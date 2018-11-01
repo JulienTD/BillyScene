@@ -19,6 +19,7 @@ int bs_label_render(bs_frame_t *frame, bs_label_t *label)
 	if (states == NULL)
 		return (0);
 	sfText_setFont(label->text, label->font);
+	sfText_setPosition(label->text, label->pos);
 	sfRenderWindow_drawText(frame->window, label->text, states);
 	free(states);
 	return (1);

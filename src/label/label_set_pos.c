@@ -20,8 +20,15 @@
  */
 bool bs_label_set_pos(bs_label_t *label, float pos_x, float pos_y)
 {
-	if (label == NULL)
-		return (false);
-	sfText_setPosition(label->text, pos_x, pos_y);
+	sfVector2f pos = {.x = pos_x, .y = pos_y};
+	sfVector2f curr_pos;
+
+	if (label == NULL) {
+		return false;
+	}
+	curr_pos = label->pos;
+	pos.x = (pos_x < 0) ? curr_pos.x : pos_x;
+	pos.y = (pos_y < 0) ? curr_pos.y : pos_y;
+	label->pos = pos;
 	return (true);
 }

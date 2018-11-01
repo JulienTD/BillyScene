@@ -113,6 +113,7 @@ typedef struct bs_label_s
 	char *id_label;
 	sfText *text;
 	sfFont *font;
+	sfVector2f pos;
 	bool enabled;
 } bs_label_t;
 
@@ -122,8 +123,9 @@ typedef struct bs_textfield_s
 	sfRectangleShape *rect;
 	bs_label_t *label;
 	sfTexture *texture;
-	int max_lenght;
+	int max_length;
 	int is_focus;
+	sfVector2f pos;
 	bool enabled;
 } bs_textfield_t;
 

@@ -27,7 +27,7 @@ bool bs_scene_render_all_textfields(bs_scene_t *scene, bs_frame_t *frame)
 	list = scene->textfield_list;
 	while (list) {
 		textfield = (bs_textfield_t *)list->data;
-		//bs_render_textfield(frame, textfield);
+		bs_textfield_render(frame, textfield);
 		list = list->next;
 	}
 	return (true);

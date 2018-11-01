@@ -35,6 +35,8 @@ SRC_EVENTS_SCENES	=	./src/events/scene/event_scene_key_pressed.c \
 				./src/events/scene/event_scene_mouse_wheel_scrolled.c \
 				./src/events/scene/event_scene_text_entered.c
 
+SRC_EVENTS_TEXTFIELDS	=	./src/events/textfield/event_textfield_text_entered.c
+
 SRC_EVENTS		=	./src/events/event_dispatcher.c
 
 SRC_FRAME		=	./src/frame/frame_create.c \
@@ -87,19 +89,29 @@ SRC_SPRITES_ANIMATIONS	=	./src/sprite/animation/sprite_anim_add.c \
 
 SRC_LABEL		=	./src/label/label_create.c \
 				./src/label/label_render.c \
-				./src/label/label_add_to_scene.c
+				./src/label/label_add_to_scene.c \
+				./src/label/label_set_pos.c \
+				./src/label/label_set_str.c \
+				./src/label/label_get_str.c
+
+SRC_TEXTFIELD		=	./src/textfield/textfield_create.c \
+				./src/textfield/textfield_render.c \
+				./src/textfield/textfield_set_focus.c \
+				./src/textfield/textfield_add_to_scene.c
 
 OBJ			=	$(SRC_BUTTONS:.c=.o) $(SRC_EVENTS_BUTTONS:.c=.o)  \
 				$(SRC_EVENTS_KEYS:.c=.o) $(SRC_EVENTS:.c=.o) \
 				$(SRC_FRAME:.c=.o) $(SRC_LIST:.c=.o) \
 				$(SRC_SCENES:.c=.o) $(SRC_UTILS:.c=.o) \
 				$(SRC_SOUNDS:.c=.o) $(SRC_EVENTS_SCENES:.c=.o) \
-				$(SRC_SPRITES:.c=.o) $(SRC_EVENTS_GENERAL:.c=.o) $(SRC_SPRITES_ANIMATIONS:.c=.o) $(SRC_LABEL:.c=.o)
+				$(SRC_SPRITES:.c=.o) $(SRC_EVENTS_GENERAL:.c=.o) \
+				$(SRC_SPRITES_ANIMATIONS:.c=.o) $(SRC_LABEL:.c=.o) \
+				$(SRC_TEXTFIELD:.c=.o) $(SRC_EVENTS_TEXTFIELDS:.c=.o)
 
 ALL_SRC			=	$(SRC_BUTTONS) $(SRC_EVENTS_BUTTONS) $(SRC_EVENTS_KEYS) \
 				$(SRC_EVENTS) $(SRC_FRAME) $(SRC_LIST) $(SRC_SCENES) $(SRC_UTILS) \
 				$(SRC_SOUNDS) $(SRC_EVENTS_SCENES) $(SRC_SPRITES) $(SRC_EVENTS_GENERAL) \
-				$(SRC_LABEL) $(SRC_SPRITES_ANIMATIONS)
+				$(SRC_LABEL) $(SRC_SPRITES_ANIMATIONS) $(SRC_TEXTFIELD) $(SRC_EVENTS_TEXTFIELDS)
 
 FLAGS	=			-Wunused-parameter -Wall -W -Wextra -pedantic -I./include/ -lc_graph_prog
 

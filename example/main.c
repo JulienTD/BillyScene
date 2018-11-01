@@ -55,7 +55,7 @@ void click_buton(bs_event_button_click_pressed_t event)
 
 	if (sprite == NULL)
 		return;
-	bs_sprite_anim_play(sprite, "anim_test", true);
+	bs_sprite_anim_play(sprite, "anim_test", false);
 }
 
 void hover_button_in(bs_event_button_hover_in_t event)
@@ -118,7 +118,7 @@ void display_frame(int width, int height)
 	anim->max_states = 6;
 	anim->max_tick_delay = 20;
 	anim->is_vertical = false;
-	anim->stay_on_last_frame = false;
+	anim->stay_on_last_frame = true;
 	anim->is_looped = false;
 	anim->is_default = false;
 	bs_sprite_anim_add(sprite, anim);
@@ -130,6 +130,11 @@ void display_frame(int width, int height)
 	bs_label_t *label = bs_label_create("./example/res/font.ttf", "yo", 20);
 
 	bs_label_add_to_scene(scene, label);
+	bs_label_set_pos(label, 500, 500);
+	bs_textfield_t *textfield = bs_textfield_create("textfield", "./example/res/font.ttf", 400, 100);
+	bs_textfield_set_focus(textfield, true);
+	bs_textfield_add_to_scene(scene, textfield);
+	sfText_setCharacterSize(textfield->label->text, 30);
 	while (sfRenderWindow_isOpen(frame->window)) {
 		while (sfRenderWindow_pollEvent(frame->window, \
 		&(frame->event)))

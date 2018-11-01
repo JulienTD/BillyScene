@@ -32,5 +32,5 @@ bool bs_button_set_pos(bs_button_t *button, float pos_x, float pos_y)
 	pos.x = (pos_x < 0) ? curr_pos.x : pos_x;
 	pos.y = (pos_y < 0) ? curr_pos.y : pos_y;
 	button->pos = pos;
-	return true;
+	return (true);
 }

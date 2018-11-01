@@ -42,7 +42,7 @@ bool bs_scene_render(bs_scene_t *scene, bs_frame_t *frame)
 	bs_scene_render_all_sprites(scene, frame);
 	bs_scene_render_all_buttons(scene, frame);
 	bs_scene_render_all_labels(scene, frame);
-	// bs_scenerender_all_textfields(scene, frame);
+	bs_scene_render_all_textfields(scene, frame);
 	scene->current_tick++;
 	return (1);
 }

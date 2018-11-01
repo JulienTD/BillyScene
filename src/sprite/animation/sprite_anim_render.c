@@ -43,8 +43,7 @@ static bool handle_anim_states(bs_sprite_anim_t *anim)
 			anim->is_finish = true;
 		}
 		anim->stay_now = anim->stay_on_last_frame;
-		anim->curr_state = (anim->stay_now) ? \
-		anim->max_states - 1 : 0;
+		anim->curr_state = (anim->stay_now) ? anim->max_states : 0;
 		return (true);
 	}
 	anim->curr_state++;

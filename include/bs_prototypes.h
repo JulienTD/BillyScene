@@ -60,6 +60,9 @@ bs_frame_t *frame, bs_scene_t *scene);
 bool bs_scene_text_entered_manager(sfTextEvent evt, bs_frame_t *frame, \
 bs_scene_t *scene);
 
+/* Prototypes to manipulate textfield events */
+bool bs_textfield_text_entered_manager(bs_textfield_t *textfield, \
+sfTextEvent evt, bs_frame_t *frame, bs_scene_t *scene);
 
 /* Prototypes to manipulate frames */
 bs_frame_t *bs_frame_create(void);
@@ -121,7 +124,17 @@ bool bs_sprite_anim_stop(bs_sprite_t *sprite);
 bs_label_t *bs_label_create(char *font, char *text, int font_size);
 int bs_label_render(bs_frame_t *frame, bs_label_t *label);
 bool bs_label_add_to_scene(bs_scene_t *scene, bs_label_t *label);
+bool bs_label_set_pos(bs_label_t *label, float pos_x, float pos_y);
+bool bs_label_set_str(bs_label_t *label, char *str);
+const char *bs_label_get_str(bs_label_t *label);
 
+
+/* Prototypes to manipulates textfields */
+bs_textfield_t *bs_textfield_create(char *id, char *font_path, float width, \
+float height);
+bool bs_textfield_render(bs_frame_t *frame, bs_textfield_t *textfield);
+bool bs_textfield_set_focus(bs_textfield_t *textfield, bool is_focus);
+bool bs_textfield_add_to_scene(bs_scene_t *scene, bs_textfield_t *textfield);
 
 /* Prototypes of the file bs_set_str_to.c */
 char *bs_set_str_to(char *src, char *new_str);
