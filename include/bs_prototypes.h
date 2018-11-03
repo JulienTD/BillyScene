@@ -76,6 +76,7 @@ bs_list_t *bs_list_get_element(bs_list_t **head, int id);
 int bs_list_length(bs_list_t **head);
 bs_list_t *bs_list_push(bs_list_t **head, void *data);
 bool bs_list_destroy(bs_list_t **head, bool (*destroy)(void *data));
+bool bs_list_each(bs_list_t **head, bool (*func_each)(void *data));
 
 
 /* Prototypes to manipulates scenes */

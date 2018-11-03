@@ -47,15 +47,12 @@ SRC_LIST		=	./src/list/list_create.c \
 				./src/list/list_get_element.c \
 				./src/list/list_length.c \
 				./src/list/list_push.c \
-				./src/list/list_destroy.c
+				./src/list/list_destroy.c \
+				./src/list/list_each.c
 
 SRC_SCENES		=	./src/scene/scene_add_to_frame.c \
 				./src/scene/scene_create.c \
 				./src/scene/scene_get_by_id.c \
-				./src/scene/scene_render_all_buttons.c \
-				./src/scene/scene_render_all_labels.c \
-				./src/scene/scene_render_all_sprites.c \
-				./src/scene/scene_render_all_textfields.c \
 				./src/scene/scene_render.c \
 				./src/scene/scene_set_to.c \
 				./src/scene/scene_destroy.c

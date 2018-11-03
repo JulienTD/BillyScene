@@ -23,6 +23,23 @@ static bool execute_tick_event(bs_frame_t *frame, bs_scene_t *scene)
 	return true;
 }
 
+static bool render_components(bs_list_t **head, bs_frame_t *frame, \
+bool (*func_render)(bs_frame_t *f, void *component))
+{
+	bs_list_t *curr = NULL;
+
+	if (head == NULL)
+		return (true);
+	curr = *head;
+	while (curr) {
+		if (func_render != NULL) {
+			func_render(frame, curr->data);
+		}
+		curr = curr->next;
+	}
+	return (true);
+}
+
 /**
  * @brief Renders scene
  * 
@@ -39,10 +56,14 @@ bool bs_scene_render(bs_scene_t *scene, bs_frame_t *frame)
 		scene->current_tick = 0;
 	}
 	execute_tick_event(frame, scene);
-	bs_scene_render_all_sprites(scene, frame);
-	bs_scene_render_all_buttons(scene, frame);
-	bs_scene_render_all_labels(scene, frame);
-	bs_scene_render_all_textfields(scene, frame);
+	render_components(&(scene->sprite_list), frame, \
+		(_Bool (*)(bs_frame_t *, void *))&bs_sprite_render);
+	render_components(&(scene->button_list), frame, \
+		(_Bool (*)(bs_frame_t *, void *))&bs_button_render);
+	render_components(&(scene->label_list), frame, \
+		(_Bool (*)(bs_frame_t *, void *))&bs_label_render);
+	render_components(&(scene->textfield_list), frame, \
+		(_Bool (*)(bs_frame_t *, void *))&bs_textfield_render);
 	scene->current_tick++;
 	return (1);
 }
