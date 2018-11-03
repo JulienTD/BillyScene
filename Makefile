@@ -46,7 +46,8 @@ SRC_LIST		=	./src/list/list_create.c \
 				./src/list/list_delete.c \
 				./src/list/list_get_element.c \
 				./src/list/list_length.c \
-				./src/list/list_push.c
+				./src/list/list_push.c \
+				./src/list/list_destroy.c
 
 SRC_SCENES		=	./src/scene/scene_add_to_frame.c \
 				./src/scene/scene_create.c \
@@ -56,7 +57,8 @@ SRC_SCENES		=	./src/scene/scene_add_to_frame.c \
 				./src/scene/scene_render_all_sprites.c \
 				./src/scene/scene_render_all_textfields.c \
 				./src/scene/scene_render.c \
-				./src/scene/scene_set_to.c
+				./src/scene/scene_set_to.c \
+				./src/scene/scene_destroy.c
 
 SRC_UTILS		=	./src/util/bs_set_str_to.c \
 				./src/util/bs_str_are_equals.c \
@@ -76,7 +78,8 @@ SRC_SPRITES		=	./src/sprite/sprite_add_to_scene.c \
 				./src/sprite/sprite_set_pos.c \
 				./src/sprite/sprite_set_scale.c \
 				./src/sprite/sprite_set_size.c \
-				./src/sprite/sprite_set_speed.c
+				./src/sprite/sprite_set_speed.c \
+				./src/sprite/sprite_destroy.c
 
 SRC_SPRITES_ANIMATIONS	=	./src/sprite/animation/sprite_anim_add.c \
 				./src/sprite/animation/sprite_anim_create.c \
@@ -85,19 +88,22 @@ SRC_SPRITES_ANIMATIONS	=	./src/sprite/animation/sprite_anim_add.c \
 				./src/sprite/animation/sprite_anim_get_default.c \
 				./src/sprite/animation/sprite_anim_play.c \
 				./src/sprite/animation/sprite_anim_render.c \
-				./src/sprite/animation/sprite_anim_stop.c
+				./src/sprite/animation/sprite_anim_stop.c \
+				./src/sprite/animation/sprite_anim_destroy.c
 
 SRC_LABEL		=	./src/label/label_create.c \
 				./src/label/label_render.c \
 				./src/label/label_add_to_scene.c \
 				./src/label/label_set_pos.c \
 				./src/label/label_set_str.c \
-				./src/label/label_get_str.c
+				./src/label/label_get_str.c \
+				./src/label/label_destroy.c
 
 SRC_TEXTFIELD		=	./src/textfield/textfield_create.c \
 				./src/textfield/textfield_render.c \
 				./src/textfield/textfield_set_focus.c \
-				./src/textfield/textfield_add_to_scene.c
+				./src/textfield/textfield_add_to_scene.c \
+				./src/textfield/textfield_destroy.c
 
 OBJ			=	$(SRC_BUTTONS:.c=.o) $(SRC_EVENTS_BUTTONS:.c=.o)  \
 				$(SRC_EVENTS_KEYS:.c=.o) $(SRC_EVENTS:.c=.o) \

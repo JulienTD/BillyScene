@@ -22,7 +22,7 @@ bool bs_button_set_sound_click(bs_button_t *button, char *path)
 		return (false);
 	if (path == NULL) {
 		if (button->sound_click)
-			bs_sound_free(button->sound_click);
+			bs_sound_destroy(button->sound_click);
 		button->sound_click = NULL;
 		return (true);
 	}

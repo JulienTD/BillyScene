@@ -33,11 +33,11 @@ bool bs_button_destroy(bs_button_t *button)
 	if (button->texture_clicked)
 		sfTexture_destroy(button->texture_clicked);
 	if (button->sound_click)
-		bs_sound_free(button->sound_click);
+		bs_sound_destroy(button->sound_click);
 	if (button->sound_hover_in)
-		bs_sound_free(button->sound_hover_in);
+		bs_sound_destroy(button->sound_hover_in);
 	if (button->sound_hover_out)
-		bs_sound_free(button->sound_hover_out);
+		bs_sound_destroy(button->sound_hover_out);
 	free(button);
 	return true;
 }

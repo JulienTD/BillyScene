@@ -23,8 +23,7 @@ bs_scene_t *scene)
 	while (curr) {
 		textfield = (bs_textfield_t *)curr->data;		
 		if (textfield->is_focus) {
-			bs_textfield_text_entered_manager(textfield, \
-			evt, frame, scene);
+			bs_textfield_text_entered_manager(textfield, evt);
 		}
 		curr = curr->next;
 	}

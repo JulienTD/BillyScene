@@ -9,10 +9,10 @@
 #include "bs_prototypes.h"
 #include "stdbool.h"
 
-bool bs_sound_free(bs_sound_t *sound)
+bool bs_sound_destroy(bs_sound_t *sound)
 {
 	if (sound == NULL) {
-		return true;
+		return (true);
 	}
 	if (sound->buffer) {
 		sfSoundBuffer_destroy(sound->buffer);
@@ -24,5 +24,5 @@ bool bs_sound_free(bs_sound_t *sound)
 		free(sound->id_sound);
 	}
 	free(sound);
-	return sound;
+	return (true);
 }

@@ -62,7 +62,7 @@ bs_scene_t *scene);
 
 /* Prototypes to manipulate textfield events */
 bool bs_textfield_text_entered_manager(bs_textfield_t *textfield, \
-sfTextEvent evt, bs_frame_t *frame, bs_scene_t *scene);
+sfTextEvent evt);
 
 /* Prototypes to manipulate frames */
 bs_frame_t *bs_frame_create(void);
@@ -75,6 +75,7 @@ bool bs_list_delete_element(bs_list_t **head, int id);
 bs_list_t *bs_list_get_element(bs_list_t **head, int id);
 int bs_list_length(bs_list_t **head);
 bs_list_t *bs_list_push(bs_list_t **head, void *data);
+bool bs_list_destroy(bs_list_t **head, bool (*destroy)(void *data));
 
 
 /* Prototypes to manipulates scenes */
@@ -87,13 +88,14 @@ bool bs_scene_render_all_sprites(bs_scene_t *scene, bs_frame_t *frame);
 bool bs_scene_render_all_textfields(bs_scene_t *scene, bs_frame_t *frame);
 bool bs_scene_render(bs_scene_t *scene, bs_frame_t *frame);
 bool bs_scene_set_to(bs_frame_t *frame, char *id);
+bool bs_scene_destroy(bs_scene_t *scene);
 
 
 /* Prototypes to manipulates sounds */
 bs_sound_t *bs_sound_create(char *path);
 bool bs_sound_play(bs_sound_t *sound);
 bool bs_sound_set_new(bs_sound_t *sound, char *path);
-bool bs_sound_free(bs_sound_t *sound);
+bool bs_sound_destroy(bs_sound_t *sound);
 
 /* Prototypes to manipulates sprites */
 bool bs_sprite_add_to_scene(bs_scene_t *scene, bs_sprite_t *sprite);
@@ -104,6 +106,7 @@ bool bs_sprite_set_pos(bs_sprite_t *sprite, float x, float y);
 bool bs_sprite_set_scale(bs_sprite_t *sprite, float x, float y);
 bool bs_sprite_set_size(bs_sprite_t *sprite, int x, int y);
 bool bs_sprite_set_speed(bs_sprite_t *sprite, float x, float y);
+bool bs_sprite_destroy(bs_sprite_t *sprite);
 
 
 /* Prototypes to manipulates sprites animations */
@@ -118,6 +121,7 @@ bool reverse);
 bool bs_sprite_anim_render(bs_frame_t *frame, bs_sprite_t *sprite, \
 bs_sprite_anim_t *anim);
 bool bs_sprite_anim_stop(bs_sprite_t *sprite);
+bool bs_sprite_anim_destroy(bs_sprite_anim_t *anim);
 
 
 /* Prototypes to manipulates labels */
@@ -126,7 +130,8 @@ int bs_label_render(bs_frame_t *frame, bs_label_t *label);
 bool bs_label_add_to_scene(bs_scene_t *scene, bs_label_t *label);
 bool bs_label_set_pos(bs_label_t *label, float pos_x, float pos_y);
 bool bs_label_set_str(bs_label_t *label, char *str);
-const char *bs_label_get_str(bs_label_t *label);
+char *bs_label_get_str(bs_label_t *label);
+bool bs_label_destroy(bs_label_t *label);
 
 
 /* Prototypes to manipulates textfields */
@@ -135,6 +140,8 @@ float height);
 bool bs_textfield_render(bs_frame_t *frame, bs_textfield_t *textfield);
 bool bs_textfield_set_focus(bs_textfield_t *textfield, bool is_focus);
 bool bs_textfield_add_to_scene(bs_scene_t *scene, bs_textfield_t *textfield);
+bool bs_textfield_destroy(bs_textfield_t *textfield);
+
 
 /* Prototypes of the file bs_set_str_to.c */
 char *bs_set_str_to(char *src, char *new_str);

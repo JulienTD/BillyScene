@@ -32,6 +32,7 @@ bs_sprite_t *bs_sprite_create(char *id, const char *texture_path)
 	element->is_init = false;
 	element->id_sprite = NULL;
 	element->id_sprite = bs_set_str_to(element->id_sprite, id);
+	element->curr_anim = NULL;
 	element->enabled = true;
 	element->curr_tick = 0;
 	element->tick_max = 0;

@@ -9,6 +9,22 @@
 #include "bs_prototypes.h"
 #include "stdbool.h"
 
+// static bool destroy_all_scenes(bs_list_t **head)
+// {
+// 	bs_list_t *curr = NULL;
+// 	bs_scene_t *scene = NULL;
+
+// 	if (head == NULL)
+// 		return (true);
+// 	curr = *head;
+// 	while (curr) {
+// 		scene = (bs_scene_t *)curr->data;		
+// 		bs_scene_destroy(scene);
+// 		curr = curr->next;
+// 	}
+// 	return (true);
+// }
+
 /**
  * @brief Free the frame structure
  * 
@@ -30,6 +46,8 @@ bool bs_frame_destroy(bs_frame_t *frame)
 		free(frame->last_scene);
 	if (frame->data)
 		free(frame->data);
+	bs_list_destroy(&(frame->scenes), \
+	(_Bool (*)(void *))&bs_scene_destroy);
 	free(frame);
 	return true;
 }

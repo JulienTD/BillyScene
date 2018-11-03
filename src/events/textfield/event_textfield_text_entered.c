@@ -13,7 +13,7 @@
 static bool apply_backspace(bs_textfield_t *textfield)
 {
 	bs_label_t *label = textfield->label;
-	const char *ancient_str = bs_label_get_str(label);
+	char *ancient_str = bs_label_get_str(label);
 	int size = bs_strlen(ancient_str);
 	char *new_str = malloc(size * sizeof(char));
 	int i = 0;
@@ -37,17 +37,15 @@ static bool apply_backspace(bs_textfield_t *textfield)
 static bool fill_textfield(bs_textfield_t *textfield, char c)
 {
 	bs_label_t *label = textfield->label;
-	const char *ancient_str = bs_label_get_str(label);
+	char *ancient_str = bs_label_get_str(label);
 	int size = bs_strlen(ancient_str);
 	char *new_str = malloc((size + 2) * sizeof(char));
 	int i = 0;
 
-	if (new_str == NULL) {
+	if (new_str == NULL)
 		return (false);
-	}
-	for (i = 0; ancient_str[i] != '\0'; i++) {
+	for (i = 0; ancient_str[i] != '\0'; i++)
 		new_str[i] = ancient_str[i];
-	}
 	new_str[i++] = c;
 	new_str[i] = '\0';
 	bs_label_set_str(label, new_str);
@@ -67,16 +65,16 @@ static char sanitize_char(sfUint32 code)
  * 
  * @param textfield 
  * @param evt 
- * @param frame 
- * @param scene 
  * @return true 
  * @return false 
  */
 bool bs_textfield_text_entered_manager(bs_textfield_t *textfield, \
-sfTextEvent evt, bs_frame_t *frame, bs_scene_t *scene)
+sfTextEvent evt)
 {
 	char c;
 
+	if (textfield == NULL || textfield->label == NULL)
+		return (false);
 	if (textfield->is_focus == false)
 		return (false);
 	if (!(evt.unicode >= 0 && evt.unicode <= 127)) {
