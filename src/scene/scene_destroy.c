@@ -11,23 +11,22 @@
 /**
  * @brief Destroys scene
  * 
- * @param id 
- * @return bs_scene_t* 
+ * @param id  
  */
-bool bs_scene_destroy(bs_scene_t *scene)
+void bs_scene_destroy(bs_scene_t *scene)
 {
 	if (scene == NULL)
-		return (true);
+		return;
 	if (scene->id_scene)
 		free(scene->id_scene);
 	bs_list_destroy(&(scene->button_list), \
-			(_Bool (*)(void *))&bs_button_destroy);
+			(void (*)(void *))&bs_button_destroy);
 	bs_list_destroy(&(scene->label_list), \
-			(_Bool (*)(void *))&bs_label_destroy);
+			(void (*)(void *))&bs_label_destroy);
 	bs_list_destroy(&(scene->sprite_list), \
-			(_Bool (*)(void *))&bs_sprite_destroy);
+			(void (*)(void *))&bs_sprite_destroy);
 	bs_list_destroy(&(scene->textfield_list), \
-			(_Bool (*)(void *))&bs_textfield_destroy);
+			(void (*)(void *))&bs_textfield_destroy);
 	free(scene);
-	return (true);
+	return;
 }

@@ -12,8 +12,9 @@ bool bs_list_each(bs_list_t **head, bool (*func_each)(void *data))
 {
 	bs_list_t *curr = NULL;
 
-	if (head == NULL)
-		return (true);
+	if (head == NULL || *head == NULL || func_each == NULL) {
+		return (false);
+	}
 	curr = *head;
 	while (curr) {
 		if (func_each != NULL) {

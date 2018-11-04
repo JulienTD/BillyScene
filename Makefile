@@ -77,8 +77,7 @@ SRC_SPRITES		=	./src/sprite/sprite_add_to_scene.c \
 				./src/sprite/sprite_set_scale.c \
 				./src/sprite/sprite_set_size.c \
 				./src/sprite/sprite_set_speed.c \
-				./src/sprite/sprite_destroy.c \
-				./src/sprite/sprite_get_by_id.c
+				./src/sprite/sprite_destroy.c
 
 SRC_SPRITES_ANIMATIONS	=	./src/sprite/animation/sprite_anim_add.c \
 				./src/sprite/animation/sprite_anim_create.c \
@@ -133,7 +132,12 @@ $(NAME):	$(ALL_SRC)
 
 re:	fclean all clean
 
-SRC_TEST	=	./tests/test_list_push.c \
+SRC_TEST	=	./tests/list/test_list_push.c \
+			./tests/list/test_list_create.c \
+			./tests/list/test_list_each.c \
+			./tests/list/test_list_length.c \
+			./tests/list/test_list_get_element.c \
+			./tests/list/test_list_destroy.c \
 			./tests/test_bs_set_str_to.c
 
 tests_run: $(ALL_SRC)
@@ -142,7 +146,7 @@ tests_run: $(ALL_SRC)
 	./all_tests
 
 clean:
-	rm -f $(OBJ) *.o *~ \#*\# *.gcda *.gcno
+	rm -f $(OBJ) *.o *~ \#*\# *.gcda *.gcno *.gcov
 
 fclean:	clean
 	rm -f $(NAME)

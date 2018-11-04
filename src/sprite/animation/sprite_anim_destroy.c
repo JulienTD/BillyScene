@@ -9,10 +9,15 @@
 #include "bs_prototypes.h"
 #include <stdbool.h>
 
-bool bs_sprite_anim_destroy(bs_sprite_anim_t *anim)
+/**
+ * @brief Destroys sprite animation
+ * 
+ * @param anim 
+ */
+void bs_sprite_anim_destroy(bs_sprite_anim_t *anim)
 {
 	if (anim == NULL)
-		return (true);
+		return;
 	if (anim->id_anim)
 		free(anim->id_anim);
 	if (anim->sprite)
@@ -20,5 +25,4 @@ bool bs_sprite_anim_destroy(bs_sprite_anim_t *anim)
 	if (anim->texture)
 		sfTexture_destroy(anim->texture);
 	free(anim);
-	return (true);
 }

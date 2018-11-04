@@ -19,7 +19,7 @@ int bs_list_length(bs_list_t **head)
 	bs_list_t *curr = NULL;
 	int length = 0;
 
-	if (head == NULL)
+	if (head == NULL || *head == NULL)
 		return (0);
 	curr = *head;
 	while (curr) {

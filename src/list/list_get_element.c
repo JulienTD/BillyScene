@@ -12,8 +12,8 @@ bs_list_t *bs_list_get_element(bs_list_t **head, int id)
 {
 	bs_list_t *curr = NULL;
 
-	if (head == NULL)
-		return NULL;
+	if (head == NULL || *head == NULL)
+		return (NULL);
 	curr = *head;
 	while (curr) {
 		if (curr->id == id) {

@@ -16,21 +16,22 @@
  * @return true 
  * @return false 
  */
-bool bs_list_destroy(bs_list_t **head, bool (*destroy)(void *data))
+void bs_list_destroy(bs_list_t **head, void (*destroy)(void *data))
 {
 	bs_list_t *curr = NULL;
 	bs_list_t *tmp = NULL;
 
-	if (head == NULL)
-		return (true);
+	if (head == NULL || *head == NULL)
+		return;
 	curr = *head;
 	while (curr) {
 		if (destroy != NULL) {
 			destroy(curr->data);
+			curr->data = NULL;
 		}
 		tmp = curr;
 		curr = curr->next;
 		free(tmp);
 	}
-	return (true);
+	*head = NULL;
 }

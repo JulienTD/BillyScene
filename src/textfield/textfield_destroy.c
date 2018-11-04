@@ -13,13 +13,11 @@
  * @brief Destroys textfield
  * 
  * @param textfield 
- * @return true 
- * @return false 
  */
-bool bs_textfield_destroy(bs_textfield_t *textfield)
+void bs_textfield_destroy(bs_textfield_t *textfield)
 {
 	if (textfield == NULL)
-		return (true);
+		return;
 	if (textfield->id_textfield)
 		free(textfield->id_textfield);
 	bs_label_destroy(textfield->label);
@@ -27,5 +25,4 @@ bool bs_textfield_destroy(bs_textfield_t *textfield)
 		sfRectangleShape_destroy(textfield->rect);
 	if (textfield->texture)
 		sfTexture_destroy(textfield->texture);
-	return (true);
 }

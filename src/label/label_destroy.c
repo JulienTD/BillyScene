@@ -13,13 +13,11 @@
  * @brief Destroys label
  * 
  * @param label 
- * @return true 
- * @return false 
  */
-bool bs_label_destroy(bs_label_t *label)
+void bs_label_destroy(bs_label_t *label)
 { 
 	if (label == NULL)
-		return (true);
+		return;
 	if (label->id_label)
 		free(label->id_label);
 	if (label->font)
@@ -27,5 +25,4 @@ bool bs_label_destroy(bs_label_t *label)
 	if (label->text)
 		sfText_destroy(label->text);
 	free(label);
-	return (true);
 }
