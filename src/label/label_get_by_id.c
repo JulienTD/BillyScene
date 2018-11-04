@@ -9,24 +9,24 @@
 #include "bs_prototypes.h"
 
 /**
- * @brief Gets a sprite by its id
+ * @brief Gets label in a scene by its id
  * 
  * @param scene 
  * @param id 
- * @return bs_sprite_t* 
+ * @return bs_label_t* 
  */
-bs_sprite_t *bs_sprite_get_by_id(bs_scene_t *scene, char *id)
+bs_label_t *bs_label_get_by_id(bs_scene_t *scene, char *id)
 {
 	bs_list_t *curr = NULL;
-	bs_sprite_t *sprite = NULL;
+	bs_label_t *label = NULL;
 
 	if (scene == NULL || id == NULL)
 		return NULL;
-	curr = scene->sprite_list;
+	curr = scene->label_list;
 	while (curr) {
-		sprite = (bs_sprite_t *)curr->data;
-		if (bs_str_are_equals(id, sprite->id_sprite)) {
-			return sprite;
+		label = (bs_label_t *)curr->data;
+		if (bs_str_are_equals(id, label->id_label)) {
+			return (label);
 		}
 		curr = curr->next;
 	}

@@ -21,5 +21,5 @@ bs_list_t *bs_list_get_element(bs_list_t **head, int id)
 		}
 		curr = curr->next;
 	}
-	return NULL;
+	return (NULL);
 }

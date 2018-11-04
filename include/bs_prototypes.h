@@ -26,6 +26,7 @@ bool bs_button_set_size(bs_button_t *button, float width, float height);
 bool bs_button_set_sound_click(bs_button_t *button, char *path);
 bool bs_button_set_sound_hover_in(bs_button_t *button, char *path);
 bool bs_button_set_sound_hover_out(bs_button_t *button, char *path);
+bs_button_t *bs_button_get_by_id(bs_scene_t *scene, char *id);
 
 
 /* Prototypes of the file event_dispatcher.c */
@@ -133,6 +134,7 @@ bool bs_label_set_pos(bs_label_t *label, float pos_x, float pos_y);
 bool bs_label_set_str(bs_label_t *label, char *str);
 char *bs_label_get_str(bs_label_t *label);
 bool bs_label_destroy(bs_label_t *label);
+bs_label_t *bs_label_get_by_id(bs_scene_t *scene, char *id);
 
 
 /* Prototypes to manipulates textfields */
@@ -142,6 +144,7 @@ bool bs_textfield_render(bs_frame_t *frame, bs_textfield_t *textfield);
 bool bs_textfield_set_focus(bs_textfield_t *textfield, bool is_focus);
 bool bs_textfield_add_to_scene(bs_scene_t *scene, bs_textfield_t *textfield);
 bool bs_textfield_destroy(bs_textfield_t *textfield);
+bs_textfield_t *bs_textfield_get_by_id(bs_scene_t *scene, char *id);
 
 
 /* Prototypes of the file bs_set_str_to.c */

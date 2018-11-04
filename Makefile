@@ -20,7 +20,8 @@ SRC_BUTTONS		=	./src/button/button_add_to_scene.c \
 				./src/button/button_set_size.c \
 				./src/button/button_set_sound_click.c \
 				./src/button/button_set_sound_hover_in.c \
-				./src/button/button_set_sound_hover_out.c
+				./src/button/button_set_sound_hover_out.c \
+				./src/button/button_get_by_id.c
 
 SRC_EVENTS_BUTTONS	=	./src/events/button/event_button_mouse_move.c \
 				./src/events/button/event_button_mouse_pressed.c \
@@ -76,7 +77,8 @@ SRC_SPRITES		=	./src/sprite/sprite_add_to_scene.c \
 				./src/sprite/sprite_set_scale.c \
 				./src/sprite/sprite_set_size.c \
 				./src/sprite/sprite_set_speed.c \
-				./src/sprite/sprite_destroy.c
+				./src/sprite/sprite_destroy.c \
+				./src/sprite/sprite_get_by_id.c
 
 SRC_SPRITES_ANIMATIONS	=	./src/sprite/animation/sprite_anim_add.c \
 				./src/sprite/animation/sprite_anim_create.c \
@@ -94,13 +96,15 @@ SRC_LABEL		=	./src/label/label_create.c \
 				./src/label/label_set_pos.c \
 				./src/label/label_set_str.c \
 				./src/label/label_get_str.c \
-				./src/label/label_destroy.c
+				./src/label/label_destroy.c \
+				./src/label/label_get_by_id.c
 
 SRC_TEXTFIELD		=	./src/textfield/textfield_create.c \
 				./src/textfield/textfield_render.c \
 				./src/textfield/textfield_set_focus.c \
 				./src/textfield/textfield_add_to_scene.c \
-				./src/textfield/textfield_destroy.c
+				./src/textfield/textfield_destroy.c \
+				./src/textfield/textfield_get_by_id.c
 
 OBJ			=	$(SRC_BUTTONS:.c=.o) $(SRC_EVENTS_BUTTONS:.c=.o)  \
 				$(SRC_EVENTS_KEYS:.c=.o) $(SRC_EVENTS:.c=.o) \

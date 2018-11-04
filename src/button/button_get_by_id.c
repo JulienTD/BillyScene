@@ -9,24 +9,24 @@
 #include "bs_prototypes.h"
 
 /**
- * @brief Gets a sprite by its id
+ * @brief Gets button in a scene by its id
  * 
  * @param scene 
  * @param id 
- * @return bs_sprite_t* 
+ * @return bs_button_t* 
  */
-bs_sprite_t *bs_sprite_get_by_id(bs_scene_t *scene, char *id)
+bs_button_t *bs_button_get_by_id(bs_scene_t *scene, char *id)
 {
 	bs_list_t *curr = NULL;
-	bs_sprite_t *sprite = NULL;
+	bs_button_t *button = NULL;
 
 	if (scene == NULL || id == NULL)
 		return NULL;
-	curr = scene->sprite_list;
+	curr = scene->button_list;
 	while (curr) {
-		sprite = (bs_sprite_t *)curr->data;
-		if (bs_str_are_equals(id, sprite->id_sprite)) {
-			return sprite;
+		button = (bs_button_t *)curr->data;
+		if (bs_str_are_equals(id, button->id_button)) {
+			return (button);
 		}
 		curr = curr->next;
 	}
