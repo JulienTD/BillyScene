@@ -127,6 +127,9 @@ typedef struct bs_textfield_s
 	int is_focus;
 	sfVector2f pos;
 	bool enabled;
+	void (*focus_event)(bs_event_textfield_focus_t event);
+	void (*unfocus_event)(bs_event_textfield_unfocus_t event);
+	_Bool (*text_entered_event)(bs_event_textfield_text_entered_t event);
 } bs_textfield_t;
 
 typedef struct bs_button_s

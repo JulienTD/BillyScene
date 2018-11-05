@@ -8,7 +8,7 @@
 #include "bs_components.h"
 #include "bs_prototypes.h"
 
-bs_list_t *bs_list_get_element(bs_list_t **head, int id)
+bs_list_t *bs_list_get_by_id(bs_list_t **head, int id)
 {
 	bs_list_t *curr = NULL;
 

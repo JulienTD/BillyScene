@@ -38,5 +38,8 @@ float width, float height)
 	sfRectangleShape_setSize(textfield->rect, size);
 	textfield->texture = NULL;
 	textfield->label = bs_label_create(font_path, "", 12);
+	textfield->focus_event = NULL;
+	textfield->unfocus_event = NULL;
+	textfield->text_entered_event = NULL;
 	return (textfield);
 }

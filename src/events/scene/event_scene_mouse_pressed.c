@@ -15,6 +15,7 @@ bs_frame_t *frame, bs_scene_t *scene)
 {
 	bs_event_mouse_pressed_t result;
 
+	bs_textfield_mouse_pressed_manager(evt, frame, scene);
 	if (scene->event_mouse_pressed == NULL) {
 		return false;
 	}

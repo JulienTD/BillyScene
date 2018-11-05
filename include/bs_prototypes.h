@@ -63,7 +63,9 @@ bs_scene_t *scene);
 
 /* Prototypes to manipulate textfield events */
 bool bs_textfield_text_entered_manager(bs_textfield_t *textfield, \
-sfTextEvent evt);
+sfTextEvent evt, bs_frame_t *frame, bs_scene_t *scene);
+void bs_textfield_mouse_pressed_manager(sfMouseButtonEvent event, \
+bs_frame_t *frame, bs_scene_t *scene);
 
 /* Prototypes to manipulate frames */
 bs_frame_t *bs_frame_create(void);
@@ -72,8 +74,8 @@ void bs_frame_destroy(bs_frame_t *frame);
 
 /* Prototypes to manipulate lists */
 bs_list_t *bs_list_create(void *data);
-bool bs_list_delete_element(bs_list_t **head, int id);
-bs_list_t *bs_list_get_element(bs_list_t **head, int id);
+bool bs_list_delete(bs_list_t **head, int id);
+bs_list_t *bs_list_get_by_id(bs_list_t **head, int id);
 int bs_list_length(bs_list_t **head);
 bs_list_t *bs_list_push(bs_list_t **head, void *data);
 void bs_list_destroy(bs_list_t **head, void (*destroy)(void *data));
@@ -145,6 +147,8 @@ bool bs_textfield_set_focus(bs_textfield_t *textfield, bool is_focus);
 bool bs_textfield_add_to_scene(bs_scene_t *scene, bs_textfield_t *textfield);
 void bs_textfield_destroy(bs_textfield_t *textfield);
 bs_textfield_t *bs_textfield_get_by_id(bs_scene_t *scene, char *id);
+bool bs_is_mouse_on_textfield(bs_textfield_t textfield, \
+float clickX, float clickY);
 
 
 /* Prototypes of the file bs_set_str_to.c */

@@ -10,6 +10,22 @@
 #include "bs_prototypes.h"
 #include "stdbool.h"
 
+static bool execute_text_entered(bs_textfield_t *textfield, 
+sfTextEvent event, bs_frame_t *frame, bs_scene_t *scene)
+{
+	bs_event_textfield_text_entered_t result;
+
+	if (textfield == NULL || textfield->text_entered_event == NULL) {
+		return (true);
+	}
+	result.event = event;
+	result.frame = frame;
+	result.textfield = textfield;
+	result.scene = scene;
+	return (textfield->text_entered_event(result));
+}
+
+
 static bool apply_backspace(bs_textfield_t *textfield)
 {
 	bs_label_t *label = textfield->label;
@@ -69,7 +85,7 @@ static char sanitize_char(sfUint32 code)
  * @return false 
  */
 bool bs_textfield_text_entered_manager(bs_textfield_t *textfield, \
-sfTextEvent evt)
+sfTextEvent evt, bs_frame_t *frame, bs_scene_t *scene)
 {
 	char c;
 
@@ -77,9 +93,11 @@ sfTextEvent evt)
 		return (false);
 	if (textfield->is_focus == false)
 		return (false);
-	if (!(evt.unicode >= 0 && evt.unicode <= 127)) {
+	if (evt.unicode > 127) {
 		return (false);
 	}
+	if (execute_text_entered(textfield, evt, frame, scene) == false)
+		return (true);
 	c = sanitize_char(evt.unicode);
 	if (evt.unicode == 8) {
 		apply_backspace(textfield);

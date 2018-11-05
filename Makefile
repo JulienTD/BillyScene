@@ -36,7 +36,8 @@ SRC_EVENTS_SCENES	=	./src/events/scene/event_scene_key_pressed.c \
 				./src/events/scene/event_scene_mouse_wheel_scrolled.c \
 				./src/events/scene/event_scene_text_entered.c
 
-SRC_EVENTS_TEXTFIELDS	=	./src/events/textfield/event_textfield_text_entered.c
+SRC_EVENTS_TEXTFIELDS	=	./src/events/textfield/event_textfield_text_entered.c \
+				./src/events/textfield/event_textfield_mouse_pressed.c
 
 SRC_EVENTS		=	./src/events/event_dispatcher.c
 
@@ -45,7 +46,7 @@ SRC_FRAME		=	./src/frame/frame_create.c \
 
 SRC_LIST		=	./src/list/list_create.c \
 				./src/list/list_delete.c \
-				./src/list/list_get_element.c \
+				./src/list/list_get_by_id.c \
 				./src/list/list_length.c \
 				./src/list/list_push.c \
 				./src/list/list_destroy.c \
@@ -103,7 +104,8 @@ SRC_TEXTFIELD		=	./src/textfield/textfield_create.c \
 				./src/textfield/textfield_set_focus.c \
 				./src/textfield/textfield_add_to_scene.c \
 				./src/textfield/textfield_destroy.c \
-				./src/textfield/textfield_get_by_id.c
+				./src/textfield/textfield_get_by_id.c \
+				./src/textfield/textfield_hitbox.c
 
 OBJ			=	$(SRC_BUTTONS:.c=.o) $(SRC_EVENTS_BUTTONS:.c=.o)  \
 				$(SRC_EVENTS_KEYS:.c=.o) $(SRC_EVENTS:.c=.o) \
@@ -136,8 +138,9 @@ SRC_TEST	=	./tests/list/test_list_push.c \
 			./tests/list/test_list_create.c \
 			./tests/list/test_list_each.c \
 			./tests/list/test_list_length.c \
-			./tests/list/test_list_get_element.c \
+			./tests/list/test_list_get_by_id.c \
 			./tests/list/test_list_destroy.c \
+			./tests/list/test_list_delete.c \
 			./tests/test_bs_set_str_to.c
 
 tests_run: $(ALL_SRC)
