@@ -5,6 +5,7 @@
 ## Makefile
 ##
 
+# CONFIG
 NAME			=	libbs_scene.a
 
 SRC_BUTTONS		=	./src/button/button_add_to_scene.c \
@@ -97,7 +98,8 @@ SRC_LABEL		=	./src/label/label_create.c \
 				./src/label/label_set_str.c \
 				./src/label/label_get_str.c \
 				./src/label/label_destroy.c \
-				./src/label/label_get_by_id.c
+				./src/label/label_get_by_id.c \
+				./src/label/label_set_color.c
 
 SRC_TEXTFIELD		=	./src/textfield/textfield_create.c \
 				./src/textfield/textfield_render.c \
@@ -105,7 +107,13 @@ SRC_TEXTFIELD		=	./src/textfield/textfield_create.c \
 				./src/textfield/textfield_add_to_scene.c \
 				./src/textfield/textfield_destroy.c \
 				./src/textfield/textfield_get_by_id.c \
-				./src/textfield/textfield_hitbox.c
+				./src/textfield/textfield_hitbox.c \
+				./src/textfield/textfield_set_max_length.c
+
+ALL_SRC			=	$(SRC_BUTTONS) $(SRC_EVENTS_BUTTONS) $(SRC_EVENTS_KEYS) \
+				$(SRC_EVENTS) $(SRC_FRAME) $(SRC_LIST) $(SRC_SCENES) $(SRC_UTILS) \
+				$(SRC_SOUNDS) $(SRC_EVENTS_SCENES) $(SRC_SPRITES) $(SRC_EVENTS_GENERAL) \
+				$(SRC_LABEL) $(SRC_SPRITES_ANIMATIONS) $(SRC_TEXTFIELD) $(SRC_EVENTS_TEXTFIELDS)
 
 OBJ			=	$(SRC_BUTTONS:.c=.o) $(SRC_EVENTS_BUTTONS:.c=.o)  \
 				$(SRC_EVENTS_KEYS:.c=.o) $(SRC_EVENTS:.c=.o) \
@@ -116,13 +124,9 @@ OBJ			=	$(SRC_BUTTONS:.c=.o) $(SRC_EVENTS_BUTTONS:.c=.o)  \
 				$(SRC_SPRITES_ANIMATIONS:.c=.o) $(SRC_LABEL:.c=.o) \
 				$(SRC_TEXTFIELD:.c=.o) $(SRC_EVENTS_TEXTFIELDS:.c=.o)
 
-ALL_SRC			=	$(SRC_BUTTONS) $(SRC_EVENTS_BUTTONS) $(SRC_EVENTS_KEYS) \
-				$(SRC_EVENTS) $(SRC_FRAME) $(SRC_LIST) $(SRC_SCENES) $(SRC_UTILS) \
-				$(SRC_SOUNDS) $(SRC_EVENTS_SCENES) $(SRC_SPRITES) $(SRC_EVENTS_GENERAL) \
-				$(SRC_LABEL) $(SRC_SPRITES_ANIMATIONS) $(SRC_TEXTFIELD) $(SRC_EVENTS_TEXTFIELDS)
-
 FLAGS	=			-Wunused-parameter -Wall -W -Wextra -pedantic -I./include/ -lc_graph_prog
 
+# Lib
 all:	$(NAME)
 
 $(NAME):	$(ALL_SRC)
@@ -134,6 +138,7 @@ $(NAME):	$(ALL_SRC)
 
 re:	fclean all clean
 
+# Tests
 SRC_TEST	=	./tests/list/test_list_push.c \
 			./tests/list/test_list_create.c \
 			./tests/list/test_list_each.c \
@@ -148,12 +153,14 @@ tests_run: $(ALL_SRC)
 	gcc $(ALL_SRC) $(SRC_TEST) -o all_tests -lcriterion --coverage $(FLAGS) -I../include/
 	./all_tests
 
+# Cleaning
 clean:
 	rm -f $(OBJ) *.o *~ \#*\# *.gcda *.gcno *.gcov
 
 fclean:	clean
 	rm -f $(NAME)
 
+# Example
 SRC_EXAMPLE	=	./example/main.c
 
 EXAMPLE_OBJ	=	$(SRC_EXAMPLE:.c=.o)

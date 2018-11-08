@@ -21,7 +21,7 @@ bs_label_t *bs_label_create(char *font, char *text, int font_size)
 	if (text != NULL)
 		sfText_setString(label->text, text);
 	sfText_setPosition(label->text, pos);
-	sfText_setColor(label->text, sfGreen);
+	sfText_setColor(label->text, sfBlack);
 	sfText_setCharacterSize(label->text, font_size);
 	return (label);
 }

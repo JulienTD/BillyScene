@@ -65,6 +65,7 @@ static bool fill_textfield(bs_textfield_t *textfield, char c)
 	new_str[i++] = c;
 	new_str[i] = '\0';
 	bs_label_set_str(label, new_str);
+	free(ancient_str);
 	return (true);
 }
 
@@ -88,21 +89,23 @@ bool bs_textfield_text_entered_manager(bs_textfield_t *textfield, \
 sfTextEvent evt, bs_frame_t *frame, bs_scene_t *scene)
 {
 	char c;
+	char *curr_str = NULL;
 
 	if (textfield == NULL || textfield->label == NULL)
 		return (false);
-	if (textfield->is_focus == false)
+	if (textfield->is_focus == false || evt.unicode > 127)
 		return (false);
-	if (evt.unicode > 127) {
-		return (false);
-	}
 	if (execute_text_entered(textfield, evt, frame, scene) == false)
 		return (true);
 	c = sanitize_char(evt.unicode);
 	if (evt.unicode == 8) {
 		apply_backspace(textfield);
-	} else {
-		fill_textfield(textfield, c);	
+		return (true);
 	}
+	curr_str = bs_label_get_str(textfield->label);
+	if (textfield->max_length < 0 || \
+	bs_strlen(curr_str) + 1 <= textfield->max_length)
+		fill_textfield(textfield, c);
+	free(curr_str);
 	return (true);
 }

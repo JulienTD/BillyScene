@@ -15,6 +15,8 @@ void click_buton(bs_event_button_click_pressed_t event);
 void hover_button_in(bs_event_button_hover_in_t event);
 void hover_button_out(bs_event_button_hover_out_t event);
 void hover_button(bs_event_button_hover_t event);
+void textfield_unfocus(bs_event_textfield_unfocus_t event);
+void textfield_focus(bs_event_textfield_focus_t event);
 
 bs_frame_t *init(int width, int height)
 {
@@ -80,6 +82,22 @@ void scene_key_manager(bs_event_key_pressed_t event)
 	}
 }
 
+void textfield_unfocus(bs_event_textfield_unfocus_t event)
+{
+	bs_textfield_t *tf = event.textfield;
+
+	sfRectangleShape_setFillColor(tf->rect, sfWhite);
+	sfRectangleShape_setOutlineThickness(tf->rect, 0);
+}
+
+void textfield_focus(bs_event_textfield_focus_t event)
+{
+	bs_textfield_t *tf = event.textfield;
+
+	sfRectangleShape_setFillColor(tf->rect, sfGreen);
+	sfRectangleShape_setOutlineThickness(tf->rect, 10);
+}
+
 void display_frame(int width, int height)
 {
 	bs_frame_t *frame = init(width, height);
@@ -132,9 +150,12 @@ void display_frame(int width, int height)
 	bs_label_add_to_scene(scene, label);
 	bs_label_set_pos(label, 500, 500);
 	bs_textfield_t *textfield = bs_textfield_create("textfield", "./example/res/font.ttf", 400, 100);
-	bs_textfield_set_focus(textfield, true);
 	bs_textfield_add_to_scene(scene, textfield);
 	sfText_setCharacterSize(textfield->label->text, 30);
+	textfield->focus_event = &textfield_focus;
+	textfield->unfocus_event = &textfield_unfocus;
+	bs_textfield_set_focus(textfield, true);
+	bs_textfield_set_max_length(textfield, 10);
 	while (sfRenderWindow_isOpen(frame->window)) {
 		while (sfRenderWindow_pollEvent(frame->window, \
 		&(frame->event)))

@@ -7,6 +7,7 @@
 
 #include "bs_components.h"
 #include "bs_prototypes.h"
+#include <SFML/Network.h>
 
 /**
  * @brief Creates a new sprite

@@ -137,6 +137,7 @@ bool bs_label_set_str(bs_label_t *label, char *str);
 char *bs_label_get_str(bs_label_t *label);
 void bs_label_destroy(bs_label_t *label);
 bs_label_t *bs_label_get_by_id(bs_scene_t *scene, char *id);
+bool bs_label_set_color(bs_label_t *label, sfColor color);
 
 
 /* Prototypes to manipulates textfields */
@@ -149,6 +150,7 @@ void bs_textfield_destroy(bs_textfield_t *textfield);
 bs_textfield_t *bs_textfield_get_by_id(bs_scene_t *scene, char *id);
 bool bs_is_mouse_on_textfield(bs_textfield_t textfield, \
 float clickX, float clickY);
+bool bs_textfield_set_max_length(bs_textfield_t *textfield, int max_length);
 
 
 /* Prototypes of the file bs_set_str_to.c */
