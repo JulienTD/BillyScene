@@ -27,6 +27,8 @@ void bs_scene_destroy(bs_scene_t *scene)
 			(void (*)(void *))&bs_sprite_destroy);
 	bs_list_destroy(&(scene->textfield_list), \
 			(void (*)(void *))&bs_textfield_destroy);
+	bs_list_destroy(&(scene->pbuffer_list), \
+		(void (*)(void *))&bs_pbuffer_destroy);
 	free(scene);
 	return;
 }

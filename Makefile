@@ -115,7 +115,9 @@ SRC_PIXELBUFFER		=	./src/pixelbuffer/pbuffer_add_to_scene.c \
 				./src/pixelbuffer/pbuffer_create.c \
 				./src/pixelbuffer/pbuffer_render.c \
 				./src/pixelbuffer/pbuffer_set_pixel.c \
-				./src/pixelbuffer/pbuffer_set_pos.c
+				./src/pixelbuffer/pbuffer_set_pos.c \
+				./src/pixelbuffer/pbuffer_destroy.c \
+				./src/pixelbuffer/pbuffer_get_by_id.c
 
 ALL_SRC			=	$(SRC_BUTTONS) $(SRC_EVENTS_BUTTONS) $(SRC_EVENTS_KEYS) \
 				$(SRC_EVENTS) $(SRC_FRAME) $(SRC_LIST) $(SRC_SCENES) $(SRC_UTILS) \

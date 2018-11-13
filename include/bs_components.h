@@ -36,6 +36,7 @@ typedef struct bs_list_s
 
 typedef struct bs_pbuffer_s
 {
+	char *id_pbuffer;
 	int pos_x;
 	int pos_y;
 	unsigned int width;

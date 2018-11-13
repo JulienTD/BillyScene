@@ -16,7 +16,7 @@
  * @param height 
  * @return bs_pbuffer_t* 
  */
-bs_pbuffer_t *bs_pbuffer_create(unsigned int width, \
+bs_pbuffer_t *bs_pbuffer_create(char *id, unsigned int width, \
 unsigned int height)
 {
 	bs_pbuffer_t *pbuffer = malloc(sizeof(bs_pbuffer_t));
@@ -35,6 +35,8 @@ unsigned int height)
 	pbuffer->pos_y = 0;
 	pbuffer->texture = sfTexture_create(width, height);
 	pbuffer->sprite = sfSprite_create();
-	bs_pbuffer_clear(pbuffer, sfRed);
+	pbuffer->id_pbuffer = NULL;
+	pbuffer->id_pbuffer = bs_set_str_to(pbuffer->id_pbuffer, id);
+	bs_pbuffer_clear(pbuffer, sfBlack);
 	return (pbuffer);
 }

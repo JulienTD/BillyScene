@@ -129,7 +129,7 @@ void bs_sprite_anim_destroy(bs_sprite_anim_t *anim);
 
 
 /* Prototypes to manipulates labels */
-bs_label_t *bs_label_create(char *font, char *text, int font_size);
+bs_label_t *bs_label_create(char *id, char *font, char *text, int font_size);
 int bs_label_render(bs_frame_t *frame, bs_label_t *label);
 bool bs_label_add_to_scene(bs_scene_t *scene, bs_label_t *label);
 bool bs_label_set_pos(bs_label_t *label, float pos_x, float pos_y);
@@ -154,13 +154,16 @@ bool bs_textfield_set_max_length(bs_textfield_t *textfield, int max_length);
 
 
 /* Prototypes to manipulates pixelbuffers */
-bs_pbuffer_t *bs_pbuffer_create(unsigned int width, \
+bs_pbuffer_t *bs_pbuffer_create(char *id, unsigned int width, \
 unsigned int height);
 bool bs_pbuffer_clear(bs_pbuffer_t *pbuffer, sfColor color);
 bool bs_pbuffer_set_pixel(bs_pbuffer_t *pbuffer, \
 unsigned int x, unsigned int y, sfColor color);
 bool bs_pbuffer_set_pos(bs_pbuffer_t *pbuffer, int pos_x, int pos_y);
 bool bs_pbuffer_render(bs_frame_t *frame, bs_pbuffer_t *pbuffer);
+bool bs_pbuffer_add_to_scene(bs_scene_t *scene, bs_pbuffer_t *pbuffer);
+void bs_pbuffer_destroy(bs_pbuffer_t *pbuffer);
+bs_pbuffer_t *bs_pbuffer_get_by_id(bs_scene_t *scene, char *id);
 
 
 /* Prototypes of the file bs_set_str_to.c */

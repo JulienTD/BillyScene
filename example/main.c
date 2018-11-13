@@ -17,6 +17,7 @@ void hover_button_out(bs_event_button_hover_out_t event);
 void hover_button(bs_event_button_hover_t event);
 void textfield_unfocus(bs_event_textfield_unfocus_t event);
 void textfield_focus(bs_event_textfield_focus_t event);
+void mouse_move(bs_event_mouse_moved_t event);
 
 bs_frame_t *init(int width, int height)
 {
@@ -111,6 +112,22 @@ void textfield_focus(bs_event_textfield_focus_t event)
 	sfRectangleShape_setOutlineThickness(tf->rect, 10);
 }
 
+void mouse_move(bs_event_mouse_moved_t event)
+{
+	bs_scene_t *scene = event.scene;
+	bs_frame_t *frame = event.frame;
+	bs_pbuffer_t *pbuffer = bs_pbuffer_get_by_id(scene, "test");
+
+	bs_pbuffer_set_pixel(pbuffer, event.event.x - pbuffer->pos_x, \
+	event.event.y - pbuffer->pos_y, sfRed);
+	bs_pbuffer_set_pixel(pbuffer, event.event.x + 1 - pbuffer->pos_x, \
+	event.event.y - pbuffer->pos_y, sfRed);
+	bs_pbuffer_set_pixel(pbuffer, event.event.x - pbuffer->pos_x, \
+	event.event.y + 1 - pbuffer->pos_y, sfRed);
+	bs_pbuffer_set_pixel(pbuffer, event.event.x + 1 - pbuffer->pos_x, \
+	event.event.y + 1 - pbuffer->pos_y, sfRed);
+}
+
 void display_frame(int width, int height)
 {
 	bs_frame_t *frame = init(width, height);
@@ -160,7 +177,7 @@ void display_frame(int width, int height)
 	scene->event_tick = &scene_tick;
 	bs_scene_add_to_frame(frame, scene);
 	bs_scene_set_to(frame, "intro");
-	bs_label_t *label = bs_label_create("./example/res/font.ttf", "yo", 20);
+	bs_label_t *label = bs_label_create("test", "./example/res/font.ttf", "yo", 20);
 
 	bs_label_add_to_scene(scene, label);
 	bs_label_set_pos(label, 500, 500);
@@ -171,6 +188,10 @@ void display_frame(int width, int height)
 	textfield->unfocus_event = &textfield_unfocus;
 	bs_textfield_set_focus(textfield, true);
 	bs_textfield_set_max_length(textfield, 10);
+	bs_pbuffer_t *pbuffer = bs_pbuffer_create("test", 500, 500);
+	bs_pbuffer_set_pos(pbuffer, 200, 100);
+	bs_pbuffer_add_to_scene(scene, pbuffer);
+	scene->event_mouse_moved = &mouse_move;
 	while (sfRenderWindow_isOpen(frame->window)) {
 		while (sfRenderWindow_pollEvent(frame->window, \
 		&(frame->event)))

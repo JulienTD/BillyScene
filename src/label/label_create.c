@@ -9,7 +9,7 @@
 #include "bs_prototypes.h"
 #include "stdbool.h"
 
-bs_label_t *bs_label_create(char *font, char *text, int font_size)
+bs_label_t *bs_label_create(char *id, char *font, char *text, int font_size)
 {
 	bs_label_t *label = malloc(sizeof(bs_label_t));
 	sfVector2f pos = {.x = 0, .y = 0};
@@ -18,6 +18,7 @@ bs_label_t *bs_label_create(char *font, char *text, int font_size)
 	label->text = sfText_create();
 	label->enabled = true;
 	label->id_label = NULL;
+	label->id_label = bs_set_str_to(label->id_label, id);
 	if (text != NULL)
 		sfText_setString(label->text, text);
 	sfText_setPosition(label->text, pos);
