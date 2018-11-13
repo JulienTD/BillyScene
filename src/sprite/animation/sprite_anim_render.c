@@ -69,8 +69,9 @@ bs_sprite_anim_t *anim)
 {
 	sfIntRect sprite_box = determine_sprite_box(anim);
 	sfRenderStates *render_state = bs_init_render_states();
+	sfVector2f sprite_pos = sfSprite_getPosition(sprite->sprite);
 
-	sfSprite_setPosition(anim->sprite, sprite->pos);
+	sfSprite_setPosition(anim->sprite, sprite_pos);
 	sfSprite_setScale(anim->sprite, sprite->scale);
 	sfSprite_setTexture(anim->sprite, anim->texture, sfTrue);
 	sfSprite_setTextureRect(anim->sprite, sprite_box);

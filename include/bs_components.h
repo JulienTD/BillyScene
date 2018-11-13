@@ -34,6 +34,18 @@ typedef struct bs_list_s
 	struct bs_list_s *next;
 } bs_list_t;
 
+typedef struct bs_pbuffer_s
+{
+	int pos_x;
+	int pos_y;
+	unsigned int width;
+	unsigned int height;
+	// bs_list_t *shapes; todo: create shapes  
+	sfUint8 *pixels;
+	sfSprite *sprite;
+	sfTexture *texture;
+} bs_pbuffer_t;
+
 typedef struct bs_frame_s
 {
 	int height;
@@ -56,6 +68,7 @@ typedef struct bs_scene_s
 	bs_list_t *sprite_list;
 	bs_list_t *label_list;
 	bs_list_t *textfield_list;
+	bs_list_t *pbuffer_list;
 	void (*event_key_pressed)(bs_event_key_pressed_t event);
 	void (*event_mouse_pressed)(bs_event_mouse_pressed_t event);
 	void (*event_mouse_released)(bs_event_mouse_released_t event);

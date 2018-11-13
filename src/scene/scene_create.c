@@ -39,6 +39,7 @@ bs_scene_t *bs_scene_create(char *id)
 	scene->button_list = NULL;
 	scene->sprite_list = NULL;
 	scene->label_list = NULL;
+	scene->pbuffer_list = NULL;
 	scene->textfield_list = NULL;
 	scene->current_tick = 0;
 	inits_scene_events(scene);

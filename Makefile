@@ -110,10 +110,18 @@ SRC_TEXTFIELD		=	./src/textfield/textfield_create.c \
 				./src/textfield/textfield_hitbox.c \
 				./src/textfield/textfield_set_max_length.c
 
+SRC_PIXELBUFFER		=	./src/pixelbuffer/pbuffer_add_to_scene.c \
+				./src/pixelbuffer/pbuffer_clear.c \
+				./src/pixelbuffer/pbuffer_create.c \
+				./src/pixelbuffer/pbuffer_render.c \
+				./src/pixelbuffer/pbuffer_set_pixel.c \
+				./src/pixelbuffer/pbuffer_set_pos.c
+
 ALL_SRC			=	$(SRC_BUTTONS) $(SRC_EVENTS_BUTTONS) $(SRC_EVENTS_KEYS) \
 				$(SRC_EVENTS) $(SRC_FRAME) $(SRC_LIST) $(SRC_SCENES) $(SRC_UTILS) \
 				$(SRC_SOUNDS) $(SRC_EVENTS_SCENES) $(SRC_SPRITES) $(SRC_EVENTS_GENERAL) \
-				$(SRC_LABEL) $(SRC_SPRITES_ANIMATIONS) $(SRC_TEXTFIELD) $(SRC_EVENTS_TEXTFIELDS)
+				$(SRC_LABEL) $(SRC_SPRITES_ANIMATIONS) $(SRC_TEXTFIELD) $(SRC_EVENTS_TEXTFIELDS) \
+				$(SRC_PIXELBUFFER)
 
 OBJ			=	$(SRC_BUTTONS:.c=.o) $(SRC_EVENTS_BUTTONS:.c=.o)  \
 				$(SRC_EVENTS_KEYS:.c=.o) $(SRC_EVENTS:.c=.o) \
@@ -122,7 +130,8 @@ OBJ			=	$(SRC_BUTTONS:.c=.o) $(SRC_EVENTS_BUTTONS:.c=.o)  \
 				$(SRC_SOUNDS:.c=.o) $(SRC_EVENTS_SCENES:.c=.o) \
 				$(SRC_SPRITES:.c=.o) $(SRC_EVENTS_GENERAL:.c=.o) \
 				$(SRC_SPRITES_ANIMATIONS:.c=.o) $(SRC_LABEL:.c=.o) \
-				$(SRC_TEXTFIELD:.c=.o) $(SRC_EVENTS_TEXTFIELDS:.c=.o)
+				$(SRC_TEXTFIELD:.c=.o) $(SRC_EVENTS_TEXTFIELDS:.c=.o) \
+				$(SRC_PIXELBUFFER:.c=.o)
 
 FLAGS	=			-Wunused-parameter -Wall -W -Wextra -pedantic -I./include/ -lc_graph_prog
 

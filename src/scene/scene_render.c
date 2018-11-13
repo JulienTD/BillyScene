@@ -64,6 +64,8 @@ bool bs_scene_render(bs_scene_t *scene, bs_frame_t *frame)
 		(_Bool (*)(bs_frame_t *, void *))&bs_label_render);
 	render_components(&(scene->textfield_list), frame, \
 		(_Bool (*)(bs_frame_t *, void *))&bs_textfield_render);
+	render_components(&(scene->pbuffer_list), frame, \
+		(_Bool (*)(bs_frame_t *, void *))&bs_pbuffer_render);
 	scene->current_tick++;
 	return (1);
 }

@@ -153,6 +153,16 @@ float clickX, float clickY);
 bool bs_textfield_set_max_length(bs_textfield_t *textfield, int max_length);
 
 
+/* Prototypes to manipulates pixelbuffers */
+bs_pbuffer_t *bs_pbuffer_create(unsigned int width, \
+unsigned int height);
+bool bs_pbuffer_clear(bs_pbuffer_t *pbuffer, sfColor color);
+bool bs_pbuffer_set_pixel(bs_pbuffer_t *pbuffer, \
+unsigned int x, unsigned int y, sfColor color);
+bool bs_pbuffer_set_pos(bs_pbuffer_t *pbuffer, int pos_x, int pos_y);
+bool bs_pbuffer_render(bs_frame_t *frame, bs_pbuffer_t *pbuffer);
+
+
 /* Prototypes of the file bs_set_str_to.c */
 char *bs_set_str_to(char *src, char *new_str);
 

@@ -48,7 +48,20 @@ void game_loop(bs_frame_t *frame)
 
 void scene_tick(bs_event_tick_t event)
 {
+	bs_scene_t *scene = event.scene;
+	bs_sprite_t *sprite = bs_sprite_get_by_id(scene, "test");
+	static mult = 1;
+	sfVector2f real_pos = sfSprite_getPosition(sprite->sprite);
 
+	if (sprite == NULL || scene->current_tick != 20)
+		return;
+	if (real_pos.x + sprite->size.x + (5 * mult) > event.frame->width) {
+		mult *= -1;
+	}
+	if (real_pos.x + (5 * mult) < 0) {
+		mult *= -1;
+	}
+	sprite->speed.x = 5 * mult;
 }
 
 void click_buton(bs_event_button_click_pressed_t event)
@@ -104,6 +117,8 @@ void display_frame(int width, int height)
 
 	if (frame == NULL)
 		return;
+	bs_frame_t *second_win = init(500, 200);
+
 	bs_scene_t *scene = bs_scene_create("intro");
 
 	bs_button_t *button = bs_button_create("button", 200, 100);
@@ -137,11 +152,11 @@ void display_frame(int width, int height)
 	anim->max_tick_delay = 20;
 	anim->is_vertical = false;
 	anim->stay_on_last_frame = true;
-	anim->is_looped = false;
-	anim->is_default = false;
+	anim->is_looped = true;
+	anim->is_default = true;
 	bs_sprite_anim_add(sprite, anim);
 	bs_sprite_add_to_scene(scene, sprite);
-	bs_sprite_anim_play(sprite, "anim_test", false);
+	// bs_sprite_anim_play(sprite, "anim_test", false);
 	scene->event_tick = &scene_tick;
 	bs_scene_add_to_frame(frame, scene);
 	bs_scene_set_to(frame, "intro");
@@ -163,6 +178,7 @@ void display_frame(int width, int height)
 		if (sfClock_getElapsedTime(frame->clock).microseconds \
 		>= 50000) {
 			game_loop(frame);
+			game_loop(second_win);
 		}
 	}
 	bs_frame_destroy(frame);
