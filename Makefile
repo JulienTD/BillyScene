@@ -137,6 +137,9 @@ OBJ			=	$(SRC_BUTTONS:.c=.o) $(SRC_EVENTS_BUTTONS:.c=.o)  \
 
 FLAGS	=			-Wunused-parameter -Wall -W -Wextra -pedantic -I./include/ -lc_graph_prog
 
+wc:
+	wc $(ALL_SRC)
+
 # Lib
 all:	$(NAME)
 

@@ -28,6 +28,9 @@ unsigned int x, unsigned int y, sfColor color)
 		return (false);
 	}
 	pixel_index = 4 * (x + y * pbuffer->width);
+	if (x > pbuffer->width || y > pbuffer->height) {
+		return (false);
+	}
 	pbuffer->pixels[pixel_index] = color.r;
 	pbuffer->pixels[pixel_index + 1] = color.g;
 	pbuffer->pixels[pixel_index + 2] = color.b;
