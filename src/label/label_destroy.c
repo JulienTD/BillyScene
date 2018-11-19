@@ -24,5 +24,7 @@ void bs_label_destroy(bs_label_t *label)
 		sfFont_destroy(label->font);
 	if (label->text)
 		sfText_destroy(label->text);
+	if (label->rs)
+		free(label->rs);
 	free(label);
 }

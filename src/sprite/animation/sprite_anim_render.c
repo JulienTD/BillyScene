@@ -68,15 +68,13 @@ bool bs_sprite_anim_render(bs_frame_t *frame, bs_sprite_t *sprite, \
 bs_sprite_anim_t *anim)
 {
 	sfIntRect sprite_box = determine_sprite_box(anim);
-	sfRenderStates *render_state = bs_init_render_states();
 	sfVector2f sprite_pos = sfSprite_getPosition(sprite->sprite);
 
 	sfSprite_setPosition(anim->sprite, sprite_pos);
 	sfSprite_setScale(anim->sprite, sprite->scale);
 	sfSprite_setTexture(anim->sprite, anim->texture, sfTrue);
 	sfSprite_setTextureRect(anim->sprite, sprite_box);
-	sfRenderWindow_drawSprite(frame->window, anim->sprite, render_state);
+	sfRenderWindow_drawSprite(frame->window, anim->sprite, anim->rs);
 	tick_anim(anim);
-	free(render_state);
 	return (true);
 }

@@ -51,5 +51,6 @@ float height, float width)
 	anim->stay_now = false;
 	anim->stay_on_last_frame = false;
 	anim->texture = sfTexture_createFromFile(path, NULL);
+	anim->rs = bs_init_render_states();
 	return (anim);
 }

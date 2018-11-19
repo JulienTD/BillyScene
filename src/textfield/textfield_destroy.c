@@ -25,4 +25,6 @@ void bs_textfield_destroy(bs_textfield_t *textfield)
 		sfRectangleShape_destroy(textfield->rect);
 	if (textfield->texture)
 		sfTexture_destroy(textfield->texture);
+	if (textfield->rs)
+		free(textfield->rs);
 }

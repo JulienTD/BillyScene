@@ -160,7 +160,12 @@ SRC_TEST	=	./tests/list/test_list_push.c \
 			./tests/list/test_list_get_by_id.c \
 			./tests/list/test_list_destroy.c \
 			./tests/list/test_list_delete.c \
-			./tests/test_bs_set_str_to.c
+			./tests/utils/test_bs_set_str_to.c \
+			./tests/utils/test_bs_strlen.c \
+			./tests/utils/test_bs_strcpy.c \
+			./tests/utils/test_bs_str_are_equals.c \
+			./tests/utils/test_bs_init_render_states.c
+			
 
 tests_run: $(ALL_SRC)
 	make re

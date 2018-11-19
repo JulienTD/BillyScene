@@ -21,9 +21,8 @@ unsigned int height)
 {
 	bs_pbuffer_t *pbuffer = malloc(sizeof(bs_pbuffer_t));
 
-	if (pbuffer == NULL) {
+	if (pbuffer == NULL)
 		return (NULL);
-	}
 	pbuffer->height = height;
 	pbuffer->width = width;
 	pbuffer->pixels = malloc((width * height * 4) * sizeof(sfUint8));
@@ -31,12 +30,12 @@ unsigned int height)
 		free(pbuffer);
 		return (NULL);
 	}
-	pbuffer->pos_x = 0;
-	pbuffer->pos_y = 0;
+	bs_pbuffer_set_pos(pbuffer, 0, 0);
 	pbuffer->texture = sfTexture_create(width, height);
 	pbuffer->sprite = sfSprite_create();
 	pbuffer->id_pbuffer = NULL;
 	pbuffer->id_pbuffer = bs_set_str_to(pbuffer->id_pbuffer, id);
+	pbuffer->rs = bs_init_render_states();
 	bs_pbuffer_clear(pbuffer, sfBlack);
 	return (pbuffer);
 }

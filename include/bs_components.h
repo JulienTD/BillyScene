@@ -41,10 +41,10 @@ typedef struct bs_pbuffer_s
 	int pos_y;
 	unsigned int width;
 	unsigned int height;
-	// bs_list_t *shapes; todo: create shapes  
 	sfUint8 *pixels;
 	sfSprite *sprite;
 	sfTexture *texture;
+	sfRenderStates *rs;
 } bs_pbuffer_t;
 
 typedef struct bs_frame_s
@@ -102,6 +102,7 @@ typedef struct bs_sprite_anim_s
 	bool is_finish;
 	bool is_default;
 	bool reverse;
+	sfRenderStates *rs;
 } bs_sprite_anim_t;
 
 typedef struct bs_sprite_s
@@ -120,6 +121,7 @@ typedef struct bs_sprite_s
 	int curr_tick;
 	char *curr_anim;
 	bs_list_t *anims;
+	sfRenderStates *rs;
 } bs_sprite_t;
 
 typedef struct bs_label_s
@@ -129,6 +131,7 @@ typedef struct bs_label_s
 	sfFont *font;
 	sfVector2f pos;
 	bool enabled;
+	sfRenderStates *rs;
 } bs_label_t;
 
 typedef struct bs_textfield_s
@@ -144,6 +147,7 @@ typedef struct bs_textfield_s
 	void (*focus_event)(bs_event_textfield_focus_t event);
 	void (*unfocus_event)(bs_event_textfield_unfocus_t event);
 	_Bool (*text_entered_event)(bs_event_textfield_text_entered_t event);
+	sfRenderStates *rs;
 } bs_textfield_t;
 
 typedef struct bs_button_s
@@ -165,6 +169,7 @@ typedef struct bs_button_s
 	int texture_status;
 	sfVector2f pos;
 	bool enabled;
+	sfRenderStates *rs;
 } bs_button_t;
 
 #endif /* !BS_COMPONENTS_H_ */

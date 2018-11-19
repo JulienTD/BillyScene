@@ -16,7 +16,7 @@ Test(bs_set_str_to, init_null) {
 	cr_assert_str_eq(str, "New str");
 }
 
-Test(bs_set_str_to, wrong_input) {
+Test(bs_set_str_to, basic_input) {
 	char *str = malloc(2 * sizeof(char));
 
 	if (str == NULL)
@@ -26,4 +26,22 @@ Test(bs_set_str_to, wrong_input) {
 	str = bs_set_str_to(str, "New str");
 	cr_assert_str_eq(str, "New str");
 	free(str);
+}
+
+Test(bs_set_str_to, null_input) {
+	char *str = malloc(2 * sizeof(char));
+
+	if (str == NULL)
+		return;
+	str[0] = 'A';
+	str[1] = '\0';
+	str = bs_set_str_to(str, NULL);
+	cr_assert(str == NULL);
+}
+
+Test(bs_set_str_to, all_null) {
+	char *str = NULL;
+
+	str = bs_set_str_to(str, NULL);
+	cr_assert(str == NULL);
 }

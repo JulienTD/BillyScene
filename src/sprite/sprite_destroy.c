@@ -27,5 +27,7 @@ void bs_sprite_destroy(bs_sprite_t *sprite)
 		sfSprite_destroy(sprite->sprite);
 	if (sprite->texture)
 		sfTexture_destroy(sprite->texture);
+	if (sprite->rs)
+		free(sprite->rs);
 	free(sprite);
 }

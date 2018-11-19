@@ -21,16 +21,14 @@ static bool draw_sprite(bs_frame_t *frame, bs_sprite_t *sprite)
 	sfIntRect sprite_box = {.width = sprite->size.x, \
 	.height = sprite->size.y, .left = sprite->pos_s.x, \
 	.top = sprite->pos_s.y};
-	sfRenderStates *render_states = bs_init_render_states();
 
 	sfSprite_setScale(sprite->sprite, sprite->scale);
 	sfSprite_setTexture(sprite->sprite, sprite->texture, sfTrue);
 	if (sprite->size.x >= 0 && sprite->size.y >= 0) {
 		sfSprite_setTextureRect(sprite->sprite, sprite_box);
 	}
-	sfRenderWindow_drawSprite(frame->window, sprite->sprite, render_states);
-	free(render_states);
-	return true;
+	sfRenderWindow_drawSprite(frame->window, sprite->sprite, sprite->rs);
+	return (true);
 }
 
 /**
@@ -49,7 +47,7 @@ static bool update_sprite_position(bs_sprite_t *sprite)
 	} else {
 		sfSprite_move(sprite->sprite, sprite->speed);
 	}
-	return true;
+	return (true);
 }
 
 /**

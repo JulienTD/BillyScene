@@ -19,6 +19,7 @@ bs_label_t *bs_label_create(char *id, char *font, char *text, int font_size)
 	label->enabled = true;
 	label->id_label = NULL;
 	label->id_label = bs_set_str_to(label->id_label, id);
+	label->rs = bs_init_render_states();
 	if (text != NULL)
 		sfText_setString(label->text, text);
 	sfText_setPosition(label->text, pos);

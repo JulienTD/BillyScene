@@ -24,5 +24,7 @@ void bs_sprite_anim_destroy(bs_sprite_anim_t *anim)
 		sfSprite_destroy(anim->sprite);
 	if (anim->texture)
 		sfTexture_destroy(anim->texture);
+	if (anim->rs)
+		free(anim->rs);
 	free(anim);
 }

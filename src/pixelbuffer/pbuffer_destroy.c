@@ -26,5 +26,7 @@ void bs_pbuffer_destroy(bs_pbuffer_t *pbuffer)
 		sfTexture_destroy(pbuffer->texture);
 	if (pbuffer->id_pbuffer)
 		free(pbuffer->id_pbuffer);
+	if (pbuffer->rs)
+		free(pbuffer->rs);
 	free(pbuffer);
 }

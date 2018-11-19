@@ -46,5 +46,6 @@ float width, float height)
 	textfield->focus_event = NULL;
 	textfield->unfocus_event = NULL;
 	textfield->text_entered_event = NULL;
+	textfield->rs = bs_init_render_states();
 	return (textfield);
 }

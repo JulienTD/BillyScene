@@ -10,7 +10,10 @@
 char *bs_set_str_to(char *src, char *new_str)
 {
 	if (new_str == NULL) {
-		return src;
+		if (src) {
+			free(src);
+		}
+		return (NULL);
 	}
 	if (src != NULL)
 		free(src);
