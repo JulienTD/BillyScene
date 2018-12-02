@@ -26,9 +26,10 @@ bs_frame_t *bs_frame_create(void)
 	frame->clock = NULL;
 	frame->current_scene = NULL;
 	frame->last_scene = NULL;
-	frame->scenes = NULL;	
+	frame->scenes = NULL;
 	frame->components_volume_level = 50;
 	frame->max_tick = 20;
 	frame->data = NULL;
-	return frame;
+	frame->cursor = NULL;
+	return (frame);
 }

@@ -23,7 +23,7 @@ static bool init_button_textures(bs_button_t *button)
 	button->texture_base = NULL;
 	button->texture_hover = NULL;
 	button->texture_clicked = NULL;
-	return true;
+	return (true);
 }
 
 /**
@@ -38,7 +38,7 @@ static bool init_button_sounds(bs_button_t *button)
 	button->sound_click = NULL;
 	button->sound_hover_in = NULL;
 	button->sound_hover_out = NULL;
-	return true;
+	return (true);
 }
 
 /**
@@ -55,7 +55,7 @@ static bool init_button_events(bs_button_t *button)
 	button->hover_event = NULL;
 	button->hover_in_event = NULL;
 	button->hover_out_event = NULL;
-	return true;
+	return (true);
 }
 
 /**

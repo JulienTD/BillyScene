@@ -59,6 +59,7 @@ typedef struct bs_frame_s
 	bs_list_t *scenes;
 	int components_volume_level;
 	int max_tick;
+	struct bs_sprite_s *cursor;
 	void *data;
 } bs_frame_t;
 
@@ -171,5 +172,27 @@ typedef struct bs_button_s
 	bool enabled;
 	sfRenderStates *rs;
 } bs_button_t;
+
+typedef struct bs_panel_s
+{
+	bs_scene_t *parent;
+	char *id_panel;
+	bs_list_t *button_list;
+	bs_list_t *sprite_list;
+	bs_list_t *label_list;
+	bs_list_t *textfield_list;
+	bs_list_t *pbuffer_list;
+	void (*event_key_pressed)(bs_event_key_pressed_t event);
+	void (*event_mouse_pressed)(bs_event_mouse_pressed_t event);
+	void (*event_mouse_released)(bs_event_mouse_released_t event);
+	void (*event_mouse_moved)(bs_event_mouse_moved_t event);
+	void (*event_mouse_wheel_scrolled)(bs_event_mouse_wheel_scrolled_t \
+	event);
+	void (*event_text_entered)(bs_event_text_entered_t event);
+	void (*event_tick)(bs_event_tick_t event);
+	void (*event_init)(bs_event_scene_init_t event);
+	void (*event_init_post)(bs_event_scene_init_t event);
+	int current_tick;
+} bs_panel_t;
 
 #endif /* !BS_COMPONENTS_H_ */

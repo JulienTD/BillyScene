@@ -21,14 +21,14 @@ bs_scene_t *bs_scene_get_by_id(bs_frame_t *frame, char *id)
 	bs_scene_t *scene = NULL;
 
 	if (frame == NULL || id == NULL)
-		return NULL;
+		return (NULL);
 	curr = frame->scenes;
 	while (curr) {
 		scene = (bs_scene_t *)curr->data;
 		if (bs_str_are_equals(id, scene->id_scene)) {
-			return scene;
+			return (scene);
 		}
 		curr = curr->next;
 	}
-	return NULL;
+	return (NULL);
 }

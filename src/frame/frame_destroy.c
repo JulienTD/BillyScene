@@ -28,6 +28,8 @@ void bs_frame_destroy(bs_frame_t *frame)
 		free(frame->last_scene);
 	if (frame->data)
 		free(frame->data);
+	if (frame->cursor)
+		bs_sprite_destroy(frame->cursor);
 	bs_list_destroy(&(frame->scenes), \
 	(void (*)(void *))&bs_scene_destroy);
 	free(frame);

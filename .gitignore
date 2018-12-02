@@ -50,3 +50,12 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Coverage
+*.gcda
+*.gcno
+*.gcov
+
+# Bin
+ex
+all_test

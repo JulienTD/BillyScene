@@ -30,7 +30,7 @@ bs_sprite_t *bs_sprite_create(char *id, const char *texture_path)
 	bs_sprite_t *sprite = malloc(sizeof(bs_sprite_t));
 	sfVector2f scale = {1, 1};
 	sfVector2f speed = {0, 0};
-	sfVector2i size = {0, 0};
+	sfVector2i size = {-1, -1};
 
 	if (sprite == NULL || texture_path == NULL)
 		return (NULL);

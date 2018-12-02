@@ -16,7 +16,7 @@ bool bs_button_add_to_scene(bs_scene_t *scene, bs_button_t *button);
 bs_button_t *bs_button_create(char *id, float width, float heigth);
 void bs_button_destroy(bs_button_t *button);
 bool bs_is_mouse_on_button(bs_button_t button, float clickX, float clickY);
-int bs_button_render(bs_frame_t *frame, bs_button_t *button);
+bool bs_button_render(bs_frame_t *frame, bs_button_t *button);
 int bs_button_set_base_clicked_hover_texture(bs_button_t *button, char *path);
 int bs_button_set_base_texture(bs_button_t *button, char *path);
 int bs_button_set_clicked_texture(bs_button_t *button, char *path);
@@ -70,6 +70,7 @@ bs_frame_t *frame, bs_scene_t *scene);
 /* Prototypes to manipulate frames */
 bs_frame_t *bs_frame_create(void);
 void bs_frame_destroy(bs_frame_t *frame);
+bool bs_frame_set_cursor(bs_frame_t *frame, char *path);
 
 
 /* Prototypes to manipulate lists */

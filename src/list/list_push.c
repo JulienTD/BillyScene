@@ -21,10 +21,10 @@ bs_list_t *bs_list_push(bs_list_t **head, void *data)
 	bs_list_t *element = bs_list_create(data);
 
 	if (element == NULL)
-		return NULL;
+		return (NULL);
 	if (head == NULL || *head == NULL) {
 		*head = element;
-		return element;
+		return (element);
 	}
 	curr = *head;
 	while (curr->next) {
@@ -32,5 +32,5 @@ bs_list_t *bs_list_push(bs_list_t **head, void *data)
 	}
 	element->id = curr->id + 1;
 	curr->next = element;
-	return element;
+	return (element);
 }

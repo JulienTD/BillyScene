@@ -18,10 +18,10 @@
  * @param button 
  * @return int 
  */
-int bs_button_render(bs_frame_t *frame, bs_button_t *button)
+bool bs_button_render(bs_frame_t *frame, bs_button_t *button)
 {
 	if (frame == NULL || button == NULL || button->enabled == false)
-		return (1);
+		return (false);
 	if (button->status == NORMAL && button->texture_base != NULL) {
 		sfRectangleShape_setTexture(button->rect,
 		button->texture_base, sfFalse);
@@ -37,5 +37,5 @@ int bs_button_render(bs_frame_t *frame, bs_button_t *button)
 	sfRectangleShape_setPosition(button->rect, button->pos);
 	sfRenderWindow_drawRectangleShape(frame->window, button->rect, \
 	button->rs);
-	return (0);
+	return (true);
 }

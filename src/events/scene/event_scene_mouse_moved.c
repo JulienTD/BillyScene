@@ -15,6 +15,7 @@ bs_scene_t *scene)
 {
 	bs_event_mouse_moved_t result;
 
+	bs_sprite_set_pos(frame->cursor, evt.x, evt.y);
 	if (scene->event_mouse_moved == NULL) {
 		return false;
 	}

@@ -43,7 +43,8 @@ SRC_EVENTS_TEXTFIELDS	=	./src/events/textfield/event_textfield_text_entered.c \
 SRC_EVENTS		=	./src/events/event_dispatcher.c
 
 SRC_FRAME		=	./src/frame/frame_create.c \
-				./src/frame/frame_destroy.c
+				./src/frame/frame_destroy.c \
+				./src/frame/frame_set_cursor.c
 
 SRC_LIST		=	./src/list/list_create.c \
 				./src/list/list_delete.c \
@@ -164,7 +165,19 @@ SRC_TEST	=	./tests/list/test_list_push.c \
 			./tests/utils/test_bs_strlen.c \
 			./tests/utils/test_bs_strcpy.c \
 			./tests/utils/test_bs_str_are_equals.c \
-			./tests/utils/test_bs_init_render_states.c
+			./tests/utils/test_bs_init_render_states.c \
+			./tests/frame/test_bs_frame_create.c \
+			./tests/frame/test_bs_frame_set_cursor.c \
+			./tests/scene/test_bs_scene_create.c \
+			./tests/scene/test_bs_scene_get_by_id.c \
+			./tests/scene/test_bs_scene_add_to_frame.c \
+			./tests/scene/test_bs_scene_set_to.c \
+			./tests/scene/test_bs_scene_render.c \
+			./tests/button/test_bs_button_create.c \
+			./tests/button/test_bs_button_add_to_scene.c \
+			./tests/button/test_bs_button_get_by_id.c \
+			./tests/button/test_bs_button_render.c \
+			./tests/button/test_bs_button_hitbox.c
 			
 
 tests_run: $(ALL_SRC)

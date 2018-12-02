@@ -51,7 +51,7 @@ bool (*func_render)(bs_frame_t *f, void *component))
 bool bs_scene_render(bs_scene_t *scene, bs_frame_t *frame)
 {
 	if (scene == NULL || frame == NULL)
-		return (-1);
+		return (false);
 	if (scene->current_tick > frame->max_tick) {
 		scene->current_tick = 0;
 	}
@@ -66,6 +66,7 @@ bool bs_scene_render(bs_scene_t *scene, bs_frame_t *frame)
 		(_Bool (*)(bs_frame_t *, void *))&bs_textfield_render);
 	render_components(&(scene->pbuffer_list), frame, \
 		(_Bool (*)(bs_frame_t *, void *))&bs_pbuffer_render);
+	bs_sprite_render(frame, frame->cursor);
 	scene->current_tick++;
-	return (1);
+	return (true);
 }

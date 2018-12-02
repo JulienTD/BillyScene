@@ -26,11 +26,12 @@ bool bs_button_set_pos(bs_button_t *button, float pos_x, float pos_y)
 	sfVector2f curr_pos;
 
 	if (button == NULL) {
-		return false;
+		return (false);
 	}
 	curr_pos = button->pos;
 	pos.x = (pos_x < 0) ? curr_pos.x : pos_x;
 	pos.y = (pos_y < 0) ? curr_pos.y : pos_y;
 	button->pos = pos;
+	sfRectangleShape_setPosition(button->rect, button->pos);
 	return (true);
 }

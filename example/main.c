@@ -192,6 +192,7 @@ void display_frame(int width, int height)
 	bs_pbuffer_set_pos(pbuffer, 200, 100);
 	bs_pbuffer_add_to_scene(scene, pbuffer);
 	scene->event_mouse_moved = &mouse_move;
+	bs_frame_set_cursor(frame, "./example/res/button_click.jpg");
 	while (sfRenderWindow_isOpen(frame->window)) {
 		while (sfRenderWindow_pollEvent(frame->window, \
 		&(frame->event)))

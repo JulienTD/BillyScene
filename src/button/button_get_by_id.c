@@ -21,7 +21,7 @@ bs_button_t *bs_button_get_by_id(bs_scene_t *scene, char *id)
 	bs_button_t *button = NULL;
 
 	if (scene == NULL || id == NULL)
-		return NULL;
+		return (NULL);
 	curr = scene->button_list;
 	while (curr) {
 		button = (bs_button_t *)curr->data;
