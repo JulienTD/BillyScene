@@ -149,9 +149,9 @@ void display_frame(int width, int height)
 	bs_button_set_sound_hover_in(button, "./example/res/button_sound.ogg");
 	bs_button_set_sound_hover_out(button, "./example/res/button_sound.ogg");
 	
-	bs_button_set_base_texture(button, "./example/res/button_normal.jpg");
-	bs_button_set_hover_texture(button, "./example/res/button_hover.jpg");
-	bs_button_set_clicked_texture(button, "./example/res/button_click.jpg");
+	bs_button_set_texture_base(button, "./example/res/button_normal.jpg");
+	bs_button_set_texture_hover(button, "./example/res/button_hover.jpg");
+	bs_button_set_texture_clicked(button, "./example/res/button_click.jpg");
 
 	bs_button_set_pos(button, 20.0, 20.0);
 	bs_button_add_to_scene(scene, button);

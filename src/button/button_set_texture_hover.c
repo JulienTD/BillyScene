@@ -14,19 +14,19 @@
  * 
  * @param button 
  * @param path 
- * @return int 
+ * @return bool 
  */
-int bs_button_set_hover_texture(bs_button_t *button, char *path)
+bool bs_button_set_texture_hover(bs_button_t *button, char *path)
 {
 	sfTexture *texture = NULL;
 
 	if (button == NULL)
-		return (0);
+		return (false);
 	texture = sfTexture_createFromFile(path, NULL);
 	if (texture == NULL)
-		return (0);
+		return (false);
 	if (button->texture_hover)
 		sfTexture_destroy(button->texture_hover);
 	button->texture_hover = texture;
-	return (1);
+	return (true);
 }

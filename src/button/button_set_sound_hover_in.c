@@ -31,5 +31,7 @@ bool bs_button_set_sound_hover_in(bs_button_t *button, char *path)
 	} else {
 		bs_sound_set_new(button->sound_hover_in, path);
 	}
+	if (button->sound_hover_in == NULL)
+		return (false);
 	return (true);
 }

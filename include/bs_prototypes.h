@@ -17,10 +17,11 @@ bs_button_t *bs_button_create(char *id, float width, float heigth);
 void bs_button_destroy(bs_button_t *button);
 bool bs_is_mouse_on_button(bs_button_t button, float clickX, float clickY);
 bool bs_button_render(bs_frame_t *frame, bs_button_t *button);
-int bs_button_set_base_clicked_hover_texture(bs_button_t *button, char *path);
-int bs_button_set_base_texture(bs_button_t *button, char *path);
-int bs_button_set_clicked_texture(bs_button_t *button, char *path);
-int bs_button_set_hover_texture(bs_button_t *button, char *path);
+bool bs_button_set_base_clicked_hover_texture(bs_button_t *button, \
+char *path);
+bool bs_button_set_texture_base(bs_button_t *button, char *path);
+bool bs_button_set_texture_clicked(bs_button_t *button, char *path);
+bool bs_button_set_texture_hover(bs_button_t *button, char *path);
 bool bs_button_set_pos(bs_button_t *button, float pos_x, float pos_y);
 bool bs_button_set_size(bs_button_t *button, float width, float height);
 bool bs_button_set_sound_click(bs_button_t *button, char *path);

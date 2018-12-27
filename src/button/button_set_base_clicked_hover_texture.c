@@ -14,12 +14,12 @@
  * 
  * @param button 
  * @param path 
- * @return int 
+ * @return bool 
  */
-int bs_button_set_base_clicked_hover_texture(bs_button_t *button, char *path)
+bool bs_button_set_base_clicked_hover_texture(bs_button_t *button, char *path)
 {
-	bs_button_set_base_texture(button, path);
-	bs_button_set_hover_texture(button, path);
-	bs_button_set_clicked_texture(button, path);
-	return (1);
+	bs_button_set_texture_base(button, path);
+	bs_button_set_texture_hover(button, path);
+	bs_button_set_texture_clicked(button, path);
+	return (true);
 }

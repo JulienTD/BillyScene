@@ -30,3 +30,9 @@ Test(bs_button_create, basic) {
 	cr_assert_not_null(button->rs);
 	cr_assert(button->status == NORMAL);
 }
+
+Test(bs_button_create, null_id) {
+	bs_button_t *button = bs_button_create(NULL, 100, 100);
+
+	cr_assert_null(button);
+}

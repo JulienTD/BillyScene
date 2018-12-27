@@ -58,6 +58,21 @@ static bool init_button_events(bs_button_t *button)
 	return (true);
 }
 
+bool init_button_default_param(bs_button_t *button, char *id)
+{
+	button->id_button = NULL;
+	button->id_button = bs_set_str_to(button->id_button, id);
+	if (button->id_button == NULL)
+		return (false);
+	button->status = NORMAL;
+	button->texture_status = 0;
+	button->enabled = true;
+	button->rs = bs_init_render_states();
+	if (button->rs == NULL)
+		return (false);
+	return (true);
+}
+
 /**
  * @brief Creates a button from an id  and a size
  *
@@ -69,8 +84,11 @@ static bool init_button_events(bs_button_t *button)
  */
 bs_button_t *bs_button_create(char *id, float width, float heigth)
 {
-	bs_button_t *button = malloc(sizeof(bs_button_t));
+	bs_button_t *button = NULL;
 
+	if (id == NULL)
+		return (NULL);
+	button = malloc(sizeof(bs_button_t));
 	if (button == NULL)
 		return (NULL);
 	button->rect = sfRectangleShape_create();
@@ -81,11 +99,6 @@ bs_button_t *bs_button_create(char *id, float width, float heigth)
 	init_button_events(button);
 	init_button_sounds(button);
 	init_button_textures(button);
-	button->id_button = NULL;
-	button->id_button = bs_set_str_to(button->id_button, id);
-	button->status = NORMAL;
-	button->texture_status = 0;
-	button->enabled = true;
-	button->rs = bs_init_render_states();
+	init_button_default_param(button, id);
 	return (button);
 }

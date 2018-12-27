@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2018
-** button_texture_helper
+** bs_button_set_texture_base
 ** File description:
 ** Helps to manipulate button's texture
 */
@@ -14,19 +14,19 @@
  * 
  * @param button 
  * @param path 
- * @return int 
+ * @return bool 
  */
-int bs_button_set_base_texture(bs_button_t *button, char *path)
+bool bs_button_set_texture_base(bs_button_t *button, char *path)
 {
 	sfTexture *texture = NULL;
 
 	if (button == NULL)
-		return (0);
+		return (false);
 	texture = sfTexture_createFromFile(path, NULL);
 	if (texture == NULL)
-		return (0);
+		return (false);
 	if (button->texture_base)
 		sfTexture_destroy(button->texture_base);
 	button->texture_base = texture;
-	return (1);
+	return (true);
 }

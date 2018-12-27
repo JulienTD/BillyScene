@@ -14,9 +14,9 @@ SRC_BUTTONS		=	./src/button/button_add_to_scene.c \
 				./src/button/button_hitbox.c \
 				./src/button/button_render.c \
 				./src/button/button_set_base_clicked_hover_texture.c \
-				./src/button/button_set_base_texture.c \
-				./src/button/button_set_clicked_texture.c \
-				./src/button/button_set_hover_texture.c \
+				./src/button/button_set_texture_base.c \
+				./src/button/button_set_texture_clicked.c \
+				./src/button/button_set_texture_hover.c \
 				./src/button/button_set_pos.c \
 				./src/button/button_set_size.c \
 				./src/button/button_set_sound_click.c \
@@ -177,8 +177,20 @@ SRC_TEST	=	./tests/list/test_list_push.c \
 			./tests/button/test_bs_button_add_to_scene.c \
 			./tests/button/test_bs_button_get_by_id.c \
 			./tests/button/test_bs_button_render.c \
-			./tests/button/test_bs_button_hitbox.c
-			
+			./tests/button/test_bs_button_hitbox.c \
+			./tests/button/test_bs_button_set_pos.c \
+			./tests/button/test_bs_button_set_size.c \
+			./tests/button/test_bs_button_set_sound_click.c \
+			./tests/button/test_bs_button_set_sound_hover_in.c \
+			./tests/button/test_bs_button_set_sound_hover_out.c \
+			./tests/button/test_bs_button_set_texture_base.c \
+			./tests/button/test_bs_button_set_texture_clicked.c \
+			./tests/button/test_bs_button_set_texture_hover.c \
+			./tests/label/test_bs_label_create.c \
+			./tests/label/test_bs_label_add_to_scene.c \
+			./tests/label/test_bs_label_get_by_id.c \
+			./tests/label/test_bs_label_get_str.c
+
 
 tests_run: $(ALL_SRC)
 	make re
