@@ -77,13 +77,14 @@ bool bs_frame_set_cursor(bs_frame_t *frame, char *path);
 
 
 /* Prototypes to manipulate lists */
-bs_list_t *bs_list_create(void *data);
+bs_list_t *bs_list_create(void *data, bs_data_type_t data_type);
 bool bs_list_delete(bs_list_t **head, int id);
 bs_list_t *bs_list_get_by_id(bs_list_t **head, int id);
 int bs_list_length(bs_list_t **head);
-bs_list_t *bs_list_push(bs_list_t **head, void *data);
+bs_list_t *bs_list_push(bs_list_t **head, void *data, \
+bs_data_type_t data_type);
 void bs_list_destroy(bs_list_t **head, void (*destroy)(void *data));
-bool bs_list_each(bs_list_t **head, bool (*func_each)(void *data));
+bool bs_list_each(bs_list_t **head, bool (*func_each)(bs_list_t *element));
 
 
 /* Prototypes to manipulates scenes */

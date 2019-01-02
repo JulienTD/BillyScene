@@ -8,7 +8,7 @@
 #include "bs_components.h"
 #include "bs_prototypes.h"
 
-bool bs_list_each(bs_list_t **head, bool (*func_each)(void *data))
+bool bs_list_each(bs_list_t **head, bool (*func_each)(bs_list_t *element))
 {
 	bs_list_t *curr = NULL;
 
@@ -18,7 +18,7 @@ bool bs_list_each(bs_list_t **head, bool (*func_each)(void *data))
 	curr = *head;
 	while (curr) {
 		if (func_each != NULL) {
-			func_each(curr->data);
+			func_each(curr);
 		}
 		curr = curr->next;
 	}

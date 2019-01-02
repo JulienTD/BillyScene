@@ -20,5 +20,5 @@ bool bs_scene_add_to_frame(bs_frame_t *frame, bs_scene_t *scene)
 {
 	if (frame == NULL || scene == NULL)
 		return (false);
-	return bs_list_push(&(frame->scenes), scene) != NULL;
+	return bs_list_push(&(frame->scenes), scene, BS_SCENE) != NULL;
 }

@@ -27,10 +27,25 @@ typedef struct bs_sound_s
 	sfSoundBuffer *buffer;
 } bs_sound_t;
 
+typedef enum bs_data_type_e
+{
+	BS_LIST,
+	BS_PIXEL_BUFFER,
+	BS_FRAME,
+	BS_SCENE,
+	BS_SPRITE_ANIM,
+	BS_SPRITE,
+	BS_LABEL,
+	BS_TEXTFIELD,
+	BS_BUTTON,
+	BS_UNKNOW
+} bs_data_type_t;
+
 typedef struct bs_list_s
 {
 	int id;
 	void *data;
+	bs_data_type_t data_type;
 	struct bs_list_s *next;
 } bs_list_t;
 

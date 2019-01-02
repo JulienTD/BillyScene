@@ -20,5 +20,5 @@ bool bs_label_add_to_scene(bs_scene_t *scene, bs_label_t *label)
 {
 	if (scene == NULL || label == NULL)
 		return (false);
-	return bs_list_push(&(scene->label_list), label) != NULL;
+	return bs_list_push(&(scene->label_list), label, BS_LABEL) != NULL;
 }

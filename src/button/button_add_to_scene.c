@@ -23,5 +23,5 @@ bool bs_button_add_to_scene(bs_scene_t *scene, bs_button_t *button)
 {
 	if (scene == NULL || button == NULL)
 		return (false);
-	return bs_list_push(&(scene->button_list), button) != NULL;
+	return bs_list_push(&(scene->button_list), button, BS_BUTTON) != NULL;
 }

@@ -13,12 +13,14 @@
  * 
  * @param head 
  * @param data 
+ * @param data_type
  * @return bs_list_t* 
  */
-bs_list_t *bs_list_push(bs_list_t **head, void *data)
+bs_list_t *bs_list_push(bs_list_t **head, void *data, \
+bs_data_type_t data_type)
 {
 	bs_list_t *curr = NULL;
-	bs_list_t *element = bs_list_create(data);
+	bs_list_t *element = bs_list_create(data, data_type);
 
 	if (element == NULL)
 		return (NULL);

@@ -21,7 +21,6 @@ static bool determine_pbuffer_position(bs_pbuffer_t *pbuffer)
 	return (true);
 }
 
-
 /**
  * @brief Renders a pixel buffer
  * 

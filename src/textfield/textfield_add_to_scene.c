@@ -20,5 +20,6 @@ bool bs_textfield_add_to_scene(bs_scene_t *scene, bs_textfield_t *textfield)
 {
 	if (scene == NULL || textfield == NULL)
 		return false;
-	return bs_list_push(&(scene->textfield_list), textfield) != NULL;
+	return bs_list_push(&(scene->textfield_list), textfield, \
+	BS_TEXTFIELD) != NULL;
 }
