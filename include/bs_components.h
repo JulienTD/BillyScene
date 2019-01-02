@@ -37,8 +37,8 @@ typedef struct bs_list_s
 typedef struct bs_pbuffer_s
 {
 	char *id_pbuffer;
-	int pos_x;
-	int pos_y;
+	sfVector2f pos;
+	sfVector2f offset;
 	unsigned int width;
 	unsigned int height;
 	sfUint8 *pixels;
@@ -112,14 +112,13 @@ typedef struct bs_sprite_s
 	sfSprite *sprite;
 	sfTexture *texture;
 	sfVector2i size;
+	sfVector2f offset;
 	sfVector2f pos;
 	sfVector2f pos_s;
 	sfVector2f scale;
 	sfVector2f speed;
 	bool is_init;
 	bool enabled;
-	int tick_max;
-	int curr_tick;
 	char *curr_anim;
 	bs_list_t *anims;
 	sfRenderStates *rs;
@@ -131,6 +130,7 @@ typedef struct bs_label_s
 	sfText *text;
 	sfFont *font;
 	sfVector2f pos;
+	sfVector2f offset;
 	bool enabled;
 	sfRenderStates *rs;
 } bs_label_t;
@@ -144,6 +144,7 @@ typedef struct bs_textfield_s
 	int max_length;
 	int is_focus;
 	sfVector2f pos;
+	sfVector2f offset;
 	bool enabled;
 	void (*focus_event)(bs_event_textfield_focus_t event);
 	void (*unfocus_event)(bs_event_textfield_unfocus_t event);
@@ -169,6 +170,7 @@ typedef struct bs_button_s
 	bs_button_status_t status;
 	int texture_status;
 	sfVector2f pos;
+	sfVector2f offset;
 	bool enabled;
 	sfRenderStates *rs;
 } bs_button_t;

@@ -10,19 +10,21 @@
 #include "stdbool.h"
 
 /**
- * @brief Sets the pbuffer's position
+ * @brief Sets the pbuffer's offset
+ * 
  * @param pbuffer 
- * @param pos_x 
- * @param pos_y 
+ * @param offset_x 
+ * @param offset_y 
  * @return true 
  * @return false 
  */
-bool bs_pbuffer_set_pos(bs_pbuffer_t *pbuffer, float pos_x, float pos_y)
+bool bs_pbuffer_set_offset(bs_pbuffer_t *pbuffer, \
+float offset_x, float offset_y)
 {
 	if (pbuffer == NULL) {
 		return (false);
 	}
-	pbuffer->pos.x = pos_x;
-	pbuffer->pos.y = pos_y;
+	pbuffer->offset.x = offset_x;
+	pbuffer->offset.y = offset_y;
 	return (true);
 }

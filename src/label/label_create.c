@@ -31,7 +31,6 @@ static bool init_label(bs_label_t *label, char *font, char *id)
 bs_label_t *bs_label_create(char *id, char *font, char *text, int font_size)
 {
 	bs_label_t *label = NULL;
-	sfVector2f pos = {.x = 0, .y = 0};
 
 	if (id == NULL || font == NULL)
 		return (NULL);
@@ -42,8 +41,9 @@ bs_label_t *bs_label_create(char *id, char *font, char *text, int font_size)
 		return (NULL);
 	if (text != NULL)
 		sfText_setString(label->text, text);
-	sfText_setPosition(label->text, pos);
-	sfText_setColor(label->text, sfBlack);
+	bs_label_set_offset(label, 0, 0);
+	bs_label_set_pos(label, 0, 0);
+	bs_label_set_color(label, sfBlack);
 	sfText_setCharacterSize(label->text, font_size);
 	return (label);
 }

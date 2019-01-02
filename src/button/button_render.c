@@ -11,6 +11,18 @@
 #include "bs_prototypes.h"
 #include "stdbool.h"
 
+static bool determine_button_position(bs_button_t *button)
+{
+	sfVector2f new_pos = {.x = 0, .y = 0};
+
+	if (button == NULL)
+		return (false);
+	new_pos.x = button->pos.x + button->offset.x;
+	new_pos.y = button->pos.y + button->offset.y;
+	sfRectangleShape_setPosition(button->rect, new_pos);
+	return (true);
+}
+
 /**
  * @brief Renders a button
  * 
@@ -34,7 +46,7 @@ bool bs_button_render(bs_frame_t *frame, bs_button_t *button)
 			sfRectangleShape_setTexture(button->rect,
 			button->texture_clicked, sfFalse);
 	}
-	sfRectangleShape_setPosition(button->rect, button->pos);
+	determine_button_position(button);
 	sfRenderWindow_drawRectangleShape(frame->window, button->rect, \
 	button->rs);
 	return (true);

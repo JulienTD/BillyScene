@@ -9,6 +9,19 @@
 #include "bs_prototypes.h"
 #include "stdbool.h"
 
+static bool determine_pbuffer_position(bs_pbuffer_t *pbuffer)
+{
+	sfVector2f new_pos;
+
+	if (pbuffer == NULL)
+		return (false);
+	new_pos.x = pbuffer->pos.x + pbuffer->offset.x;
+	new_pos.y = pbuffer->pos.y + pbuffer->offset.y;
+	sfSprite_setPosition(pbuffer->sprite, new_pos);
+	return (true);
+}
+
+
 /**
  * @brief Renders a pixel buffer
  * 
@@ -19,17 +32,13 @@
  */
 bool bs_pbuffer_render(bs_frame_t *frame, bs_pbuffer_t *pbuffer)
 {
-	sfVector2f pos;
-
 	if (pbuffer == NULL) {
 		return (false);
 	}
-	pos.x = pbuffer->pos_x;
-	pos.y = pbuffer->pos_y;
 	sfTexture_updateFromPixels(pbuffer->texture, pbuffer->pixels, \
 	pbuffer->width, pbuffer->height, 0, 0);
 	sfSprite_setTexture(pbuffer->sprite, pbuffer->texture, sfFalse);
-	sfSprite_setPosition(pbuffer->sprite, pos);
+	determine_pbuffer_position(pbuffer);
 	sfRenderWindow_drawSprite(frame->window, pbuffer->sprite, \
 	pbuffer->rs);
 	return (true);

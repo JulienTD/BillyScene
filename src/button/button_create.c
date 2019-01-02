@@ -96,6 +96,7 @@ bs_button_t *bs_button_create(char *id, float width, float heigth)
 		return (NULL);
 	bs_button_set_size(button, width, heigth);
 	bs_button_set_pos(button, 0, 0);
+	bs_button_set_offset(button, 0, 0);
 	init_button_events(button);
 	init_button_sounds(button);
 	init_button_textures(button);

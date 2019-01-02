@@ -12,7 +12,7 @@
 #include "stdbool.h"
 
 /**
- * @brief Sets the position of the button
+ * @brief Sets the offset of the button
  * 
  * @param button 
  * @param pos_x 
@@ -20,17 +20,12 @@
  * @return true 
  * @return false 
  */
-bool bs_button_set_pos(bs_button_t *button, float pos_x, float pos_y)
+bool bs_button_set_offset(bs_button_t *button, float offset_x, float offset_y)
 {
-	sfVector2f pos = {.x = pos_x, .y = pos_y};
-	sfVector2f curr_pos;
-
 	if (button == NULL) {
 		return (false);
 	}
-	curr_pos = button->pos;
-	pos.x = (pos_x < 0) ? curr_pos.x : pos_x;
-	pos.y = (pos_y < 0) ? curr_pos.y : pos_y;
-	button->pos = pos;
+	button->offset.x = offset_x;
+	button->offset.y = offset_y;
 	return (true);
 }

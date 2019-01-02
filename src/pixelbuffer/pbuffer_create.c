@@ -31,6 +31,7 @@ unsigned int height)
 		return (NULL);
 	}
 	bs_pbuffer_set_pos(pbuffer, 0, 0);
+	bs_pbuffer_set_offset(pbuffer, 0, 0);
 	pbuffer->texture = sfTexture_create(width, height);
 	pbuffer->sprite = sfSprite_create();
 	pbuffer->id_pbuffer = NULL;

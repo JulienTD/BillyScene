@@ -1,4 +1,4 @@
- /*
+/*
 ** EPITECH PROJECT, 2018
 ** label_set_pos
 ** File description:

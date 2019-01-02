@@ -23,6 +23,8 @@ bool bs_button_set_texture_base(bs_button_t *button, char *path);
 bool bs_button_set_texture_clicked(bs_button_t *button, char *path);
 bool bs_button_set_texture_hover(bs_button_t *button, char *path);
 bool bs_button_set_pos(bs_button_t *button, float pos_x, float pos_y);
+bool bs_button_set_offset(bs_button_t *button, \
+float offset_x, float offset_y);
 bool bs_button_set_size(bs_button_t *button, float width, float height);
 bool bs_button_set_sound_click(bs_button_t *button, char *path);
 bool bs_button_set_sound_hover_in(bs_button_t *button, char *path);
@@ -109,6 +111,8 @@ bs_sprite_t *bs_sprite_create(char *id, const char *texture_path);
 bs_sprite_t *bs_sprite_get_by_id(bs_scene_t *scene, char *id);
 bool bs_sprite_render(bs_frame_t *frame, bs_sprite_t *sprite);
 bool bs_sprite_set_pos(bs_sprite_t *sprite, float x, float y);
+bool bs_sprite_set_offset(bs_sprite_t *sprite, \
+float offset_x, float offset_y);
 bool bs_sprite_set_scale(bs_sprite_t *sprite, float x, float y);
 bool bs_sprite_set_size(bs_sprite_t *sprite, int x, int y);
 bool bs_sprite_set_speed(bs_sprite_t *sprite, float x, float y);
@@ -135,6 +139,7 @@ bs_label_t *bs_label_create(char *id, char *font, char *text, int font_size);
 int bs_label_render(bs_frame_t *frame, bs_label_t *label);
 bool bs_label_add_to_scene(bs_scene_t *scene, bs_label_t *label);
 bool bs_label_set_pos(bs_label_t *label, float pos_x, float pos_y);
+bool bs_label_set_offset(bs_label_t *label, float offset_x, float offset_y);
 bool bs_label_set_str(bs_label_t *label, char *str);
 char *bs_label_get_str(bs_label_t *label);
 void bs_label_destroy(bs_label_t *label);
@@ -153,6 +158,10 @@ bs_textfield_t *bs_textfield_get_by_id(bs_scene_t *scene, char *id);
 bool bs_is_mouse_on_textfield(bs_textfield_t textfield, \
 float clickX, float clickY);
 bool bs_textfield_set_max_length(bs_textfield_t *textfield, int max_length);
+bool bs_textfield_set_offset(bs_textfield_t *textfield, \
+float offset_x, float offset_y);
+bool bs_textfield_set_pos(bs_textfield_t *textfield, \
+float pos_x, float pos_y);
 
 
 /* Prototypes to manipulates pixelbuffers */
@@ -161,7 +170,9 @@ unsigned int height);
 bool bs_pbuffer_clear(bs_pbuffer_t *pbuffer, sfColor color);
 bool bs_pbuffer_set_pixel(bs_pbuffer_t *pbuffer, \
 unsigned int x, unsigned int y, sfColor color);
-bool bs_pbuffer_set_pos(bs_pbuffer_t *pbuffer, int pos_x, int pos_y);
+bool bs_pbuffer_set_pos(bs_pbuffer_t *pbuffer, float pos_x, float pos_y);
+bool bs_pbuffer_set_offset(bs_pbuffer_t *pbuffer, \
+float offset_x, float offset_y);
 bool bs_pbuffer_render(bs_frame_t *frame, bs_pbuffer_t *pbuffer);
 bool bs_pbuffer_add_to_scene(bs_scene_t *scene, bs_pbuffer_t *pbuffer);
 void bs_pbuffer_destroy(bs_pbuffer_t *pbuffer);

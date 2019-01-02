@@ -86,7 +86,9 @@ void hover_button_out(bs_event_button_hover_out_t event)
 
 void hover_button(bs_event_button_hover_t event)
 {
+	bs_button_t *button = event.button;
 
+	bs_button_set_offset(button, 0, button->offset.y + 10);
 }
 
 void scene_key_manager(bs_event_key_pressed_t event)
@@ -118,14 +120,14 @@ void mouse_move(bs_event_mouse_moved_t event)
 	bs_frame_t *frame = event.frame;
 	bs_pbuffer_t *pbuffer = bs_pbuffer_get_by_id(scene, "test");
 
-	bs_pbuffer_set_pixel(pbuffer, event.event.x - pbuffer->pos_x, \
-	event.event.y - pbuffer->pos_y, sfRed);
-	bs_pbuffer_set_pixel(pbuffer, event.event.x + 1 - pbuffer->pos_x, \
-	event.event.y - pbuffer->pos_y, sfRed);
-	bs_pbuffer_set_pixel(pbuffer, event.event.x - pbuffer->pos_x, \
-	event.event.y + 1 - pbuffer->pos_y, sfRed);
-	bs_pbuffer_set_pixel(pbuffer, event.event.x + 1 - pbuffer->pos_x, \
-	event.event.y + 1 - pbuffer->pos_y, sfRed);
+	bs_pbuffer_set_pixel(pbuffer, event.event.x - pbuffer->pos.x, \
+	event.event.y - pbuffer->pos.y, sfRed);
+	bs_pbuffer_set_pixel(pbuffer, event.event.x + 1 - pbuffer->pos.x, \
+	event.event.y - pbuffer->pos.y, sfRed);
+	bs_pbuffer_set_pixel(pbuffer, event.event.x - pbuffer->pos.x, \
+	event.event.y + 1 - pbuffer->pos.y, sfRed);
+	bs_pbuffer_set_pixel(pbuffer, event.event.x + 1 - pbuffer->pos.x, \
+	event.event.y + 1 - pbuffer->pos.y, sfRed);
 }
 
 void display_frame(int width, int height)
@@ -182,12 +184,13 @@ void display_frame(int width, int height)
 	bs_label_add_to_scene(scene, label);
 	bs_label_set_pos(label, 500, 500);
 	bs_textfield_t *textfield = bs_textfield_create("textfield", "./example/res/font.ttf", 400, 100);
-	bs_textfield_add_to_scene(scene, textfield);
 	sfText_setCharacterSize(textfield->label->text, 30);
 	textfield->focus_event = &textfield_focus;
 	textfield->unfocus_event = &textfield_unfocus;
 	bs_textfield_set_focus(textfield, true);
 	bs_textfield_set_max_length(textfield, 10);
+	bs_textfield_add_to_scene(scene, textfield);
+	bs_textfield_set_pos(textfield, 500, 500);
 	bs_pbuffer_t *pbuffer = bs_pbuffer_create("test", 500, 500);
 	bs_pbuffer_set_pos(pbuffer, 200, 100);
 	bs_pbuffer_add_to_scene(scene, pbuffer);
@@ -210,3 +213,9 @@ int main(void)
 {
 	display_frame(1000, 1000);
 }
+
+/*
+		printf("Position -> X: %f    Y: %f\n", sprite->pos.x, sprite->pos.y);
+		printf("Offset -> X: %f    Y: %f\n", sprite->offset.x, sprite->offset.y);
+		printf("Real position -> X: %f    Y: %f\n\n", new_pos.x, new_pos.y);
+		*/

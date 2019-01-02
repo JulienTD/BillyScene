@@ -13,8 +13,6 @@ static void init_params(bs_sprite_t *sprite)
 {
 	sprite->curr_anim = NULL;
 	sprite->enabled = true;
-	sprite->curr_tick = 0;
-	sprite->tick_max = 0;
 	sprite->anims = NULL;
 }
 
@@ -39,6 +37,10 @@ bs_sprite_t *bs_sprite_create(char *id, const char *texture_path)
 	sprite->size = size;
 	sprite->speed = speed;
 	sprite->scale = scale;
+	sprite->pos_s.x = 0;
+	sprite->pos_s.y = 0;
+	bs_sprite_set_pos(sprite, 0, 0);
+	bs_sprite_set_offset(sprite, 0, 0);
 	sprite->is_init = false;
 	sprite->id_sprite = NULL;
 	init_params(sprite);

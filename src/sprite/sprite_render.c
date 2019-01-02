@@ -41,8 +41,12 @@ static bool draw_sprite(bs_frame_t *frame, bs_sprite_t *sprite)
  */
 static bool update_sprite_position(bs_sprite_t *sprite)
 {
+	sfVector2f new_pos;
+
 	if (sprite->is_init == false) {
-		sfSprite_setPosition(sprite->sprite, sprite->pos);
+		new_pos.x = sprite->pos.x + sprite->offset.x;
+		new_pos.y = sprite->pos.y + sprite->offset.y;
+		sfSprite_setPosition(sprite->sprite, new_pos);
 		sprite->is_init = true;
 	} else {
 		sfSprite_move(sprite->sprite, sprite->speed);

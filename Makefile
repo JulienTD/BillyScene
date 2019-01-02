@@ -22,7 +22,8 @@ SRC_BUTTONS		=	./src/button/button_add_to_scene.c \
 				./src/button/button_set_sound_click.c \
 				./src/button/button_set_sound_hover_in.c \
 				./src/button/button_set_sound_hover_out.c \
-				./src/button/button_get_by_id.c
+				./src/button/button_get_by_id.c \
+				./src/button/button_set_offset.c
 
 SRC_EVENTS_BUTTONS	=	./src/events/button/event_button_mouse_move.c \
 				./src/events/button/event_button_mouse_pressed.c \
@@ -80,7 +81,8 @@ SRC_SPRITES		=	./src/sprite/sprite_add_to_scene.c \
 				./src/sprite/sprite_set_scale.c \
 				./src/sprite/sprite_set_size.c \
 				./src/sprite/sprite_set_speed.c \
-				./src/sprite/sprite_destroy.c
+				./src/sprite/sprite_destroy.c \
+				./src/sprite/sprite_set_offset.c
 
 SRC_SPRITES_ANIMATIONS	=	./src/sprite/animation/sprite_anim_add.c \
 				./src/sprite/animation/sprite_anim_create.c \
@@ -100,7 +102,8 @@ SRC_LABEL		=	./src/label/label_create.c \
 				./src/label/label_get_str.c \
 				./src/label/label_destroy.c \
 				./src/label/label_get_by_id.c \
-				./src/label/label_set_color.c
+				./src/label/label_set_color.c \
+				./src/label/label_set_offset.c
 
 SRC_TEXTFIELD		=	./src/textfield/textfield_create.c \
 				./src/textfield/textfield_render.c \
@@ -109,7 +112,9 @@ SRC_TEXTFIELD		=	./src/textfield/textfield_create.c \
 				./src/textfield/textfield_destroy.c \
 				./src/textfield/textfield_get_by_id.c \
 				./src/textfield/textfield_hitbox.c \
-				./src/textfield/textfield_set_max_length.c
+				./src/textfield/textfield_set_max_length.c \
+				./src/textfield/textfield_set_pos.c \
+				./src/textfield/textfield_set_offset.c
 
 SRC_PIXELBUFFER		=	./src/pixelbuffer/pbuffer_add_to_scene.c \
 				./src/pixelbuffer/pbuffer_clear.c \
@@ -118,7 +123,8 @@ SRC_PIXELBUFFER		=	./src/pixelbuffer/pbuffer_add_to_scene.c \
 				./src/pixelbuffer/pbuffer_set_pixel.c \
 				./src/pixelbuffer/pbuffer_set_pos.c \
 				./src/pixelbuffer/pbuffer_destroy.c \
-				./src/pixelbuffer/pbuffer_get_by_id.c
+				./src/pixelbuffer/pbuffer_get_by_id.c \
+				./src/pixelbuffer/pbuffer_set_offset.c
 
 ALL_SRC			=	$(SRC_BUTTONS) $(SRC_EVENTS_BUTTONS) $(SRC_EVENTS_KEYS) \
 				$(SRC_EVENTS) $(SRC_FRAME) $(SRC_LIST) $(SRC_SCENES) $(SRC_UTILS) \
