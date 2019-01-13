@@ -11,23 +11,22 @@
 
 static bool determine_label_position(bs_label_t *label)
 {
-	sfVector2f new_pos = {.x = 0, .y = 0};
+    sfVector2f new_pos = {.x = 0, .y = 0};
 
-	if (label == NULL)
-		return (false);
-	new_pos.x = label->pos.x + label->offset.x;
-	new_pos.y = label->pos.y + label->offset.y;
-	sfText_setPosition(label->text, new_pos);
-	return (true);
+    if (label == NULL)
+        return (false);
+    new_pos.x = label->pos.x + label->offset.x;
+    new_pos.y = label->pos.y + label->offset.y;
+    sfText_setPosition(label->text, new_pos);
+    return (true);
 }
 
-int bs_label_render(bs_frame_t *frame, bs_label_t *label)
+bool bs_label_render(bs_frame_t *frame, bs_label_t *label)
 {
-	if (frame == NULL || label == NULL || label->enabled == false)
-		return (1);
-	
-	sfText_setFont(label->text, label->font);
-	determine_label_position(label);
-	sfRenderWindow_drawText(frame->window, label->text, label->rs);
-	return (1);
+    if (frame == NULL || label == NULL || label->enabled == false)
+        return (false);
+    sfText_setFont(label->text, label->font);
+    determine_label_position(label);
+    sfRenderWindow_drawText(frame->window, label->text, label->rs);
+    return (true);
 }

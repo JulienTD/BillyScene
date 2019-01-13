@@ -19,10 +19,10 @@
  */
 bool bs_sprite_set_size(bs_sprite_t *sprite, int x, int y)
 {
-	if (sprite == NULL)
-		return (0);
-	sprite->size.x = x;
-	sprite->size.y = y;
-	sprite->is_init = 0;
-	return (1);
+    if (sprite == NULL)
+        return (0);
+    sprite->size.x = x;
+    sprite->size.y = y;
+    sprite->is_init = 0;
+    return (1);
 }

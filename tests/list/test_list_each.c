@@ -86,7 +86,7 @@ __attribute__((__unused__)))
 	return (true);
 }
 
-bool check_id(bs_list_t *element, va_list *args)
+bool check_id(bs_list_t *element __attribute__((__unused__)), va_list *args)
 {
 	int *nbr = (int *)va_arg(*args, void *);
 

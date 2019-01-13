@@ -19,10 +19,10 @@
  */
 bool bs_sprite_set_pos(bs_sprite_t *sprite, float x, float y)
 {
-	if (sprite == NULL)
-		return (0);
-	sprite->pos.x = x;
-	sprite->pos.y = y;
-	sprite->is_init = false;
-	return (1);
+    if (sprite == NULL)
+        return (0);
+    sprite->pos.x = x;
+    sprite->pos.y = y;
+    sprite->is_init = false;
+    return (1);
 }

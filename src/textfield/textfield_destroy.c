@@ -16,15 +16,15 @@
  */
 void bs_textfield_destroy(bs_textfield_t *textfield)
 {
-	if (textfield == NULL)
-		return;
-	if (textfield->id_textfield)
-		free(textfield->id_textfield);
-	bs_label_destroy(textfield->label);
-	if (textfield->rect)
-		sfRectangleShape_destroy(textfield->rect);
-	if (textfield->texture)
-		sfTexture_destroy(textfield->texture);
-	if (textfield->rs)
-		free(textfield->rs);
+    if (textfield == NULL)
+        return;
+    if (textfield->id_textfield)
+        free(textfield->id_textfield);
+    bs_label_destroy(textfield->label);
+    if (textfield->rect)
+        sfRectangleShape_destroy(textfield->rect);
+    if (textfield->texture)
+        sfTexture_destroy(textfield->texture);
+    if (textfield->rs)
+        free(textfield->rs);
 }

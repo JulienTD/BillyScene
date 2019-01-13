@@ -16,19 +16,19 @@
  */
 bool bs_frame_set_cursor(bs_frame_t *frame, char *path)
 {
-	if (frame == NULL || frame->window == NULL) {
-		return (false);
-	}
-	if (path == NULL) {
-		if (frame->cursor != NULL) {
-			bs_sprite_destroy(frame->cursor);
-			frame->cursor = NULL;
-			sfRenderWindow_setMouseCursorVisible(frame->window, \
-			true);
-			return (true);
-		}
-	}
-	frame->cursor = bs_sprite_create("cursor", path);
-	sfRenderWindow_setMouseCursorVisible(frame->window, false);
-	return (true);
+    if (frame == NULL || frame->window == NULL) {
+        return (false);
+    }
+    if (path == NULL) {
+        if (frame->cursor != NULL) {
+            bs_sprite_destroy(frame->cursor);
+            frame->cursor = NULL;
+            sfRenderWindow_setMouseCursorVisible(frame->window, \
+            true);
+            return (true);
+        }
+    }
+    frame->cursor = bs_sprite_create("cursor", path);
+    sfRenderWindow_setMouseCursorVisible(frame->window, false);
+    return (true);
 }

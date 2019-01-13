@@ -17,18 +17,17 @@
  */
 bs_button_t *bs_button_get_by_id(bs_scene_t *scene, char *id)
 {
-	bs_list_t *curr = NULL;
-	bs_button_t *button = NULL;
+    bs_list_t *curr = NULL;
+    bs_button_t *button = NULL;
 
-	if (scene == NULL || id == NULL)
-		return (NULL);
-	curr = scene->button_list;
-	while (curr) {
-		button = (bs_button_t *)curr->data;
-		if (bs_str_are_equals(id, button->id_button)) {
-			return (button);
-		}
-		curr = curr->next;
-	}
-	return (NULL);
+    if (scene == NULL || id == NULL)
+        return (NULL);
+    for (curr = scene->components_list; curr != NULL; curr = curr->next) {
+        if (curr->data_type != BS_BUTTON)
+            continue;
+        button = (bs_button_t *)curr->data;
+        if (bs_str_are_equals(id, button->id_button))
+            return (button);
+    }
+    return (NULL);
 }

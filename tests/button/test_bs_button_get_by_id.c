@@ -21,7 +21,7 @@ Test(bs_button_get_by_id, basic) {
 	bs_button_add_to_scene(scene, button1);
 	bs_button_add_to_scene(scene, button2);
 	tmp_button = bs_button_get_by_id(scene, "aa");
-	cr_assert_not_null(tmp_button);
+	cr_expect_not_null(tmp_button);
 	cr_assert_not_null(tmp_button->id_button);
 	cr_assert_str_eq("aa", tmp_button->id_button);
 	bs_scene_destroy(scene);

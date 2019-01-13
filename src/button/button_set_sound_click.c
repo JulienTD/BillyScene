@@ -18,20 +18,20 @@
  */
 bool bs_button_set_sound_click(bs_button_t *button, char *path)
 {
-	if (button == NULL)
-		return (false);
-	if (path == NULL) {
-		if (button->sound_click)
-			bs_sound_destroy(button->sound_click);
-		button->sound_click = NULL;
-		return (true);
-	}
-	if (button->sound_click == NULL) {
-		button->sound_click = bs_sound_create(path);
-	} else {
-		bs_sound_set_new(button->sound_click, path);
-	}
-	if (button->sound_click == NULL)
-		return (false);
-	return (true);
+    if (button == NULL)
+        return (false);
+    if (path == NULL) {
+        if (button->sound_click)
+            bs_sound_destroy(button->sound_click);
+        button->sound_click = NULL;
+        return (true);
+    }
+    if (button->sound_click == NULL) {
+        button->sound_click = bs_sound_create(path);
+    } else {
+        bs_sound_set_new(button->sound_click, path);
+    }
+    if (button->sound_click == NULL)
+        return (false);
+    return (true);
 }

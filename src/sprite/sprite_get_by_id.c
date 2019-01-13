@@ -17,18 +17,17 @@
  */
 bs_sprite_t *bs_sprite_get_by_id(bs_scene_t *scene, char *id)
 {
-	bs_list_t *curr = NULL;
-	bs_sprite_t *sprite = NULL;
+    bs_list_t *curr = NULL;
+    bs_sprite_t *sprite = NULL;
 
-	if (scene == NULL || id == NULL)
-		return NULL;
-	curr = scene->sprite_list;
-	while (curr) {
-		sprite = (bs_sprite_t *)curr->data;
-		if (bs_str_are_equals(id, sprite->id_sprite)) {
-			return sprite;
-		}
-		curr = curr->next;
-	}
-	return (NULL);
+    if (scene == NULL || id == NULL)
+        return NULL;
+    for (curr = scene->components_list; curr != NULL; curr = curr->next) {
+        if (curr->data_type != BS_SPRITE)
+            continue;
+        sprite = (bs_sprite_t *)curr->data;
+        if (bs_str_are_equals(id, sprite->id_sprite))
+            return (sprite);
+    }
+    return (NULL);
 }

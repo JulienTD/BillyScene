@@ -20,9 +20,9 @@
  */
 bool bs_textfield_set_max_length(bs_textfield_t *textfield, int max_length)
 {
-	if (textfield == NULL) {
-		return (false);
-	}
-	textfield->max_length = max_length;
-	return (true);
+    if (textfield == NULL) {
+        return (false);
+    }
+    textfield->max_length = max_length;
+    return (true);
 }

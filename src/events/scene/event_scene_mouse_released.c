@@ -13,14 +13,14 @@
 bool bs_scene_mouse_released_manager(sfMouseButtonEvent evt, \
 bs_frame_t *frame, bs_scene_t *scene)
 {
-	bs_event_mouse_released_t result;
+    bs_event_mouse_released_t result;
 
-	if (scene->event_mouse_released == NULL) {
-		return false;
-	}
-	result.event = evt;
-	result.frame = frame;
-	result.scene = scene;
-	scene->event_mouse_released(result);
-	return true;
+    if (scene == NULL || scene->event_mouse_released == NULL) {
+        return false;
+    }
+    result.event = evt;
+    result.frame = frame;
+    result.scene = scene;
+    scene->event_mouse_released(result);
+    return true;
 }

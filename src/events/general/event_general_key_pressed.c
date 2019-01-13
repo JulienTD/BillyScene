@@ -17,10 +17,10 @@
 void bs_general_key_pressed_manager(sfKeyEvent event, bs_frame_t *frame, \
 bs_scene_t *scene)
 {
-	frame = frame;
-	scene = scene;
-	switch(event.code) {
-	default:
-		break;
-	}
+    frame = frame;
+    scene = scene;
+    switch(event.code) {
+    default:
+        break;
+    }
 }

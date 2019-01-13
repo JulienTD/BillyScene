@@ -19,13 +19,13 @@
  */
 bool bs_label_set_str(bs_label_t *label, char *str)
 {
-	if (label == NULL) {
-		return (false);
-	}
-	if (str == NULL) {
-		sfText_setString(label->text, "");
-		return (true);
-	}
-	sfText_setString(label->text, str);
-	return (true);
+    if (label == NULL) {
+        return (false);
+    }
+    if (str == NULL) {
+        sfText_setString(label->text, "");
+        return (true);
+    }
+    sfText_setString(label->text, str);
+    return (true);
 }

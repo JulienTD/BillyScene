@@ -60,3 +60,6 @@ dkms.conf
 ex
 all_tests
 libbs_tests.a
+
+# Other
+.vscode/

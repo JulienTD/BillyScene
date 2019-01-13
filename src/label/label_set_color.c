@@ -19,9 +19,9 @@
  */
 bool bs_label_set_color(bs_label_t *label, sfColor color)
 {
-	if (label == NULL) {
-		return (false);
-	}
-	sfText_setColor(label->text, color);
-	return (true);
+    if (label == NULL) {
+        return (false);
+    }
+    sfText_setColor(label->text, color);
+    return (true);
 }

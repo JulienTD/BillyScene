@@ -84,7 +84,7 @@ bs_list_t *bs_list_get_by_id(bs_list_t **head, int id);
 int bs_list_length(bs_list_t **head);
 bs_list_t *bs_list_push(bs_list_t **head, void *data, \
 bs_data_type_t data_type);
-void bs_list_destroy(bs_list_t **head, void (*destroy)(void *data));
+void bs_list_destroy(bs_list_t **head, void (*destroy)(bs_list_t *list));
 bool bs_list_each(bs_list_t **head, \
 bool (*func_each)(bs_list_t *element, va_list *args), ...);
 
@@ -140,7 +140,7 @@ void bs_sprite_anim_destroy(bs_sprite_anim_t *anim);
 
 /* Prototypes to manipulates labels */
 bs_label_t *bs_label_create(char *id, char *font, char *text, int font_size);
-int bs_label_render(bs_frame_t *frame, bs_label_t *label);
+bool bs_label_render(bs_frame_t *frame, bs_label_t *label);
 bool bs_label_add_to_scene(bs_scene_t *scene, bs_label_t *label);
 bool bs_label_set_pos(bs_label_t *label, float pos_x, float pos_y);
 bool bs_label_set_offset(bs_label_t *label, float offset_x, float offset_y);

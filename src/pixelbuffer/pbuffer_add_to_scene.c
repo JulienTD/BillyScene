@@ -18,8 +18,8 @@
  */
 bool bs_pbuffer_add_to_scene(bs_scene_t *scene, bs_pbuffer_t *pbuffer)
 {
-	if (scene == NULL || pbuffer == NULL)
-		return (false);
-	return bs_list_push(&(scene->pbuffer_list), pbuffer, \
-	BS_PIXEL_BUFFER) != NULL;
+    if (scene == NULL || pbuffer == NULL)
+        return (false);
+    return bs_list_push(&(scene->components_list), pbuffer, \
+    BS_PIXEL_BUFFER) != NULL;
 }

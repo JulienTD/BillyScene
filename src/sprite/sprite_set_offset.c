@@ -19,10 +19,10 @@
  */
 bool bs_sprite_set_offset(bs_sprite_t *sprite, float offset_x, float offset_y)
 {
-	if (sprite == NULL)
-		return (0);
-	sprite->offset.x = offset_x;
-	sprite->offset.y = offset_y;
-	sprite->is_init = false;
-	return (1);
+    if (sprite == NULL)
+        return (0);
+    sprite->offset.x = offset_x;
+    sprite->offset.y = offset_y;
+    sprite->is_init = false;
+    return (1);
 }

@@ -12,13 +12,13 @@
 
 sfRenderStates *bs_init_render_states(void)
 {
-	sfRenderStates *states = malloc(sizeof(sfRenderStates));
+    sfRenderStates *states = malloc(sizeof(sfRenderStates));
 
-	if (states == NULL)
-		return (NULL);
-	states->texture = NULL;
-	states->shader = NULL;
-	states->transform = sfTransform_Identity;
-	states->blendMode = sfBlendAlpha;
-	return (states);
+    if (states == NULL)
+        return (NULL);
+    states->texture = NULL;
+    states->shader = NULL;
+    states->transform = sfTransform_Identity;
+    states->blendMode = sfBlendAlpha;
+    return (states);
 }

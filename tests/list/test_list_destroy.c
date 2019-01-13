@@ -9,6 +9,11 @@
 #include "bs_components.h"
 #include "bs_prototypes.h"
 
+static void destroy_node(bs_list_t *node)
+{
+	free(node->data);
+}
+
 Test(bs_list_destroy, basic) {
 	bs_list_t *list = NULL;
 	char *str = malloc(2 * sizeof(char));
@@ -19,6 +24,6 @@ Test(bs_list_destroy, basic) {
 	str[1] = '\0';
 	bs_list_push(&(list), str, BS_UNKNOW);
 	bs_list_push(&(list), NULL, BS_UNKNOW);
-	bs_list_destroy(&(list), &free);
+	bs_list_destroy(&(list), &destroy_node);
 	cr_assert(list == NULL);
 }

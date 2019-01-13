@@ -24,15 +24,15 @@
  */
 bool bs_button_set_size(bs_button_t *button, float width, float height)
 {
-	sfVector2f size = {.x = width, .y = height};
-	sfVector2f curr_size;
+    sfVector2f size = {.x = width, .y = height};
+    sfVector2f curr_size;
 
-	if (button == NULL) {
-		return (false);
-	}
-	curr_size = sfRectangleShape_getSize(button->rect);
-	size.x = (width < 0) ? curr_size.x : width;
-	size.y = (height < 0) ? curr_size.y : height;
-	sfRectangleShape_setSize(button->rect, size);
-	return (true);
+    if (button == NULL) {
+        return (false);
+    }
+    curr_size = sfRectangleShape_getSize(button->rect);
+    size.x = (width < 0) ? curr_size.x : width;
+    size.y = (height < 0) ? curr_size.y : height;
+    sfRectangleShape_setSize(button->rect, size);
+    return (true);
 }

@@ -14,11 +14,7 @@ Test(bs_scene_create, basic) {
 
 	cr_assert_not_null(scene);
 	cr_assert_str_eq(scene->id_scene, "test");
-	cr_assert_null(scene->button_list);
-	cr_assert_null(scene->sprite_list);
-	cr_assert_null(scene->label_list);
-	cr_assert_null(scene->pbuffer_list);
-	cr_assert_null(scene->textfield_list);
+	cr_assert_null(scene->components_list);
 	cr_assert(scene->current_tick == 0);
 	cr_assert_null(scene->event_key_pressed);
 	cr_assert_null(scene->event_mouse_pressed);

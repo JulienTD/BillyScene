@@ -19,9 +19,9 @@
  */
 bool bs_sprite_set_scale(bs_sprite_t *sprite, float x, float y)
 {
-	if (sprite == NULL)
-		return (0);
-	sprite->scale.x = x;
-	sprite->scale.y = y;
-	return (1);
+    if (sprite == NULL)
+        return (0);
+    sprite->scale.x = x;
+    sprite->scale.y = y;
+    return (1);
 }

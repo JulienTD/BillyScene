@@ -19,7 +19,7 @@
  */
 bool bs_sprite_anim_add(bs_sprite_t *sprite, bs_sprite_anim_t *anim)
 {
-	if (sprite == NULL || anim == NULL)
-		return false;
-	return bs_list_push(&(sprite->anims), anim, BS_SPRITE_ANIM) != NULL;
+    if (sprite == NULL || anim == NULL)
+        return false;
+    return bs_list_push(&(sprite->anims), anim, BS_SPRITE_ANIM) != NULL;
 }

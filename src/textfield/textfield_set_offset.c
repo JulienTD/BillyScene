@@ -12,10 +12,10 @@
 bool bs_textfield_set_offset(bs_textfield_t *textfield, \
 float offset_x, float offset_y)
 {
-	if (textfield == NULL) {
-		return (false);
-	}
-	textfield->offset.x = offset_x;
-	textfield->offset.y = offset_y;
-	return (true);
+    if (textfield == NULL) {
+        return (false);
+    }
+    textfield->offset.x = offset_x;
+    textfield->offset.y = offset_y;
+    return (true);
 }

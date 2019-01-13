@@ -21,10 +21,10 @@
 bool bs_pbuffer_set_offset(bs_pbuffer_t *pbuffer, \
 float offset_x, float offset_y)
 {
-	if (pbuffer == NULL) {
-		return (false);
-	}
-	pbuffer->offset.x = offset_x;
-	pbuffer->offset.y = offset_y;
-	return (true);
+    if (pbuffer == NULL) {
+        return (false);
+    }
+    pbuffer->offset.x = offset_x;
+    pbuffer->offset.y = offset_y;
+    return (true);
 }

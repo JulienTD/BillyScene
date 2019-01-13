@@ -10,28 +10,28 @@
 
 static bool execute_init_event(bs_frame_t *frame, bs_scene_t *scene)
 {
-	bs_event_scene_init_t result;
+    bs_event_scene_init_t result;
 
-	if (scene == NULL || scene->event_init == NULL) {
-		return (false);
-	}
-	result.scene = scene;
-	result.frame = frame;
-	scene->event_init(result);
-	return (true);
+    if (scene == NULL || scene->event_init == NULL) {
+        return (false);
+    }
+    result.scene = scene;
+    result.frame = frame;
+    scene->event_init(result);
+    return (true);
 }
 
 static bool execute_init_post_event(bs_frame_t *frame, bs_scene_t *scene)
 {
-	bs_event_scene_init_t result;
+    bs_event_scene_init_t result;
 
-	if (scene == NULL || scene->event_init_post == NULL) {
-		return (false);
-	}
-	result.scene = scene;
-	result.frame = frame;
-	scene->event_init_post(result);
-	return (true);
+    if (scene == NULL || scene->event_init_post == NULL) {
+        return (false);
+    }
+    result.scene = scene;
+    result.frame = frame;
+    scene->event_init_post(result);
+    return (true);
 }
 
 /**
@@ -44,16 +44,16 @@ static bool execute_init_post_event(bs_frame_t *frame, bs_scene_t *scene)
  */
 bool bs_scene_set_to(bs_frame_t *frame, char *id)
 {
-	bs_scene_t *current = NULL;
+    bs_scene_t *current = NULL;
 
-	if (frame == NULL || id == NULL)
-		return (false);
-	current = bs_scene_get_by_id(frame, id);
-	if (current == NULL)
-		return (false);
-	execute_init_event(frame, current);
-	frame->last_scene = frame->current_scene;
-	frame->current_scene = bs_set_str_to(frame->current_scene, id);
-	execute_init_post_event(frame, current);
-	return (true);
+    if (frame == NULL || id == NULL)
+        return (false);
+    current = bs_scene_get_by_id(frame, id);
+    if (current == NULL)
+        return (false);
+    execute_init_event(frame, current);
+    frame->last_scene = frame->current_scene;
+    frame->current_scene = bs_set_str_to(frame->current_scene, id);
+    execute_init_post_event(frame, current);
+    return (true);
 }

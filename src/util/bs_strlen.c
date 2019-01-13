@@ -10,12 +10,12 @@
 
 int bs_strlen(char *str)
 {
-	int length = 0;
+    int length = 0;
 
-	if (str == NULL)
-		return (0);
-	for (int i = 0; str[i] != '\0'; i++) {
-		length++;
-	}
-	return (length);
+    if (str == NULL)
+        return (0);
+    for (int i = 0; str[i] != '\0'; i++) {
+        length++;
+    }
+    return (length);
 }

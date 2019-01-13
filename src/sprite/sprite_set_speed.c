@@ -19,9 +19,9 @@
  */
 bool bs_sprite_set_speed(bs_sprite_t *sprite, float x, float y)
 {
-	if (sprite == NULL)
-		return (0);
-	sprite->speed.x = x;
-	sprite->speed.y = y;
-	return (1);
+    if (sprite == NULL)
+        return (0);
+    sprite->speed.x = x;
+    sprite->speed.y = y;
+    return (1);
 }

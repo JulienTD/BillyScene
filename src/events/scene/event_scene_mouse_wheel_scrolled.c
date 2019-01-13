@@ -13,14 +13,14 @@
 bool bs_scene_mouse_wheel_scrolled_manager(sfMouseWheelScrollEvent evt, \
 bs_frame_t *frame, bs_scene_t *scene)
 {
-	bs_event_mouse_wheel_scrolled_t result;
+    bs_event_mouse_wheel_scrolled_t result;
 
-	if (scene->event_mouse_wheel_scrolled == NULL) {
-		return false;
-	}
-	result.event = evt;
-	result.frame = frame;
-	result.scene = scene;
-	scene->event_mouse_wheel_scrolled(result);
-	return true;
+    if (scene == NULL || scene->event_mouse_wheel_scrolled == NULL) {
+        return false;
+    }
+    result.event = evt;
+    result.frame = frame;
+    result.scene = scene;
+    scene->event_mouse_wheel_scrolled(result);
+    return true;
 }

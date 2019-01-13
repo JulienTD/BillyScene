@@ -11,12 +11,12 @@
 
 bool bs_sound_play(bs_sound_t *sound)
 {
-	if (sound == NULL) {
-		return false;
-	}
-	if (sound->buffer == NULL || sound->sound == NULL) {
-		return false;
-	}
-	sfSound_play(sound->sound);
-	return true;
+    if (sound == NULL) {
+        return false;
+    }
+    if (sound->buffer == NULL || sound->sound == NULL) {
+        return false;
+    }
+    sfSound_play(sound->sound);
+    return true;
 }

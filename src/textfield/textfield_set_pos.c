@@ -11,10 +11,10 @@
 
 bool bs_textfield_set_pos(bs_textfield_t *textfield, float pos_x, float pos_y)
 {
-	if (textfield == NULL) {
-		return (false);
-	}
-	textfield->pos.x = pos_x;
-	textfield->pos.y = pos_y;
-	return (true);
+    if (textfield == NULL) {
+        return (false);
+    }
+    textfield->pos.x = pos_x;
+    textfield->pos.y = pos_y;
+    return (true);
 }

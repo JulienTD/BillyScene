@@ -18,17 +18,17 @@
  */
 static bool draw_sprite(bs_frame_t *frame, bs_sprite_t *sprite)
 {
-	sfIntRect sprite_box = {.width = sprite->size.x, \
-	.height = sprite->size.y, .left = sprite->pos_s.x, \
-	.top = sprite->pos_s.y};
+    sfIntRect sprite_box = {.width = sprite->size.x, \
+    .height = sprite->size.y, .left = sprite->pos_s.x, \
+    .top = sprite->pos_s.y};
 
-	sfSprite_setScale(sprite->sprite, sprite->scale);
-	sfSprite_setTexture(sprite->sprite, sprite->texture, sfTrue);
-	if (sprite->size.x >= 0 && sprite->size.y >= 0) {
-		sfSprite_setTextureRect(sprite->sprite, sprite_box);
-	}
-	sfRenderWindow_drawSprite(frame->window, sprite->sprite, sprite->rs);
-	return (true);
+    sfSprite_setScale(sprite->sprite, sprite->scale);
+    sfSprite_setTexture(sprite->sprite, sprite->texture, sfTrue);
+    if (sprite->size.x >= 0 && sprite->size.y >= 0) {
+        sfSprite_setTextureRect(sprite->sprite, sprite_box);
+    }
+    sfRenderWindow_drawSprite(frame->window, sprite->sprite, sprite->rs);
+    return (true);
 }
 
 /**
@@ -41,17 +41,17 @@ static bool draw_sprite(bs_frame_t *frame, bs_sprite_t *sprite)
  */
 static bool update_sprite_position(bs_sprite_t *sprite)
 {
-	sfVector2f new_pos;
+    sfVector2f new_pos;
 
-	if (sprite->is_init == false) {
-		new_pos.x = sprite->pos.x + sprite->offset.x;
-		new_pos.y = sprite->pos.y + sprite->offset.y;
-		sfSprite_setPosition(sprite->sprite, new_pos);
-		sprite->is_init = true;
-	} else {
-		sfSprite_move(sprite->sprite, sprite->speed);
-	}
-	return (true);
+    if (sprite->is_init == false) {
+        new_pos.x = sprite->pos.x + sprite->offset.x;
+        new_pos.y = sprite->pos.y + sprite->offset.y;
+        sfSprite_setPosition(sprite->sprite, new_pos);
+        sprite->is_init = true;
+    } else {
+        sfSprite_move(sprite->sprite, sprite->speed);
+    }
+    return (true);
 }
 
 /**
@@ -64,21 +64,21 @@ static bool update_sprite_position(bs_sprite_t *sprite)
  */
 bool bs_sprite_render(bs_frame_t *frame, bs_sprite_t *sprite)
 {
-	bs_sprite_anim_t *anim = NULL;
+    bs_sprite_anim_t *anim = NULL;
 
-	if (frame == NULL || sprite == NULL || sprite->enabled == false)
-		return (0);
-	update_sprite_position(sprite);
-	anim = bs_sprite_anim_get_active(sprite);
-	if (anim == NULL) {
-		anim = bs_sprite_anim_get_default(sprite);
-		if (anim == NULL) {
-			draw_sprite(frame, sprite);
-		} else {
-			bs_sprite_anim_render(frame, sprite, anim);
-		}
-		return (true); 
-	}
-	bs_sprite_anim_render(frame, sprite, anim);
-	return (true);
+    if (frame == NULL || sprite == NULL || sprite->enabled == false)
+        return (0);
+    update_sprite_position(sprite);
+    anim = bs_sprite_anim_get_active(sprite);
+    if (anim == NULL) {
+        anim = bs_sprite_anim_get_default(sprite);
+        if (anim == NULL) {
+            draw_sprite(frame, sprite);
+        } else {
+            bs_sprite_anim_render(frame, sprite, anim);
+        }
+        return (true); 
+    }
+    bs_sprite_anim_render(frame, sprite, anim);
+    return (true);
 }

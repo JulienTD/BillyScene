@@ -18,7 +18,7 @@
  */
 bool bs_sprite_add_to_scene(bs_scene_t *scene, bs_sprite_t *sprite)
 {
-	if (scene == NULL || sprite == NULL)
-		return false;
-	return bs_list_push(&(scene->sprite_list), sprite, BS_SPRITE) != NULL;
+    if (scene == NULL || sprite == NULL)
+        return false;
+    return bs_list_push(&(scene->components_list), sprite, BS_SPRITE) != NULL;
 }

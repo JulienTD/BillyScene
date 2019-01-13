@@ -12,32 +12,35 @@
 
 static bool execute_tick_event(bs_frame_t *frame, bs_scene_t *scene)
 {
-	bs_event_tick_t result;
+    bs_event_tick_t result;
 
-	if (scene == NULL || scene->event_tick == NULL) {
-		return false;
-	}
-	result.frame = frame;
-	result.scene = scene;
-	scene->event_tick(result);
-	return true;
+    if (scene == NULL || scene->event_tick == NULL) {
+        return false;
+    }
+    result.frame = frame;
+    result.scene = scene;
+    scene->event_tick(result);
+    return true;
 }
 
-static bool render_components(bs_list_t **head, bs_frame_t *frame, \
-bool (*func_render)(bs_frame_t *f, void *component))
+static bool render_component(bs_list_t *element, va_list *args)
 {
-	bs_list_t *curr = NULL;
+    bs_frame_t *frame = (bs_frame_t *)va_arg(*args, void *);
 
-	if (head == NULL)
-		return (true);
-	curr = *head;
-	while (curr) {
-		if (func_render != NULL) {
-			func_render(frame, curr->data);
-		}
-		curr = curr->next;
-	}
-	return (true);
+    switch (element->data_type) {
+        case BS_PIXEL_BUFFER:
+            return bs_pbuffer_render(frame, (bs_pbuffer_t *)element->data);
+        case BS_SPRITE:
+            return bs_sprite_render(frame , (bs_sprite_t *)element->data);
+        case BS_BUTTON:
+            return bs_button_render(frame, (bs_button_t *)element->data);
+        case BS_LABEL:
+            return bs_label_render(frame, (bs_label_t *)element->data);
+        case BS_TEXTFIELD:
+            return bs_textfield_render(frame, (bs_textfield_t *)element->data);
+        default:
+            return (false);
+    }
 }
 
 /**
@@ -50,23 +53,14 @@ bool (*func_render)(bs_frame_t *f, void *component))
  */
 bool bs_scene_render(bs_scene_t *scene, bs_frame_t *frame)
 {
-	if (scene == NULL || frame == NULL)
-		return (false);
-	if (scene->current_tick > frame->max_tick) {
-		scene->current_tick = 0;
-	}
-	execute_tick_event(frame, scene);
-	render_components(&(scene->sprite_list), frame, \
-		(_Bool (*)(bs_frame_t *, void *))&bs_sprite_render);
-	render_components(&(scene->button_list), frame, \
-		(_Bool (*)(bs_frame_t *, void *))&bs_button_render);
-	render_components(&(scene->label_list), frame, \
-		(_Bool (*)(bs_frame_t *, void *))&bs_label_render);
-	render_components(&(scene->textfield_list), frame, \
-		(_Bool (*)(bs_frame_t *, void *))&bs_textfield_render);
-	render_components(&(scene->pbuffer_list), frame, \
-		(_Bool (*)(bs_frame_t *, void *))&bs_pbuffer_render);
-	bs_sprite_render(frame, frame->cursor);
-	scene->current_tick++;
-	return (true);
+    if (scene == NULL || frame == NULL)
+        return (false);
+    if (scene->current_tick > frame->max_tick) {
+        scene->current_tick = 0;
+    }
+    execute_tick_event(frame, scene);
+    bs_list_each(&(scene->components_list), &render_component, frame);
+    bs_sprite_render(frame, frame->cursor);
+    scene->current_tick++;
+    return (true);
 }

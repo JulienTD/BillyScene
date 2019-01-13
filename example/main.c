@@ -52,6 +52,8 @@ void scene_tick(bs_event_tick_t event)
 	bs_scene_t *scene = event.scene;
 	bs_sprite_t *sprite = bs_sprite_get_by_id(scene, "test");
 	static mult = 1;
+	if (sprite == NULL)
+		return;
 	sfVector2f real_pos = sfSprite_getPosition(sprite->sprite);
 
 	if (sprite == NULL || scene->current_tick != 20)
@@ -120,6 +122,8 @@ void mouse_move(bs_event_mouse_moved_t event)
 	bs_frame_t *frame = event.frame;
 	bs_pbuffer_t *pbuffer = bs_pbuffer_get_by_id(scene, "test");
 
+	if (pbuffer == NULL)
+		return;
 	bs_pbuffer_set_pixel(pbuffer, event.event.x - pbuffer->pos.x, \
 	event.event.y - pbuffer->pos.y, sfRed);
 	bs_pbuffer_set_pixel(pbuffer, event.event.x + 1 - pbuffer->pos.x, \
@@ -136,7 +140,7 @@ void display_frame(int width, int height)
 
 	if (frame == NULL)
 		return;
-	bs_frame_t *second_win = init(500, 200);
+	// bs_frame_t *second_win = init(500, 200);
 
 	bs_scene_t *scene = bs_scene_create("intro");
 
@@ -203,7 +207,7 @@ void display_frame(int width, int height)
 		if (sfClock_getElapsedTime(frame->clock).microseconds \
 		>= 50000) {
 			game_loop(frame);
-			game_loop(second_win);
+			//game_loop(second_win);
 		}
 	}
 	bs_frame_destroy(frame);
