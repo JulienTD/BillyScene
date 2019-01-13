@@ -86,6 +86,7 @@ typedef struct bs_scene_s
 	bs_list_t *label_list;
 	bs_list_t *textfield_list;
 	bs_list_t *pbuffer_list;
+	bs_list_t *components_list;
 	void (*event_key_pressed)(bs_event_key_pressed_t event);
 	void (*event_mouse_pressed)(bs_event_mouse_pressed_t event);
 	void (*event_mouse_released)(bs_event_mouse_released_t event);

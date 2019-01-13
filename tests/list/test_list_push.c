@@ -15,7 +15,7 @@ Test(bs_list_push, head_null) {
 
 	if (nbr == NULL)
 		return;
-	cr_assert(bs_list_push(&(head), nbr) != NULL);
+	cr_assert(bs_list_push(&(head), nbr, BS_UNKNOW) != NULL);
 	cr_assert(head != NULL);
 	cr_assert(head->id == 0);
 }
@@ -32,7 +32,7 @@ Test(bs_list_push, head_not_null) {
 	head->next = NULL;
 	head->data = NULL;
 	head->id = 0;
-	cr_assert(bs_list_push(&(head), nbr) != NULL);
+	cr_assert(bs_list_push(&(head), nbr, BS_UNKNOW) != NULL);
 	cr_assert(head->next != NULL);
 	cr_assert(head->next->id == 1);
 }

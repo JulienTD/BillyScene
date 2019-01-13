@@ -16,9 +16,9 @@ Test(bs_list_delete_element, first_element) {
 	if (nbr == NULL)
 		return;
 	*nbr = 9;
-	bs_list_push(&list, NULL);
-	bs_list_push(&list, nbr);
-	bs_list_push(&list, NULL);
+	bs_list_push(&list, NULL, BS_UNKNOW);
+	bs_list_push(&list, nbr, BS_UNKNOW);
+	bs_list_push(&list, NULL, BS_UNKNOW);
 	bs_list_delete(&list, 0);
 	cr_assert(*(int *)(list->data) == 9);
 }
@@ -30,9 +30,9 @@ Test(bs_list_delete_element, middle_element) {
 	if (nbr == NULL)
 		return;
 	*nbr = 9;
-	bs_list_push(&list, NULL);
-	bs_list_push(&list, NULL);
-	bs_list_push(&list, nbr);
+	bs_list_push(&list, NULL, BS_UNKNOW);
+	bs_list_push(&list, NULL, BS_UNKNOW);
+	bs_list_push(&list, nbr, BS_UNKNOW);
 	bs_list_delete(&list, 1);
 	cr_assert(*(int *)(list->next->data) == 9);
 }
@@ -43,9 +43,9 @@ Test(bs_list_delete_element, last_element) {
 
 	if (nbr == NULL)
 		return;
-	bs_list_push(&list, NULL);
-	bs_list_push(&list, NULL);
-	bs_list_push(&list, NULL);
+	bs_list_push(&list, NULL, BS_UNKNOW);
+	bs_list_push(&list, NULL, BS_UNKNOW);
+	bs_list_push(&list, NULL, BS_UNKNOW);
 	bs_list_delete(&list, 2);
 	cr_assert(bs_list_length(&list) == 2);
 }

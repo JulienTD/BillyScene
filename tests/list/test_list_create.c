@@ -16,14 +16,14 @@ Test(bs_list_create, basic) {
 	if (nbr == NULL)
 		return;
 	*nbr = 9;
-	list = bs_list_create(nbr);
+	list = bs_list_create(nbr, BS_UNKNOW);
 	cr_assert(list != NULL);
 	cr_assert(list->data != NULL);
 	cr_assert(*(int *)(list->data) == 9);
 }
 
 Test(bs_list_create, data_null) {
-	bs_list_t *list = bs_list_create(NULL);
+	bs_list_t *list = bs_list_create(NULL, BS_UNKNOW);
 
 	cr_assert(list != NULL);
 	cr_assert(list->data == NULL);

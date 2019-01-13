@@ -19,9 +19,9 @@ Test(bs_list_get_by_id, basic) {
 	bs_list_t *list = NULL;
 	bs_list_t *requested_list = NULL;
 
-	bs_list_push(&list, NULL);
-	bs_list_push(&list, NULL);
-	bs_list_push(&list, NULL);
+	bs_list_push(&list, NULL, BS_UNKNOW);
+	bs_list_push(&list, NULL, BS_UNKNOW);
+	bs_list_push(&list, NULL, BS_UNKNOW);
 	requested_list = bs_list_get_by_id(&list, 1);
 	cr_assert(requested_list != NULL);
 	cr_assert(requested_list->id == 1);
@@ -31,9 +31,9 @@ Test(bs_list_get_by_id, out_of_range) {
 	bs_list_t *list = NULL;
 	bs_list_t *requested_list = NULL;
 
-	bs_list_push(&list, NULL);
-	bs_list_push(&list, NULL);
-	bs_list_push(&list, NULL);
+	bs_list_push(&list, NULL, BS_UNKNOW);
+	bs_list_push(&list, NULL, BS_UNKNOW);
+	bs_list_push(&list, NULL, BS_UNKNOW);
 	requested_list = bs_list_get_by_id(&list, 99);
 	cr_assert(requested_list == NULL);
 }

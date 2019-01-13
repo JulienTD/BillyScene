@@ -43,7 +43,7 @@ bool bs_button_render(bs_frame_t *frame, bs_button_t *button)
 		button->texture_hover, sfFalse);
 	} else {
 		if (button->texture_clicked != NULL)
-			sfRectangleShape_setTexture(button->rect,
+			sfRectangleShape_setTexture(button->rect, \
 			button->texture_clicked, sfFalse);
 	}
 	determine_button_position(button);

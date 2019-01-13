@@ -17,8 +17,8 @@ Test(bs_list_destroy, basic) {
 		return;
 	str[0] = 'A';
 	str[1] = '\0';
-	bs_list_push(&(list), str);
-	bs_list_push(&(list), NULL);
+	bs_list_push(&(list), str, BS_UNKNOW);
+	bs_list_push(&(list), NULL, BS_UNKNOW);
 	bs_list_destroy(&(list), &free);
 	cr_assert(list == NULL);
 }

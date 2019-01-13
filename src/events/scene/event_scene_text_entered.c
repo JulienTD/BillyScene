@@ -38,11 +38,11 @@ bs_scene_t *scene)
 
 	fill_scene_textfields(evt, frame, scene);
 	if (scene == NULL || scene->event_text_entered == NULL) {
-		return false;
+		return (false);
 	}
 	result.event = evt;
 	result.frame = frame;
 	result.scene = scene;
 	scene->event_text_entered(result);
-	return true;
+	return (true);
 }

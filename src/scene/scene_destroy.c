@@ -30,5 +30,4 @@ void bs_scene_destroy(bs_scene_t *scene)
 	bs_list_destroy(&(scene->pbuffer_list), \
 		(void (*)(void *))&bs_pbuffer_destroy);
 	free(scene);
-	return;
 }

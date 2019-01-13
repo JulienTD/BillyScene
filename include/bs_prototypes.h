@@ -9,6 +9,7 @@
 	#define BS_PROTOTYPES_H_
 #include <SFML/Audio.h>
 #include <SFML/Graphics.h>
+#include <stdarg.h>
 #include "bs_components.h"
 
 /* Prototypes to manipulate buttons */
@@ -84,7 +85,9 @@ int bs_list_length(bs_list_t **head);
 bs_list_t *bs_list_push(bs_list_t **head, void *data, \
 bs_data_type_t data_type);
 void bs_list_destroy(bs_list_t **head, void (*destroy)(void *data));
-bool bs_list_each(bs_list_t **head, bool (*func_each)(bs_list_t *element));
+bool bs_list_each(bs_list_t **head, \
+bool (*func_each)(bs_list_t *element, va_list *args), ...);
+
 
 
 /* Prototypes to manipulates scenes */

@@ -12,9 +12,9 @@
 Test(bs_list_length, basic) {
 	bs_list_t *list = NULL;
 
-	bs_list_push(&(list), NULL);
-	bs_list_push(&(list), NULL);
-	bs_list_push(&(list), NULL);
+	bs_list_push(&(list), NULL, BS_UNKNOW);
+	bs_list_push(&(list), NULL, BS_UNKNOW);
+	bs_list_push(&(list), NULL, BS_UNKNOW);
 	cr_assert(bs_list_length(&list) == 3);
 }
 
