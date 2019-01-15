@@ -20,7 +20,7 @@ bs_scene_t *scene)
         return false;
     }
     for (curr = scene->components_list; curr != NULL; curr = curr->next) {
-        if (curr->data_type != BS_BUTTON)
+        if (curr->data_type != BS_TEXTFIELD)
             continue;
         textfield = (bs_textfield_t *)curr->data;
         if (textfield->is_focus) {

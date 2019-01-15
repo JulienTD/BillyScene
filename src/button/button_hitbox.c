@@ -14,11 +14,11 @@
  */
 bool bs_is_mouse_on_button(bs_button_t button, float clickX, float clickY)
 {
-    return (clickX <= sfRectangleShape_getPosition(button.rect).x
-        + sfRectangleShape_getSize(button.rect).x &&
-        clickX >= sfRectangleShape_getPosition(button.rect).x
+    return (clickX <= button.pos.x
+        + sfRectangleShape_getSize(button.rect).x + button.offset.x \
+        && clickX >= button.pos.x + button.offset.x
         &&
-        clickY <= sfRectangleShape_getPosition(button.rect).y
-        + sfRectangleShape_getSize(button.rect).y &&
-        clickY >= sfRectangleShape_getPosition(button.rect).y);
+        clickY <= button.pos.y
+        + sfRectangleShape_getSize(button.rect).y + button.offset.y &&
+        clickY >= button.pos.y + button.offset.y);
 }

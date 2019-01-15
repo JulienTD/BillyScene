@@ -192,12 +192,12 @@ void display_frame(int width, int height)
 	textfield->focus_event = &textfield_focus;
 	textfield->unfocus_event = &textfield_unfocus;
 	bs_textfield_set_focus(textfield, true);
-	bs_textfield_set_max_length(textfield, 10);
+	// bs_textfield_set_max_length(textfield, 100);
 	bs_textfield_add_to_scene(scene, textfield);
 	bs_textfield_set_pos(textfield, 500, 500);
 	bs_pbuffer_t *pbuffer = bs_pbuffer_create("test", 500, 500);
 	bs_pbuffer_set_pos(pbuffer, 200, 100);
-	bs_pbuffer_add_to_scene(scene, pbuffer);
+	// bs_pbuffer_add_to_scene(scene, pbuffer);
 	scene->event_mouse_moved = &mouse_move;
 	bs_frame_set_cursor(frame, "./example/res/button_click.jpg");
 	while (sfRenderWindow_isOpen(frame->window)) {
@@ -217,9 +217,3 @@ int main(void)
 {
 	display_frame(1000, 1000);
 }
-
-/*
-		printf("Position -> X: %f    Y: %f\n", sprite->pos.x, sprite->pos.y);
-		printf("Offset -> X: %f    Y: %f\n", sprite->offset.x, sprite->offset.y);
-		printf("Real position -> X: %f    Y: %f\n\n", new_pos.x, new_pos.y);
-		*/
