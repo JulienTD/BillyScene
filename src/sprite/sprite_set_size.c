@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2018
-** sprites_manager
+** BillyScene, 2018
+** sprite_set_size
 ** File description:
-** sprites_manager
+** bs_sprite_set_size
 */
 
 #include "bs_components.h"
@@ -11,11 +11,11 @@
 /**
  * @brief Sets the sprite's size
  * 
- * @param sprite 
- * @param x 
- * @param y 
- * @return true 
- * @return false 
+ * @param sprite
+ * @param x
+ * @param y
+ * @return true
+ * @return false
  */
 bool bs_sprite_set_size(bs_sprite_t *sprite, int x, int y)
 {

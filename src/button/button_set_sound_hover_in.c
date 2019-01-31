@@ -1,19 +1,19 @@
 /*
 ** BillyScene, 2018
-** bs_button_set_sound_hover_in
+** button_set_sound_hover_in
 ** File description:
-** Sets the sound hover in of the selected button
+** bs_button_set_sound_hover_in
 */
 
 #include "bs_components.h"
 #include "bs_prototypes.h"
-#include "stdbool.h"
+#include <stdbool.h>
 
 /**
  * @brief Sets the sound hover in of the selected button
  *
- * @param button 
- * @param path 
+ * @param button
+ * @param path
  * @return bool
  */
 bool bs_button_set_sound_hover_in(bs_button_t *button, char *path)

@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2018
-** sprites_manager
+** BillyScene, 2018
+** sprite_destroy
 ** File description:
-** sprites_manager
+** bs_sprite_destroy
 */
 
 #include "bs_components.h"
@@ -16,7 +16,7 @@ static void destroy_anim(bs_list_t *list)
 /**
  * @brief Destroys sprite
  * 
- * @param sprite 
+ * @param sprite
  */
 void bs_sprite_destroy(bs_sprite_t *sprite)
 {

@@ -1,5 +1,5 @@
 /*
-** EPITECH PROJECT, 2018
+** BillyScene, 2018
 ** label_set_pos
 ** File description:
 ** Sets the position of the label
@@ -22,11 +22,11 @@ static bool set_default_values(bs_textfield_t *textfield)
 /**
  * @brief Creates textfield structure
  * 
- * @param label 
- * @param pos_x 
- * @param pos_y 
- * @return true 
- * @return false 
+ * @param label
+ * @param pos_x
+ * @param pos_y
+ * @return true
+ * @return false
  */
 bs_textfield_t *bs_textfield_create(char *id, char *font_path, \
 float width, float height)

@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2018
+** BillyScene, 2018
 ** textfield_set_max_length
 ** File description:
-** Sets textfield's max length
+** bs_textfield_set_max_length
 */
 
 #include "bs_components.h"
@@ -14,9 +14,9 @@
  * If max_length is negative then it will be considered as infinite
  * 
  * @param textfield
- * @param max_length 
- * @return true 
- * @return false 
+ * @param max_length
+ * @return true
+ * @return false
  */
 bool bs_textfield_set_max_length(bs_textfield_t *textfield, int max_length)
 {

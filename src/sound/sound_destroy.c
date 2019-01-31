@@ -1,14 +1,19 @@
 /*
-** EPITECH PROJECT, 2018
-** sound_manager
+** BillyScene, 2018
+** sound_destroy
 ** File description:
-** sound_manager
+** bs_sound_destroy
 */
 
 #include "bs_components.h"
 #include "bs_prototypes.h"
-#include "stdbool.h"
+#include <stdbool.h>
 
+/**
+ * @brief Destroy Sound struct
+ * 
+ * @param sound
+ */
 void bs_sound_destroy(bs_sound_t *sound)
 {
     if (sound == NULL)

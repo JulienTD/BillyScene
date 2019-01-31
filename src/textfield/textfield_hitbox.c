@@ -2,7 +2,7 @@
 #include <SFML/Graphics.h>
 #include "bs_components.h"
 #include "bs_prototypes.h"
-#include "stdbool.h"
+#include <stdbool.h>
 
 /**
  * @brief Checks if x and y is on the textfield

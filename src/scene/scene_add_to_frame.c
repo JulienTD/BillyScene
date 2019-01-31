@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2017
-** scene_manager
+** BillyScene, 2017
+** scene_add_to_frame
 ** File description:
-** scene_manager
+** bs_scene_add_to_frame
 */
 
 #include "bs_components.h"
@@ -11,10 +11,10 @@
 /**
  * @brief Adds scene to frame
  * 
- * @param frame 
- * @param scene 
- * @return true 
- * @return false 
+ * @param frame
+ * @param scene
+ * @return true
+ * @return false
  */
 bool bs_scene_add_to_frame(bs_frame_t *frame, bs_scene_t *scene)
 {

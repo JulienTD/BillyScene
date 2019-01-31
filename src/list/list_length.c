@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2018
-** get_list_length
+** BillyScene, 2018
+** list_length
 ** File description:
-** get_list_length
+** bs_list_length
 */
 
 #include "bs_components.h"
@@ -11,8 +11,8 @@
 /**
  * @brief Returns the list length
  * 
- * @param head 
- * @return int 
+ * @param head
+ * @return int
  */
 int bs_list_length(bs_list_t **head)
 {

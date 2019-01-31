@@ -1,14 +1,20 @@
 /*
-** EPITECH PROJECT, 2018
-** label_set_pos
+** BillyScene, 2018
+** textfield_set_offset
 ** File description:
-** Sets the position of the label
+** bs_textfield_set_offset
 */
 
 #include "bs_components.h"
 #include "bs_prototypes.h"
 #include <stdbool.h>
 
+/**
+ * @brief Change textfield offset
+ * 
+ * @param offset_x
+ * @param offset_y
+ */
 bool bs_textfield_set_offset(bs_textfield_t *textfield, \
 float offset_x, float offset_y)
 {

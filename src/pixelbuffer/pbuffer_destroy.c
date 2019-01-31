@@ -1,13 +1,13 @@
 /*
-** EPITECH PROJECT, 2018
-** texts_manager
+** BillyScene, 2018
+** pbuffer_destroy
 ** File description:
-** texts_manager
+** bs_pbuffer_destroy
 */
 
 #include "bs_components.h"
 #include "bs_prototypes.h"
-#include "stdbool.h"
+#include <stdbool.h>
 
 /**
  * @brief Destroys a pbuffer
@@ -15,7 +15,7 @@
  * @param pbuffer 
  */
 void bs_pbuffer_destroy(bs_pbuffer_t *pbuffer)
-{ 
+{
     if (pbuffer == NULL)
         return;
     if (pbuffer->pixels)

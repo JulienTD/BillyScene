@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2017
-** scene_manager
+** BillyScene, 2017
+** scene_destroy
 ** File description:
-** scene_manager
+** bs_scene_destroy
 */
 
 #include "bs_components.h"
@@ -27,7 +27,7 @@ static void destroy_components(bs_list_t *list)
 /**
  * @brief Destroys scene
  * 
- * @param id  
+ * @param id
  */
 void bs_scene_destroy(bs_scene_t *scene)
 {

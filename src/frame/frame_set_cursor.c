@@ -1,18 +1,18 @@
 /*
-** EPITECH PROJECT, 2018
-** create_frame
+** BillyScene, 2018
+** frame_set_cursor
 ** File description:
-** create_frame
+** bs_frame_set_cursor
 */
 
 #include "bs_components.h"
 #include "bs_prototypes.h"
-#include "stdbool.h"
+#include <stdbool.h>
 
 /**
  * @brief Sets the new frame cursor
  * 
- * @return bool 
+ * @return bool
  */
 bool bs_frame_set_cursor(bs_frame_t *frame, char *path)
 {

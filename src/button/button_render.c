@@ -1,15 +1,15 @@
 /*
 ** BillyScene, 2018
-** bs_button_render
+** button_render
 ** File description:
-** Renders a button
+** bs_button_render
 */
 
 #include <SFML/Audio.h>
 #include <SFML/Graphics.h>
 #include "bs_components.h"
 #include "bs_prototypes.h"
-#include "stdbool.h"
+#include <stdbool.h>
 
 static bool determine_button_position(bs_button_t *button)
 {
@@ -26,9 +26,9 @@ static bool determine_button_position(bs_button_t *button)
 /**
  * @brief Renders a button
  * 
- * @param frame 
- * @param button 
- * @return int 
+ * @param frame
+ * @param button
+ * @return int
  */
 bool bs_button_render(bs_frame_t *frame, bs_button_t *button)
 {

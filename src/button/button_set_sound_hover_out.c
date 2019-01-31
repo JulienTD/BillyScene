@@ -1,20 +1,20 @@
 /*
 ** BillyScene, 2018
-** bs_button_set_sound_hover_out
+** button_set_sound_hover_out
 ** File description:
-** Sets the sound hover out of the selected button
+** bs_button_set_sound_hover_out
 */
 
 #include "bs_components.h"
 #include "bs_prototypes.h"
-#include "stdbool.h"
+#include <stdbool.h>
 
 /**
  * @brief Sets the sound hover out of the selected button
  *
- * @param button 
- * @param path 
- * @return int 
+ * @param button
+ * @param path
+ * @return int
  */
 bool bs_button_set_sound_hover_out(bs_button_t *button, char *path)
 {

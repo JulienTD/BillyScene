@@ -1,15 +1,22 @@
 /*
-** EPITECH PROJECT, 2018
-** key_pressed_event
+** BillyScene, 2018
+** event_scene_mouse_wheel_scrolled
 ** File description:
-** key_pressed_event
+** bs_scene_mouse_wheel_scrolled_manager
 */
 
+#include <stdbool.h>
 #include "bs_events.h"
 #include "bs_components.h"
 #include "bs_prototypes.h"
-#include "stdbool.h"
 
+/**
+ * @brief Handles Mouse scroll wheel event in the scene.
+ * 
+ * @param evt
+ * @param frame
+ * @param scene
+ */
 bool bs_scene_mouse_wheel_scrolled_manager(sfMouseWheelScrollEvent evt, \
 bs_frame_t *frame, bs_scene_t *scene)
 {

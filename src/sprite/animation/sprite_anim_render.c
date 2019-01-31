@@ -1,13 +1,13 @@
 /*
-** EPITECH PROJECT, 2018
-** sprites_manager
+** BillyScene, 2018
+** sprite_anim_render
 ** File description:
-** sprites_manager
+** bs_sprite_anim_render
 */
 
+#include <stdbool.h>
 #include "bs_components.h"
 #include "bs_prototypes.h"
-#include <stdbool.h>
 
 /*
     int left;
@@ -64,6 +64,13 @@ static bool tick_anim(bs_sprite_anim_t *anim)
     return (true);
 }
 
+/**
+ * @brief Render Sprite Animation
+ * 
+ * @param frame
+ * @param sprite
+ * @param anim
+ */
 bool bs_sprite_anim_render(bs_frame_t *frame, bs_sprite_t *sprite, \
 bs_sprite_anim_t *anim)
 {

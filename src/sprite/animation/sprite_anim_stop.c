@@ -1,20 +1,20 @@
 /*
-** EPITECH PROJECT, 2018
-** sprites_manager
+** BillyScene, 2018
+** sprite_anim_stop
 ** File description:
-** sprites_manager
+** bs_sprite_anim_stop
 */
 
+#include <stdbool.h>
 #include "bs_components.h"
 #include "bs_prototypes.h"
-#include <stdbool.h>
 
 /**
  * @brief Stops current animation
  * 
- * @param sprite 
- * @return true 
- * @return false 
+ * @param sprite
+ * @return true
+ * @return false
  */
 bool bs_sprite_anim_stop(bs_sprite_t *sprite)
 {

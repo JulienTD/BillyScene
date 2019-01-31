@@ -1,21 +1,20 @@
 /*
-** EPITECH PROJECT, 2018
-** sprites_manager
+** BillyScene, 2018
+** sprite_anim_play
 ** File description:
-** sprites_manager
+** bs_sprite_anim_play
 */
 
+#include <stdbool.h>
 #include "bs_components.h"
 #include "bs_prototypes.h"
-#include <stdbool.h>
 
 /**
  * @brief Plays animation
  * 
- * @param sprite 
- * @param id 
- * @param reverse 
- * @return bs_sprite_anim_t* 
+ * @param sprite * @param id
+ * @param reverse
+ * @return bs_sprite_anim_t*
  */
 bs_sprite_anim_t *bs_sprite_anim_play(bs_sprite_t *sprite, char *id, \
 bool reverse)

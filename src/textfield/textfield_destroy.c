@@ -1,5 +1,5 @@
 /*
-** EPITECH PROJECT, 2018
+** BillyScene, 2018
 ** label_set_pos
 ** File description:
 ** Sets the position of the label
@@ -12,7 +12,7 @@
 /**
  * @brief Destroys textfield
  * 
- * @param textfield 
+ * @param textfield
  */
 void bs_textfield_destroy(bs_textfield_t *textfield)
 {

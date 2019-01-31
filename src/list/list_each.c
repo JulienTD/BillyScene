@@ -1,14 +1,21 @@
 /*
-** EPITECH PROJECT, 2017
-** scene_manager
+** BillyScene, 2017
+** list_each
 ** File description:
-** scene_manager
+** bs_list_each
 */
 
 #include <stdarg.h>
 #include "bs_components.h"
 #include "bs_prototypes.h"
 
+/**
+ * @brief Calls a function for each element of list
+ * 
+ * @param head
+ * @param func_each
+ * @param ...
+ */
 bool bs_list_each(bs_list_t **head, \
 bool (*func_each)(bs_list_t *element, va_list *args), ...)
 {

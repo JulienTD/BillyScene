@@ -1,22 +1,22 @@
 /*
 ** BillyScene, 2018
-** bs_button_create
+** button_create
 ** File description:
-** Creates a button from an id, a width and an size
+** bs_button_create
 */
 
+#include <stdbool.h>
 #include <SFML/Audio.h>
 #include <SFML/Graphics.h>
 #include "bs_components.h"
 #include "bs_prototypes.h"
-#include "stdbool.h"
 
 /**
  * @brief Init button textures
  * 
- * @param button 
- * @return true 
- * @return false 
+ * @param button
+ * @return true
+ * @return false
  */
 static bool init_button_textures(bs_button_t *button)
 {
@@ -29,9 +29,9 @@ static bool init_button_textures(bs_button_t *button)
 /**
  * @brief Init button sounds
  * 
- * @param button 
- * @return true 
- * @return false 
+ * @param button
+ * @return true
+ * @return false
  */
 static bool init_button_sounds(bs_button_t *button)
 {
@@ -44,9 +44,9 @@ static bool init_button_sounds(bs_button_t *button)
 /**
  * @brief Init button events
  * 
- * @param button 
- * @return true 
- * @return false 
+ * @param button
+ * @return true
+ * @return false
  */
 static bool init_button_events(bs_button_t *button)
 {
@@ -61,10 +61,10 @@ static bool init_button_events(bs_button_t *button)
 /**
  * @brief Init button with default params
  * 
- * @param button 
- * @param id 
- * @return true 
- * @return false 
+ * @param button
+ * @param id
+ * @return true
+ * @return false
  */
 static bool init_button_default_param(bs_button_t *button, char *id)
 {

@@ -1,14 +1,19 @@
 /*
-** EPITECH PROJECT, 2018
-** sound_manager
+** BillyScene, 2018
+** sound_create
 ** File description:
-** sound_manager
+** bs_sound_create
 */
 
 #include "bs_components.h"
 #include "bs_prototypes.h"
-#include "stdbool.h"
+#include <stdbool.h>
 
+/**
+ * @brief Create a Sound struct.
+ * 
+ * @param path
+ */
 bs_sound_t *bs_sound_create(char *path)
 {
     bs_sound_t *sound = malloc(sizeof(bs_sound_t));

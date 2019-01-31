@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2018
-** init_render_states
+** BillyScene, 2018
+** bs_init_render_states
 ** File description:
-** init_render_states
+** bs_init_render_states
 */
 
 #include <SFML/Audio.h>
@@ -10,6 +10,9 @@
 #include "bs_components.h"
 #include "bs_prototypes.h"
 
+/**
+ * @brief Init render system
+ */
 sfRenderStates *bs_init_render_states(void)
 {
     sfRenderStates *states = malloc(sizeof(sfRenderStates));

@@ -1,5 +1,5 @@
 /*
-** EPITECH PROJECT, 2018
+** BillyScene, 2018
 ** sprites_manager
 ** File description:
 ** sprites_manager
@@ -11,10 +11,10 @@
 /**
  * @brief Adds textfield to scene
  * 
- * @param scene 
- * @param sprite 
- * @return true 
- * @return false 
+ * @param scene
+ * @param sprite
+ * @return true
+ * @return false
  */
 bool bs_textfield_add_to_scene(bs_scene_t *scene, bs_textfield_t *textfield)
 {

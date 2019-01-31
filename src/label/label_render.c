@@ -1,13 +1,13 @@
 /*
-** EPITECH PROJECT, 2018
-** texts_manager
+** BillyScene, 2018
+** label_render
 ** File description:
-** texts_manager
+** bs_label_render
 */
 
 #include "bs_components.h"
 #include "bs_prototypes.h"
-#include "stdbool.h"
+#include <stdbool.h>
 
 static bool determine_label_position(bs_label_t *label)
 {
@@ -21,6 +21,12 @@ static bool determine_label_position(bs_label_t *label)
     return (true);
 }
 
+/**
+ * @brief Render label
+ * 
+ * @param frame
+ * @param label
+ */
 bool bs_label_render(bs_frame_t *frame, bs_label_t *label)
 {
     if (frame == NULL || label == NULL || label->enabled == false)

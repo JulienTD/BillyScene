@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2018
-** sprites_manager
+** BillyScene, 2018
+** label_add_to_scene
 ** File description:
-** sprites_manager
+** bs_label_add_to_scene
 */
 
 #include "bs_components.h"
@@ -11,10 +11,10 @@
 /**
  * @brief Adds label to the scene
  * 
- * @param scene 
- * @param label 
- * @return true 
- * @return false 
+ * @param scene
+ * @param label
+ * @return true
+ * @return false
  */
 bool bs_label_add_to_scene(bs_scene_t *scene, bs_label_t *label)
 {

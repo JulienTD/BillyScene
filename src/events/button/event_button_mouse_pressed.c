@@ -1,16 +1,14 @@
 /*
 ** BillyScene, 2018
-** mouse_button_pressed_event
+** event_button_mouse_pressed
 ** File description:
-** Event fired when the mouse is pressed.
-** This event is used to detect if the mouse is on a button component,
-** and if it's the case we fire button's events.
+** bs_button_mouse_pressed_manager
 */
 
 #include "bs_components.h"
 #include "bs_events.h"
 #include "bs_prototypes.h"
-#include "stdbool.h"
+#include <stdbool.h>
 
 static bool execute_pressed_event(bs_button_t *button, 
 sfMouseButtonEvent event, bs_frame_t *frame, bs_scene_t *scene)

@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2018
-** sprites_manager
+** BillyScene, 2018
+** sprite_anim_add
 ** File description:
-** sprites_manager
+** bs_sprite_anim_add
 */
 
 #include "bs_components.h"
@@ -12,10 +12,10 @@
 /**
  * @brief Adds animation to sprite
  * 
- * @param sprite 
- * @param anim 
- * @return true 
- * @return false 
+ * @param sprite
+ * @param anim
+ * @return true
+ * @return false
  */
 bool bs_sprite_anim_add(bs_sprite_t *sprite, bs_sprite_anim_t *anim)
 {

@@ -1,26 +1,26 @@
 /*
 ** BillyScene, 2018
-** bs_button_set_size
+** button_set_size
 ** File description:
-** Sets the size of the button.
+** bs_button_set_size.
 */
 
 #include <SFML/Audio.h>
 #include <SFML/Graphics.h>
 #include "bs_components.h"
 #include "bs_prototypes.h"
-#include "stdbool.h"
+#include <stdbool.h>
 
 /**
  * @brief Sets the size of the button.
  * If width < 0 then its width won't change
  * If height < 0 then its height won't change
  * 
- * @param button 
- * @param pos_x 
- * @param pos_y 
- * @return true 
- * @return false 
+ * @param button
+ * @param pos_x
+ * @param pos_y
+ * @return true
+ * @return false
  */
 bool bs_button_set_size(bs_button_t *button, float width, float height)
 {

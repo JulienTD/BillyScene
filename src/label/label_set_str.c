@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2018
+** BillyScene, 2018
 ** label_set_pos
 ** File description:
-** Sets the position of the label
+** bs_label_set_str
 */
 
 #include "bs_components.h"
@@ -12,10 +12,10 @@
 /**
  * @brief Sets str to the label
  * 
- * @param label 
- * @param str 
- * @return true 
- * @return false 
+ * @param label
+ * @param str
+ * @return true
+ * @return false
  */
 bool bs_label_set_str(bs_label_t *label, char *str)
 {

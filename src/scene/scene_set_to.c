@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2017
-** scene_manager
+** BillyScene, 2017
+** scene_set_to
 ** File description:
-** scene_manager
+** bs_scene_set_to
 */
 
 #include "bs_components.h"
@@ -37,10 +37,10 @@ static bool execute_init_post_event(bs_frame_t *frame, bs_scene_t *scene)
 /**
  * @brief Change current scene to another
  * 
- * @param frame 
- * @param id 
- * @return true 
- * @return false 
+ * @param frame
+ * @param id
+ * @return true
+ * @return false
  */
 bool bs_scene_set_to(bs_frame_t *frame, char *id)
 {

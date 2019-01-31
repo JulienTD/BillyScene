@@ -2,13 +2,13 @@
 ** BillyScene, 2018
 ** mouse_button_pressed_event
 ** File description:
-** Button event
+** bs_button_mouse_released_manager
 */
 
 #include "bs_events.h"
 #include "bs_components.h"
 #include "bs_prototypes.h"
-#include "stdbool.h"
+#include <stdbool.h>
 
 static bool execute_released_event(bs_button_t *button, \
 sfMouseButtonEvent event, bs_frame_t *frame, bs_scene_t *scene)

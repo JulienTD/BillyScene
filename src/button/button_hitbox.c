@@ -1,19 +1,19 @@
 /*
 ** BillyScene, 2019
-** bs_is_mouse_on_button
+** button_hitbox
 ** File description:
-** Checks if x and y is on the button
+** bs_is_mouse_on_button
 */
 
+#include <stdbool.h>
 #include <SFML/Audio.h>
 #include <SFML/Graphics.h>
 #include "bs_components.h"
 #include "bs_prototypes.h"
-#include "stdbool.h"
 
 /**
  * @brief Checks if x and y is on the button
- *
+ * 
  * @param button
  * @param clickX
  * @param clickY

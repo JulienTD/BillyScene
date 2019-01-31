@@ -1,13 +1,13 @@
 /*
-** EPITECH PROJECT, 2018
-** sprites_manager
+** BillyScene, 2018
+** sprite_create
 ** File description:
-** sprites_manager
+** bs_sprite_create
 */
 
+#include <SFML/Network.h>
 #include "bs_components.h"
 #include "bs_prototypes.h"
-#include <SFML/Network.h>
 
 static void init_params(bs_sprite_t *sprite)
 {
@@ -19,9 +19,9 @@ static void init_params(bs_sprite_t *sprite)
 /**
  * @brief Creates a new sprite
  * 
- * @param id 
- * @param texture_path 
- * @return bs_sprite_t* 
+ * @param id
+ * @param texture_path
+ * @return bs_sprite_t*
  */
 bs_sprite_t *bs_sprite_create(char *id, const char *texture_path)
 {

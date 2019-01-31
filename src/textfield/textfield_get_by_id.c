@@ -1,5 +1,5 @@
 /*
-** EPITECH PROJECT, 2018
+** BillyScene, 2018
 ** sprites_manager
 ** File description:
 ** sprites_manager
@@ -11,9 +11,9 @@
 /**
  * @brief Gets textfield in a scene by its id
  * 
- * @param scene 
- * @param id 
- * @return bs_textfield_t* 
+ * @param scene
+ * @param id
+ * @return bs_textfield_t*
  */
 bs_textfield_t *bs_textfield_get_by_id(bs_scene_t *scene, char *id)
 {

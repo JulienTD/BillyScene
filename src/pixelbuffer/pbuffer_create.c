@@ -1,20 +1,20 @@
 /*
-** EPITECH PROJECT, 2018
-** texts_manager
+** BillyScene, 2018
+** pbuffer_create
 ** File description:
-** texts_manager
+** bs_pbuffer_create
 */
 
 #include "bs_components.h"
 #include "bs_prototypes.h"
-#include "stdbool.h"
+#include <stdbool.h>
 
 /**
  * @brief Creates a pbuffer
  * 
- * @param width 
- * @param height 
- * @return bs_pbuffer_t* 
+ * @param width
+ * @param height
+ * @return bs_pbuffer_t*
  */
 bs_pbuffer_t *bs_pbuffer_create(char *id, unsigned int width, \
 unsigned int height)
