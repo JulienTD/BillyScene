@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2018
-** button_render
+** BillyScene, 2018
+** bs_button_render
 ** File description:
-** button_render
+** Renders a button
 */
 
 #include <SFML/Audio.h>

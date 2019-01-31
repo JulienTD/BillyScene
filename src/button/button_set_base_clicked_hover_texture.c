@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2018
-** button_texture_helper
+** BillyScene, 2018
+** bs_button_set_base_clicked_hover_texture
 ** File description:
-** Helps to manipulate button's texture
+** Sets the base/clicked/hover texture of the button
 */
 
 #include "bs_components.h"

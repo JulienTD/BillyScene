@@ -1,5 +1,5 @@
 /*
-** EPITECH PROJECT, 2018
+** BillyScene, 2018
 ** mouse_button_pressed_event
 ** File description:
 ** Button event

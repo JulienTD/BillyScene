@@ -142,7 +142,8 @@ OBJ			=	$(SRC_BUTTONS:.c=.o) $(SRC_EVENTS_BUTTONS:.c=.o)  \
 				$(SRC_TEXTFIELD:.c=.o) $(SRC_EVENTS_TEXTFIELDS:.c=.o) \
 				$(SRC_PIXELBUFFER:.c=.o)
 
-FLAGS	=			-Wunused-parameter -Wall -W -Wextra -pedantic -I./include/ -lc_graph_prog -O3
+# -lc_graph_prog
+FLAGS	=			-Wunused-parameter -Wall -W -Wextra -pedantic -I./include/ -lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-audio -O3
 
 wc:
 	wc $(ALL_SRC)
@@ -218,7 +219,7 @@ EXAMPLE_OBJ	=	$(SRC_EXAMPLE:.c=.o)
 ex: re example clean
 
 example:  $(EXAMPLE_OBJ)
-	gcc $(EXAMPLE_OBJ) -o ex -L. -lbs_scene -I./include/ -lc_graph_prog -g3
+	gcc $(EXAMPLE_OBJ) -o ex -L. -lbs_scene -I./include/ -lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-audio -g3
 
 exwin: $(EXAMPLE_OBJ)
 	x86_64-w64-mingw32-gcc $(EXAMPLE_OBJ) -o ex.exe -L. -lbs_scene -I./include/ -lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-audio

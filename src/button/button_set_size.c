@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2018
-** button_create
+** BillyScene, 2018
+** bs_button_set_size
 ** File description:
-** function to create a button structure
+** Sets the size of the button.
 */
 
 #include <SFML/Audio.h>

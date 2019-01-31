@@ -1,8 +1,10 @@
 /*
-** EPITECH PROJECT, 2018
+** BillyScene, 2018
 ** mouse_button_pressed_event
 ** File description:
-** Button event
+** Event fired when the mouse is pressed.
+** This event is used to detect if the mouse is on a button component,
+** and if it's the case we fire button's events.
 */
 
 #include "bs_components.h"
@@ -15,9 +17,8 @@ sfMouseButtonEvent event, bs_frame_t *frame, bs_scene_t *scene)
 {
     bs_event_button_click_pressed_t result;
 
-    if (button == NULL || button->click_pressed_event == NULL) {
+    if (button == NULL || button->click_pressed_event == NULL)
         return false;
-    }
     result.event = event;
     result.frame = frame;
     result.button = button;
@@ -28,7 +29,7 @@ sfMouseButtonEvent event, bs_frame_t *frame, bs_scene_t *scene)
 
 /**
  * @brief Event fired when the mouse is pressed. This event is used to detect
- * jf the mouse is on a button, and if it's the case we fired button's
+ * if the mouse is on a button component, and if it's the case we fire button's
  * events.
  * 
  */

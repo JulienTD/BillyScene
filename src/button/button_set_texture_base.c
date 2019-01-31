@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2018
+** BillyScene, 2018
 ** bs_button_set_texture_base
 ** File description:
-** Helps to manipulate button's texture
+** Sets the base texture of the button
 */
 
 #include "bs_components.h"

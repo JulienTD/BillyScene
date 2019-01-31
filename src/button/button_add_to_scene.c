@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2017
-** button_manager
+** BillyScene, 2017
+** bs_button_add_to_scene
 ** File description:
-** button_manager
+** Adds button to scene
 */
 
 #include <SFML/Audio.h>

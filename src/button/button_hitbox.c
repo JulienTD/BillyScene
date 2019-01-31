@@ -1,3 +1,10 @@
+/*
+** BillyScene, 2019
+** bs_is_mouse_on_button
+** File description:
+** Checks if x and y is on the button
+*/
+
 #include <SFML/Audio.h>
 #include <SFML/Graphics.h>
 #include "bs_components.h"

@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2018
-** sprites_manager
+** bs_button_get_by_id
 ** File description:
-** sprites_manager
+** Gets button in a scene by its id
 */
 
 #include "bs_components.h"

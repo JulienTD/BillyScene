@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2018
-** button_create
+** BillyScene, 2018
+** bs_button_create
 ** File description:
-** function to create a button structure
+** Creates a button from an id, a width and an size
 */
 
 #include <SFML/Audio.h>
@@ -58,7 +58,15 @@ static bool init_button_events(bs_button_t *button)
     return (true);
 }
 
-bool init_button_default_param(bs_button_t *button, char *id)
+/**
+ * @brief Init button with default params
+ * 
+ * @param button 
+ * @param id 
+ * @return true 
+ * @return false 
+ */
+static bool init_button_default_param(bs_button_t *button, char *id)
 {
     button->id_button = NULL;
     button->id_button = bs_set_str_to(button->id_button, id);
@@ -74,7 +82,7 @@ bool init_button_default_param(bs_button_t *button, char *id)
 }
 
 /**
- * @brief Creates a button from an id and a size
+ * @brief Creates a button from an id, a width and an size
  *
  * @param pos_x
  * @param pos_y

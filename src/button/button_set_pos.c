@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2018
-** button_create
+** BillyScene, 2018
+** bs_button_set_pos
 ** File description:
-** function to create a button structure
+** Sets the position of the button
 */
 
 #include <SFML/Audio.h>
@@ -25,9 +25,8 @@ bool bs_button_set_pos(bs_button_t *button, float pos_x, float pos_y)
     sfVector2f pos = {.x = pos_x, .y = pos_y};
     sfVector2f curr_pos;
 
-    if (button == NULL) {
+    if (button == NULL)
         return (false);
-    }
     curr_pos = button->pos;
     pos.x = (pos_x < 0) ? curr_pos.x : pos_x;
     pos.y = (pos_y < 0) ? curr_pos.y : pos_y;

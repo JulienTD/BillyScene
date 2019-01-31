@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2018
-** button_create
+** BillyScene, 2018
+** bs_button_set_offset
 ** File description:
-** function to create a button structure
+** Sets the offset of the button
 */
 
 #include <SFML/Audio.h>
@@ -22,9 +22,8 @@
  */
 bool bs_button_set_offset(bs_button_t *button, float offset_x, float offset_y)
 {
-    if (button == NULL) {
+    if (button == NULL)
         return (false);
-    }
     button->offset.x = offset_x;
     button->offset.y = offset_y;
     return (true);

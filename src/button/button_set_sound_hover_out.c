@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2018
-** button_music_helper
+** BillyScene, 2018
+** bs_button_set_sound_hover_out
 ** File description:
-** Helps to manipulate button's sound
+** Sets the sound hover out of the selected button
 */
 
 #include "bs_components.h"

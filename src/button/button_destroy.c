@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2018
-** button_destroy
+** BillyScene, 2018
+** bs_button_destroy
 ** File description:
-** button_destroy
+** Destroy a button
 */
 
 #include <SFML/Audio.h>
@@ -11,6 +11,11 @@
 #include "bs_prototypes.h"
 #include "stdbool.h"
 
+/**
+ * @brief Destroy button's textures
+ * 
+ * @param button 
+ */
 static void destroy_textures(bs_button_t *button)
 {
     if (button->texture_base)
@@ -21,6 +26,11 @@ static void destroy_textures(bs_button_t *button)
         sfTexture_destroy(button->texture_clicked);
 }
 
+/**
+ * @brief Destroy button's sounds
+ * 
+ * @param button 
+ */
 static void destroy_sounds(bs_button_t *button)
 {
     if (button->sound_click)
@@ -32,7 +42,7 @@ static void destroy_sounds(bs_button_t *button)
 }
 
 /**
- * @brief Destroy/Free button structure
+ * @brief Destroy a button
  * 
  * @param button 
  */
