@@ -75,6 +75,7 @@ static bool init_button_default_param(bs_button_t *button, char *id)
     button->status = NORMAL;
     button->texture_status = 0;
     button->enabled = true;
+    button->layer = 0;
     button->rs = bs_init_render_states();
     if (button->rs == NULL)
         return (false);

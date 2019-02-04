@@ -40,9 +40,10 @@ typedef struct bs_sprite_s
     sfSprite *sprite;
     sfTexture *texture;
     sfVector2i size;
-    sfVector2f offset;
     sfVector2f pos;
     sfVector2f pos_s;
+    sfVector2f offset;
+    short layer;
     sfVector2f scale;
     sfVector2f speed;
     bool is_init;
@@ -66,6 +67,7 @@ bool bs_sprite_set_scale(bs_sprite_t *sprite, float x, float y);
 bool bs_sprite_set_size(bs_sprite_t *sprite, int x, int y);
 bool bs_sprite_set_speed(bs_sprite_t *sprite, float x, float y);
 void bs_sprite_destroy(bs_sprite_t *sprite);
+bool bs_sprite_set_layer(bs_sprite_t *sprite, short layer);
 
 
 /* Prototypes to manipulates sprites animations */

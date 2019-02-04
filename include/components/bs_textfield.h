@@ -52,6 +52,7 @@ typedef struct bs_textfield_s
     int is_focus;
     sfVector2f pos;
     sfVector2f offset;
+    short layer;
     bool enabled;
     void (*focus_event)(bs_event_textfield_focus_t event);
     void (*unfocus_event)(bs_event_textfield_unfocus_t event);
@@ -74,5 +75,6 @@ bool bs_textfield_set_offset(bs_textfield_t *textfield, \
 float offset_x, float offset_y);
 bool bs_textfield_set_pos(bs_textfield_t *textfield, \
 float pos_x, float pos_y);
+bool bs_textfield_set_layer(bs_textfield_t *textfield, short layer);
 
 #endif /* !BS_TEXTFIELD_H_ */

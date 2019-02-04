@@ -97,5 +97,6 @@ bool bs_scene_render_all_textfields(bs_scene_t *scene, bs_frame_t *frame);
 bool bs_scene_render(bs_scene_t *scene, bs_frame_t *frame);
 bool bs_scene_set_to(bs_frame_t *frame, char *id);
 void bs_scene_destroy(bs_scene_t *scene);
+bool bs_scene_refresh(bs_scene_t *scene);
 
 #endif /* !BS_SCENE__H_ */

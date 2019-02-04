@@ -17,6 +17,7 @@ typedef struct bs_pbuffer_s
     char *id_pbuffer;
     sfVector2f pos;
     sfVector2f offset;
+    short layer;
     unsigned int width;
     unsigned int height;
     sfUint8 *pixels;
@@ -38,5 +39,6 @@ bool bs_pbuffer_render(bs_frame_t *frame, bs_pbuffer_t *pbuffer);
 bool bs_pbuffer_add_to_scene(bs_scene_t *scene, bs_pbuffer_t *pbuffer);
 void bs_pbuffer_destroy(bs_pbuffer_t *pbuffer);
 bs_pbuffer_t *bs_pbuffer_get_by_id(bs_scene_t *scene, char *id);
+bool bs_pbuffer_set_layer(bs_pbuffer_t *pbuffer, short layer);
 
 #endif /* !BS_PBUFFER_H_ */

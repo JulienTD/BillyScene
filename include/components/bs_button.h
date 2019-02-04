@@ -83,6 +83,7 @@ typedef struct bs_button_s
     int texture_status;
     sfVector2f pos;
     sfVector2f offset;
+    short layer;
     bool enabled;
     sfRenderStates *rs;
 } bs_button_t;
@@ -107,5 +108,6 @@ bool bs_button_set_sound_click(bs_button_t *button, char *path);
 bool bs_button_set_sound_hover_in(bs_button_t *button, char *path);
 bool bs_button_set_sound_hover_out(bs_button_t *button, char *path);
 bs_button_t *bs_button_get_by_id(bs_scene_t *scene, char *id);
+bool bs_button_set_layer(bs_button_t *button, short layer);
 
 #endif /* !BS_BUTTON_H_ */

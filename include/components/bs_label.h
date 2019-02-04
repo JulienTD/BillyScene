@@ -21,6 +21,7 @@ typedef struct bs_label_s
     sfFont *font;
     sfVector2f pos;
     sfVector2f offset;
+    short layer;
     bool enabled;
     sfRenderStates *rs;
 } bs_label_t;
@@ -37,5 +38,6 @@ char *bs_label_get_str(bs_label_t *label);
 void bs_label_destroy(bs_label_t *label);
 bs_label_t *bs_label_get_by_id(bs_scene_t *scene, char *id);
 bool bs_label_set_color(bs_label_t *label, sfColor color);
+bool bs_label_set_layer(bs_label_t *label, short layer);
 
 #endif /* !BS_LABEL_H_ */

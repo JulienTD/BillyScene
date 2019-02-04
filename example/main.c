@@ -144,62 +144,86 @@ void display_frame(int width, int height)
 
 	bs_scene_t *scene = bs_scene_create("intro");
 
-	bs_button_t *button = bs_button_create("button", 200, 100);
+	bs_button_t *button = bs_button_create("button", 100, 100);
+	bs_button_t *button1 = bs_button_create("button1", 100, 100);
+	bs_button_t *button2 = bs_button_create("button2", 100, 100);
 
-	scene->event_key_pressed = &scene_key_manager;
-	button->click_pressed_event = &click_buton;
-	button->hover_in_event = &hover_button_in;
-	button->hover_out_event = &hover_button_out;
-	button->hover_event = &hover_button;
-	bs_button_set_sound_click(button, "./example/res/button_sound.ogg");
-	bs_button_set_sound_hover_in(button, "./example/res/button_sound.ogg");
-	bs_button_set_sound_hover_out(button, "./example/res/button_sound.ogg");
+	bs_button_set_pos(button, 10, 10);
+	bs_button_set_pos(button1, 80, 10);
+	bs_button_set_pos(button2, 140, 10);
 	
-	bs_button_set_texture_base(button, "./example/res/button_normal.jpg");
-	bs_button_set_texture_hover(button, "./example/res/button_hover.jpg");
-	bs_button_set_texture_clicked(button, "./example/res/button_click.jpg");
+	bs_button_set_base_clicked_hover_texture(button, "./example/res/button_normal.jpg");
+	bs_button_set_base_clicked_hover_texture(button1, "./example/res/button_hover.jpg");
+	bs_button_set_base_clicked_hover_texture(button2, "./example/res/button_click.jpg");
 
-	bs_button_set_pos(button, 20.0, 20.0);
+	bs_button_set_layer(button, 0);
+	bs_button_set_layer(button1, 3);
+	bs_button_set_layer(button2, 2);
+
 	bs_button_add_to_scene(scene, button);
+	bs_button_add_to_scene(scene, button1);
+	bs_button_add_to_scene(scene, button2);
 
-
-	bs_sprite_t *sprite = bs_sprite_create("test", "./example/res/sprite_list.png");
-
-	bs_sprite_set_pos(sprite, 400, 200);
-	bs_sprite_set_size(sprite, 100, 100);
-	sprite->pos_s.x = 0;
-	sprite->pos_s.y = 100;
-	bs_sprite_anim_t *anim = bs_sprite_anim_create("anim_test", "./example/res/sprite_list.png", 100, 100);
-	
-	anim->max_states = 6;
-	anim->max_tick_delay = 20;
-	anim->is_vertical = false;
-	anim->stay_on_last_frame = true;
-	anim->is_looped = true;
-	anim->is_default = true;
-	bs_sprite_anim_add(sprite, anim);
-	bs_sprite_add_to_scene(scene, sprite);
-	// bs_sprite_anim_play(sprite, "anim_test", false);
-	scene->event_tick = &scene_tick;
 	bs_scene_add_to_frame(frame, scene);
 	bs_scene_set_to(frame, "intro");
-	bs_label_t *label = bs_label_create("test", "./example/res/font.ttf", "yo", 20);
+	bs_scene_refresh(scene);
+	//////////////////
+	// bs_button_t *button = bs_button_create("button", 200, 100);
 
-	bs_label_add_to_scene(scene, label);
-	bs_label_set_pos(label, 500, 500);
-	bs_textfield_t *textfield = bs_textfield_create("textfield", "./example/res/font.ttf", 400, 100);
-	sfText_setCharacterSize(textfield->label->text, 30);
-	textfield->focus_event = &textfield_focus;
-	textfield->unfocus_event = &textfield_unfocus;
-	bs_textfield_set_focus(textfield, true);
-	// bs_textfield_set_max_length(textfield, 100);
-	bs_textfield_add_to_scene(scene, textfield);
-	bs_textfield_set_pos(textfield, 500, 500);
-	bs_pbuffer_t *pbuffer = bs_pbuffer_create("test", 500, 500);
-	bs_pbuffer_set_pos(pbuffer, 200, 100);
-	// bs_pbuffer_add_to_scene(scene, pbuffer);
-	scene->event_mouse_moved = &mouse_move;
-	bs_frame_set_cursor(frame, "./example/res/button_click.jpg");
+	// scene->event_key_pressed = &scene_key_manager;
+	// button->click_pressed_event = &click_buton;
+	// button->hover_in_event = &hover_button_in;
+	// button->hover_out_event = &hover_button_out;
+	// button->hover_event = &hover_button;
+	// bs_button_set_sound_click(button, "./example/res/button_sound.ogg");
+	// bs_button_set_sound_hover_in(button, "./example/res/button_sound.ogg");
+	// bs_button_set_sound_hover_out(button, "./example/res/button_sound.ogg");
+	
+	// bs_button_set_texture_base(button, "./example/res/button_normal.jpg");
+	// bs_button_set_texture_hover(button, "./example/res/button_hover.jpg");
+	// bs_button_set_texture_clicked(button, "./example/res/button_click.jpg");
+
+	// bs_button_set_pos(button, 20.0, 20.0);
+	// bs_button_add_to_scene(scene, button);
+
+
+	// bs_sprite_t *sprite = bs_sprite_create("test", "./example/res/sprite_list.png");
+
+	// bs_sprite_set_pos(sprite, 400, 200);
+	// bs_sprite_set_size(sprite, 100, 100);
+	// sprite->pos_s.x = 0;
+	// sprite->pos_s.y = 100;
+	// bs_sprite_anim_t *anim = bs_sprite_anim_create("anim_test", "./example/res/sprite_list.png", 100, 100);
+	
+	// anim->max_states = 6;
+	// anim->max_tick_delay = 20;
+	// anim->is_vertical = false;
+	// anim->stay_on_last_frame = true;
+	// anim->is_looped = true;
+	// anim->is_default = true;
+	// bs_sprite_anim_add(sprite, anim);
+	// bs_sprite_add_to_scene(scene, sprite);
+	// // bs_sprite_anim_play(sprite, "anim_test", false);
+	// scene->event_tick = &scene_tick;
+	// bs_scene_add_to_frame(frame, scene);
+	// bs_scene_set_to(frame, "intro");
+	// bs_label_t *label = bs_label_create("test", "./example/res/font.ttf", "yo", 20);
+
+	// bs_label_add_to_scene(scene, label);
+	// bs_label_set_pos(label, 500, 500);
+	// bs_textfield_t *textfield = bs_textfield_create("textfield", "./example/res/font.ttf", 400, 100);
+	// sfText_setCharacterSize(textfield->label->text, 30);
+	// textfield->focus_event = &textfield_focus;
+	// textfield->unfocus_event = &textfield_unfocus;
+	// bs_textfield_set_focus(textfield, true);
+	// // bs_textfield_set_max_length(textfield, 100);
+	// bs_textfield_add_to_scene(scene, textfield);
+	// bs_textfield_set_pos(textfield, 500, 500);
+	// bs_pbuffer_t *pbuffer = bs_pbuffer_create("test", 500, 500);
+	// bs_pbuffer_set_pos(pbuffer, 200, 100);
+	// // bs_pbuffer_add_to_scene(scene, pbuffer);
+	// scene->event_mouse_moved = &mouse_move;
+	// bs_frame_set_cursor(frame, "./example/res/button_click.jpg");
 	while (sfRenderWindow_isOpen(frame->window)) {
 		while (sfRenderWindow_pollEvent(frame->window, \
 		&(frame->event)))

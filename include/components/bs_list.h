@@ -20,7 +20,7 @@ typedef struct bs_list_s
 
 /*    PROTOTYPES    */
 bs_list_t *bs_list_create(void *data, bs_data_type_t data_type);
-bool bs_list_delete(bs_list_t **head, int id);
+bs_list_t *bs_list_delete(bs_list_t **head, int id);
 bs_list_t *bs_list_get_by_id(bs_list_t **head, int id);
 int bs_list_length(bs_list_t **head);
 bs_list_t *bs_list_push(bs_list_t **head, void *data, \
