@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2018
-** render_sprite
+** BillyScene, 2018
+** sprite_render
 ** File description:
-** render_sprite
+** draw_sprite
 */
 
 #include "bs_components.h"
@@ -11,10 +11,10 @@
 /**
  * @brief Draws sprite if it has no animation
  * 
- * @param frame 
- * @param sprite 
- * @return true 
- * @return false 
+ * @param frame
+ * @param sprite
+ * @return true
+ * @return false
  */
 static bool draw_sprite(bs_frame_t *frame, bs_sprite_t *sprite)
 {
@@ -35,9 +35,9 @@ static bool draw_sprite(bs_frame_t *frame, bs_sprite_t *sprite)
  * @brief Updates the sprite's position
  * (Sets its position if it's not init or moves it directly)
  * 
- * @param sprite 
- * @return true 
- * @return false 
+ * @param sprite
+ * @return true
+ * @return false
  */
 static bool update_sprite_position(bs_sprite_t *sprite)
 {
@@ -57,10 +57,10 @@ static bool update_sprite_position(bs_sprite_t *sprite)
 /**
  * @brief Renders a sprite
  * 
- * @param frame 
- * @param sprite 
- * @return true 
- * @return false 
+ * @param frame
+ * @param sprite
+ * @return true
+ * @return false
  */
 bool bs_sprite_render(bs_frame_t *frame, bs_sprite_t *sprite)
 {
@@ -77,7 +77,7 @@ bool bs_sprite_render(bs_frame_t *frame, bs_sprite_t *sprite)
         } else {
             bs_sprite_anim_render(frame, sprite, anim);
         }
-        return (true); 
+        return (true);
     }
     bs_sprite_anim_render(frame, sprite, anim);
     return (true);

@@ -1,14 +1,14 @@
 /*
-** EPITECH PROJECT, 2018
-** mouse_button_pressed_event
+** BillyScene, 2018
+** event_textfield_mouse_pressed
 ** File description:
-** Button event
+** bs_textfield_mouse_pressed_manager
 */
 
+#include <stdbool.h>
 #include "bs_components.h"
 #include "bs_events.h"
 #include "bs_prototypes.h"
-#include "stdbool.h"
 
 static bool execute_focus_event(bs_textfield_t *textfield, 
 sfMouseButtonEvent event, bs_frame_t *frame, bs_scene_t *scene)

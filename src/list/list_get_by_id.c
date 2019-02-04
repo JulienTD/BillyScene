@@ -1,13 +1,19 @@
 /*
-** EPITECH PROJECT, 2018
-** get_list_by_id
+** BillyScene, 2018
+** list_get_by_id
 ** File description:
-** get_list_by_id
+** bs_list_get_by_id
 */
 
 #include "bs_components.h"
 #include "bs_prototypes.h"
 
+/**
+ * @brief Get an item of the list by id
+ * 
+ * @param head
+ * @param id
+ */
 bs_list_t *bs_list_get_by_id(bs_list_t **head, int id)
 {
     bs_list_t *curr = NULL;

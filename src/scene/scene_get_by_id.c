@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2017
-** scene_manager
+** BillyScene, 2017
+** scene_get_by_id
 ** File description:
-** scene_manager
+** bs_scene_get_by_id
 */
 
 #include "bs_components.h"
@@ -11,9 +11,9 @@
 /**
  * @brief Gets scene by its id
  * 
- * @param frame 
- * @param id 
- * @return bs_scene_t* 
+ * @param frame
+ * @param id
+ * @return bs_scene_t*
  */
 bs_scene_t *bs_scene_get_by_id(bs_frame_t *frame, char *id)
 {

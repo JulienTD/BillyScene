@@ -1,13 +1,13 @@
 /*
-** EPITECH PROJECT, 2018
-** texts_manager
+** BillyScene, 2018
+** label_create
 ** File description:
-** texts_manager
+** bs_label_create
 */
 
 #include "bs_components.h"
 #include "bs_prototypes.h"
-#include "stdbool.h"
+#include <stdbool.h>
 
 static bool init_label(bs_label_t *label, char *font, char *id)
 {
@@ -28,6 +28,14 @@ static bool init_label(bs_label_t *label, char *font, char *id)
     return (true);
 }
 
+/**
+ * @brief Create a label struct
+ * 
+ * @param id
+ * @param font
+ * @param text
+ * @param font_size
+ */
 bs_label_t *bs_label_create(char *id, char *font, char *text, int font_size)
 {
     bs_label_t *label = NULL;

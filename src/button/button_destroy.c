@@ -1,20 +1,20 @@
 /*
 ** BillyScene, 2018
-** bs_button_destroy
+** button_destroy
 ** File description:
-** Destroy a button
+** bs_button_destroy
 */
 
 #include <SFML/Audio.h>
 #include <SFML/Graphics.h>
 #include "bs_components.h"
 #include "bs_prototypes.h"
-#include "stdbool.h"
+#include <stdbool.h>
 
 /**
  * @brief Destroy button's textures
  * 
- * @param button 
+ * @param button
  */
 static void destroy_textures(bs_button_t *button)
 {
@@ -29,7 +29,7 @@ static void destroy_textures(bs_button_t *button)
 /**
  * @brief Destroy button's sounds
  * 
- * @param button 
+ * @param button
  */
 static void destroy_sounds(bs_button_t *button)
 {
@@ -44,7 +44,7 @@ static void destroy_sounds(bs_button_t *button)
 /**
  * @brief Destroy a button
  * 
- * @param button 
+ * @param button
  */
 void bs_button_destroy(bs_button_t *button)
 {

@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2018
-** sprites_manager
+** BillyScene, 2018
+** sprite_anim_create
 ** File description:
-** sprites_manager
+** bs_sprite_anim_create
 */
 
 #include "bs_components.h"
@@ -25,11 +25,11 @@ static bool set_default_params(bs_sprite_anim_t *anim)
 /**
  * @brief Creates new animation
  * 
- * @param id 
- * @param path 
- * @param height 
- * @param width 
- * @return bs_sprite_anim_t* 
+ * @param id
+ * @param path
+ * @param height
+ * @param width
+ * @return bs_sprite_anim_t*
  */
 bs_sprite_anim_t *bs_sprite_anim_create(char *id, char *path, \
 float height, float width)

@@ -1,14 +1,20 @@
 /*
-** EPITECH PROJECT, 2018
-** label_set_pos
+** BillyScene, 2018
+** textfield_set_focus
 ** File description:
-** Sets the position of the label
+** bs_textfield_set_focus
 */
 
 #include "bs_components.h"
 #include "bs_prototypes.h"
 #include <stdbool.h>
 
+/**
+ * @brief Set Focus to textfield
+ * 
+ * @param textfield
+ * @param is_focus
+ */
 bool bs_textfield_set_focus(bs_textfield_t *textfield, bool is_focus)
 {
     bs_event_textfield_focus_t result;

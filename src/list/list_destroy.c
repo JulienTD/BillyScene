@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2018
-** get_list_by_id
+** BillyScene, 2018
+** list_destroy
 ** File description:
-** get_list_by_id
+** bs_list_destroy
 */
 
 #include "bs_components.h"
@@ -11,10 +11,10 @@
 /**
  * @brief Destroys a list with a custom function to destroy the data
  * 
- * @param head 
- * @param destroy 
- * @return true 
- * @return false 
+ * @param head
+ * @param destroy
+ * @return true
+ * @return false
  */
 void bs_list_destroy(bs_list_t **head, void (*destroy)(bs_list_t *list))
 {

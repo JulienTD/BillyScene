@@ -1,14 +1,14 @@
 /*
-** EPITECH PROJECT, 2018
-** key_pressed_event
+** BillyScene, 2018
+** event_textfield_text_entered
 ** File description:
-** key_pressed_event
+** bs_textfield_text_entered_manager
 */
 
+#include <stdbool.h>
 #include "bs_events.h"
 #include "bs_components.h"
 #include "bs_prototypes.h"
-#include "stdbool.h"
 
 static bool execute_text_entered(bs_textfield_t *textfield, 
 sfTextEvent event, bs_frame_t *frame, bs_scene_t *scene)
@@ -47,7 +47,6 @@ static bool apply_backspace(bs_textfield_t *textfield)
     new_str[size - 1] = '\0';
     bs_label_set_str(label, new_str);
     return (true);
-    
 }
 
 static bool fill_textfield(bs_textfield_t *textfield, char c)
@@ -78,12 +77,12 @@ static char sanitize_char(sfUint32 code)
 }
 
 /**
- * @brief 
+ * @brief Handles when text is entered.
  * 
- * @param textfield 
- * @param evt 
- * @return true 
- * @return false 
+ * @param textfield
+ * @param evt
+ * @return true
+ * @return false
  */
 bool bs_textfield_text_entered_manager(bs_textfield_t *textfield, \
 sfTextEvent evt, bs_frame_t *frame, bs_scene_t *scene)

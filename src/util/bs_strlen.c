@@ -1,5 +1,5 @@
 /*
-** EPITECH PROJECT, 2018
+** BillyScene, 2018
 ** bs_strlen
 ** File description:
 ** bs_strlen
@@ -8,6 +8,11 @@
 #include "bs_components.h"
 #include "bs_prototypes.h"
 
+/**
+ * @brief returns string length
+ * 
+ * @param str
+ */
 int bs_strlen(char *str)
 {
     int length = 0;

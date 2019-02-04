@@ -1,13 +1,13 @@
 /*
-** EPITECH PROJECT, 2018
-** create_frame
+** BillyScene, 2018
+** frame_destroy
 ** File description:
-** create_frame
+** bs_frame_destroy
 */
 
 #include "bs_components.h"
 #include "bs_prototypes.h"
-#include "stdbool.h"
+#include <stdbool.h>
 
 static void frame_destroyer(bs_list_t *list)
 {
@@ -17,7 +17,7 @@ static void frame_destroyer(bs_list_t *list)
 /**
  * @brief Free the frame structure
  * 
- * @param frame 
+ * @param frame
  */
 void bs_frame_destroy(bs_frame_t *frame)
 {

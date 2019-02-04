@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2018
-** bs_button_get_by_id
+** BillyScene, 2018
+** button_get_by_id
 ** File description:
-** Gets button in a scene by its id
+** bs_button_get_by_id
 */
 
 #include "bs_components.h"
@@ -11,9 +11,9 @@
 /**
  * @brief Gets button in a scene by its id
  * 
- * @param scene 
- * @param id 
- * @return bs_button_t* 
+ * @param scene
+ * @param id
+ * @return bs_button_t*
  */
 bs_button_t *bs_button_get_by_id(bs_scene_t *scene, char *id)
 {

@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2018
-** push_list
+** BillyScene, 2018
+** list_push
 ** File description:
-** push_list
+** bs_list_push
 */
 
 #include "bs_components.h"
@@ -11,10 +11,10 @@
 /**
  * @brief Push data to then end of the list
  * 
- * @param head 
- * @param data 
+ * @param head
+ * @param data
  * @param data_type
- * @return bs_list_t* 
+ * @return bs_list_t*
  */
 bs_list_t *bs_list_push(bs_list_t **head, void *data, \
 bs_data_type_t data_type)

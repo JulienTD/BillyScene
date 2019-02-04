@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2018
-** sprites_manager
+** BillyScene, 2018
+** sprite_get_by_id
 ** File description:
-** sprites_manager
+** bs_sprite_get_by_id
 */
 
 #include "bs_components.h"
@@ -11,9 +11,9 @@
 /**
  * @brief Gets a sprite by its id
  * 
- * @param scene 
- * @param id 
- * @return bs_sprite_t* 
+ * @param scene
+ * @param id
+ * @return bs_sprite_t*
  */
 bs_sprite_t *bs_sprite_get_by_id(bs_scene_t *scene, char *id)
 {

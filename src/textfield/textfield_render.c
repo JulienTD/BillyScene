@@ -1,14 +1,20 @@
 /*
-** EPITECH PROJECT, 2018
-** label_set_pos
+** BillyScene, 2018
+** textfield_render
 ** File description:
-** Sets the position of the label
+** bs_textfield_render
 */
 
 #include "bs_components.h"
 #include "bs_prototypes.h"
 #include <stdbool.h>
 
+/**
+ * @brief Render textfield 
+ * 
+ * @param frame
+ * @param textfield
+ */
 bool bs_textfield_render(bs_frame_t *frame, bs_textfield_t *textfield)
 {
     if (frame == NULL || textfield == NULL || textfield->enabled == false)

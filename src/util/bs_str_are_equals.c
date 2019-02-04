@@ -1,5 +1,5 @@
 /*
-** EPITECH PROJECT, 2018
+** BillyScene, 2018
 ** bs_str_are_equals
 ** File description:
 ** bs_str_are_equals
@@ -9,6 +9,12 @@
 #include "bs_prototypes.h"
 #include <stdbool.h>
 
+/**
+ * @brief Compares two string
+ * 
+ * @param str_1
+ * @param str_2
+ */
 bool bs_str_are_equals(char *str_1, char *str_2)
 {
     int size_1 = bs_strlen(str_1);

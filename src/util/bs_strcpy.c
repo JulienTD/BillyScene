@@ -1,5 +1,5 @@
 /*
-** EPITECH PROJECT, 2018
+** BillyScene, 2018
 ** bs_strcpy
 ** File description:
 ** bs_strcpy
@@ -8,6 +8,12 @@
 #include "bs_components.h"
 #include "bs_prototypes.h"
 
+/**
+ * @brief Copies a string
+ * 
+ * @param src
+ * @param dest
+ */
 char *bs_strcpy(char *src, char *dest)
 {
     int i = 0;

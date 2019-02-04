@@ -1,18 +1,18 @@
 /*
-** EPITECH PROJECT, 2018
-** create_frame
+** BillyScene, 2018
+** frame_create
 ** File description:
-** create_frame
+** bs_frame_create
 */
 
+#include <stdbool.h>
 #include "bs_components.h"
 #include "bs_prototypes.h"
-#include "stdbool.h"
 
 /**
  * @brief Create frame structure
  * 
- * @return bs_frame_t* 
+ * @return bs_frame_t*
  */
 bs_frame_t *bs_frame_create(void)
 {

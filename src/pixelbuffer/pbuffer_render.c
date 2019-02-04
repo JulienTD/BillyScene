@@ -1,13 +1,13 @@
 /*
-** EPITECH PROJECT, 2018
-** texts_manager
+** BillyScene, 2018
+** pbuffer_render
 ** File description:
-** texts_manager
+** bs_pbuffer_render
 */
 
 #include "bs_components.h"
 #include "bs_prototypes.h"
-#include "stdbool.h"
+#include <stdbool.h>
 
 static bool determine_pbuffer_position(bs_pbuffer_t *pbuffer)
 {
@@ -24,10 +24,10 @@ static bool determine_pbuffer_position(bs_pbuffer_t *pbuffer)
 /**
  * @brief Renders a pixel buffer
  * 
- * @param pbuffer 
- * @param color 
- * @return true 
- * @return false 
+ * @param pbuffer
+ * @param color
+ * @return true
+ * @return false
  */
 bool bs_pbuffer_render(bs_frame_t *frame, bs_pbuffer_t *pbuffer)
 {

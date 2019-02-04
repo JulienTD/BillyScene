@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2018
-** sprites_manager
+** BillyScene, 2018
+** sprite_set_offset
 ** File description:
-** sprites_manager
+** bs_sprite_set_offset
 */
 
 #include "bs_components.h"
@@ -11,11 +11,11 @@
 /**
  * @brief Sets the sprite offset
  * 
- * @param sprite 
- * @param x 
- * @param y 
- * @return true 
- * @return false 
+ * @param sprite
+ * @param x
+ * @param y
+ * @return true
+ * @return false
  */
 bool bs_sprite_set_offset(bs_sprite_t *sprite, float offset_x, float offset_y)
 {

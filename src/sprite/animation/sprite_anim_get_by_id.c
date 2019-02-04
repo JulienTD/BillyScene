@@ -1,20 +1,20 @@
 /*
-** EPITECH PROJECT, 2018
-** sprites_manager
+** BillyScene, 2018
+** sprite_anim_get_by_id
 ** File description:
-** sprites_manager
+** bs_sprite_anim_get_by_id
 */
 
+#include <stdbool.h>
 #include "bs_components.h"
 #include "bs_prototypes.h"
-#include <stdbool.h>
 
 /**
  * @brief Gets animation by its id
  * 
- * @param sprite 
- * @param id 
- * @return bs_sprite_anim_t* 
+ * @param sprite
+ * @param id
+ * @return bs_sprite_anim_t*
  */
 bs_sprite_anim_t *bs_sprite_anim_get_by_id(bs_sprite_t *sprite, char *id)
 {

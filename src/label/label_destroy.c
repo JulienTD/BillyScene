@@ -1,21 +1,21 @@
 /*
-** EPITECH PROJECT, 2018
-** texts_manager
+** BillyScene, 2018
+** label_destroy
 ** File description:
-** texts_manager
+** bs_label_destroy
 */
 
 #include "bs_components.h"
 #include "bs_prototypes.h"
-#include "stdbool.h"
+#include <stdbool.h>
 
 /**
  * @brief Destroys label
  * 
- * @param label 
+ * @param label
  */
 void bs_label_destroy(bs_label_t *label)
-{ 
+{
     if (label == NULL)
         return;
     if (label->id_label)

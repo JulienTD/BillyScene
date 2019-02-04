@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2017
-** scene_manager
+** BillyScene, 2017
+** scene_create
 ** File description:
-** scene_manager
+** bs_scene_create
 */
 
 #include "bs_components.h"
@@ -25,8 +25,8 @@ static bool inits_scene_events(bs_scene_t *scene)
 /**
  * @brief Creates scene
  * 
- * @param id 
- * @return bs_scene_t* 
+ * @param id
+ * @return bs_scene_t*
  */
 bs_scene_t *bs_scene_create(char *id)
 {

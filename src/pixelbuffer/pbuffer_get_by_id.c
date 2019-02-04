@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2018
-** sprites_manager
+** BillyScene, 2018
+** pbuffer_get_by_id
 ** File description:
-** sprites_manager
+** bs_pbuffer_get_by_id
 */
 
 #include "bs_components.h"

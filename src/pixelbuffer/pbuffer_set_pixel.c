@@ -1,23 +1,23 @@
 /*
-** EPITECH PROJECT, 2018
-** texts_manager
+** BillyScene, 2018
+** pbuffer_set_pixel
 ** File description:
-** texts_manager
+** bs_pbuffer_set_pixel
 */
 
 #include "bs_components.h"
 #include "bs_prototypes.h"
-#include "stdbool.h"
+#include <stdbool.h>
 
 /**
  * @brief Sets pixel in pixelbuffer
  * 
- * @param pbuffer 
- * @param x 
- * @param y 
- * @param color 
- * @return true 
- * @return false 
+ * @param pbuffer
+ * @param x
+ * @param y
+ * @param color
+ * @return true
+ * @return false
  */
 bool bs_pbuffer_set_pixel(bs_pbuffer_t *pbuffer, \
 unsigned int x, unsigned int y, sfColor color)

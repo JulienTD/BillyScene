@@ -1,14 +1,14 @@
 /*
-** EPITECH PROJECT, 2018
-** render_scene
+** BillyScene, 2018
+** scene_render
 ** File description:
-** render_scene
+** bs_scene_render
 */
 
 #include "bs_components.h"
 #include "bs_events.h"
 #include "bs_prototypes.h"
-#include "stdbool.h"
+#include <stdbool.h>
 
 static bool execute_tick_event(bs_frame_t *frame, bs_scene_t *scene)
 {
@@ -46,10 +46,10 @@ static bool render_component(bs_list_t *element, va_list *args)
 /**
  * @brief Renders scene
  * 
- * @param scene 
- * @param frame 
- * @return true 
- * @return false 
+ * @param scene
+ * @param frame
+ * @return true
+ * @return false
  */
 bool bs_scene_render(bs_scene_t *scene, bs_frame_t *frame)
 {

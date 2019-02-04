@@ -1,14 +1,20 @@
 /*
-** EPITECH PROJECT, 2018
-** sound_manager
+** BillyScene, 2018
+** sound_set_new
 ** File description:
-** sound_manager
+** bs_sound_set_new
 */
 
 #include "bs_components.h"
 #include "bs_prototypes.h"
-#include "stdbool.h"
+#include <stdbool.h>
 
+/**
+ * @brief Set new sound to struct.
+ * 
+ * @param sound
+ * @param path
+ */
 bool bs_sound_set_new(bs_sound_t *sound, char *path)
 {
     if (sound == NULL) {

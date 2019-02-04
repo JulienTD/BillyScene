@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2018
+** BillyScene, 2018
 ** label_set_pos
 ** File description:
-** Sets the position of the label
+** bs_label_set_color
 */
 
 #include "bs_components.h"
@@ -12,10 +12,10 @@
 /**
  * @brief Sets label's color
  * 
- * @param label 
- * @param color 
- * @return true 
- * @return false 
+ * @param label
+ * @param color
+ * @return true
+ * @return false
  */
 bool bs_label_set_color(bs_label_t *label, sfColor color)
 {

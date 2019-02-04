@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2018
-** sprites_manager
+** BillyScene, 2018
+** sprite_anim_destroy
 ** File description:
-** sprites_manager
+** bs_sprite_anim_destroy
 */
 
 #include "bs_components.h"
@@ -12,7 +12,7 @@
 /**
  * @brief Destroys sprite animation
  * 
- * @param anim 
+ * @param anim
  */
 void bs_sprite_anim_destroy(bs_sprite_anim_t *anim)
 {

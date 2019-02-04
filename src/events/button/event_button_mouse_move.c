@@ -1,16 +1,14 @@
 /*
 ** BillyScene, 2018
-** bs_button_mouse_move_manager
+** event_button_mouse_move
 ** File description:
-** Event fired when the mouse is moving.
-** This event is used to detect if the mouse is on a button component,
-** and if it's the case we fire the button's events.
+** bs_button_mouse_move_manager
 */
 
 #include "bs_components.h"
 #include "bs_events.h"
 #include "bs_prototypes.h"
-#include "stdbool.h"
+#include <stdbool.h>
 
 static bool execute_hover_in_event(bs_button_t *button, \
 sfMouseMoveEvent event, bs_frame_t *frame, bs_scene_t *scene)

@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2017
-** event_manager
+** BillyScene, 2017
+** event_dispatcher
 ** File description:
-** event_manager
+** bs_event_dispatcher
 */
 
 #include "bs_components.h"
@@ -24,15 +24,15 @@ bs_scene_t *scene)
 	if (event.type == sfEvtMouseMoved)
 		bs_scene_mouse_moved_manager(event.mouseMove, frame, scene);
 	if (event.type == sfEvtMouseWheelScrolled)
-		bs_scene_mouse_wheel_scrolled_manager(event.mouseWheelScroll,\
-		 frame, scene);
+		bs_scene_mouse_wheel_scrolled_manager(event.mouseWheelScroll, \
+		frame, scene);
 }
 
 /**
  * @brief Dispatches events to the corresponding events manager
  * 
- * @param event 
- * @param frame 
+ * @param event
+ * @param frame
  */
 void bs_event_dispatcher(sfEvent event, bs_frame_t *frame)
 {

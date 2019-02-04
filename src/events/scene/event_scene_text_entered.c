@@ -1,14 +1,14 @@
 /*
-** EPITECH PROJECT, 2018
-** key_pressed_event
+** BillyScene, 2018
+** event_scene_text_entered
 ** File description:
-** key_pressed_event
+** bs_scene_text_entered_manager
 */
 
+#include <stdbool.h>
 #include "bs_events.h"
 #include "bs_components.h"
 #include "bs_prototypes.h"
-#include "stdbool.h"
 
 static bool fill_scene_textfields(sfTextEvent evt, bs_frame_t *frame, \
 bs_scene_t *scene)
@@ -31,6 +31,13 @@ bs_scene_t *scene)
     return (true);
 }
 
+/**
+ * @brief Handles Text Entered event in the scene.
+ * 
+ * @param evt
+ * @param frame
+ * @param scene
+ */
 bool bs_scene_text_entered_manager(sfTextEvent evt, bs_frame_t *frame, \
 bs_scene_t *scene)
 {

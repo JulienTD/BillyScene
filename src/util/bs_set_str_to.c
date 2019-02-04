@@ -1,12 +1,18 @@
 /*
-** EPITECH PROJECT, 2018
-** set_str_to
+** BillyScene, 2018
+** bs_set_str_to
 ** File description:
-** set_str_to
+** bs_set_str_to
 */
 
 #include "bs_prototypes.h"
 
+/**
+ * @brief Updates string content
+ * 
+ * @param src
+ * @param new_str
+ */
 char *bs_set_str_to(char *src, char *new_str)
 {
     if (new_str == NULL) {

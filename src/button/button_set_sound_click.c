@@ -1,20 +1,20 @@
 /*
 ** BillyScene, 2018
-** bs_button_set_sound_click
+** button_set_sound_click
 ** File description:
-** Sets the sound click of the selected button
+** bs_button_set_sound_click
 */
 
 #include "bs_components.h"
 #include "bs_prototypes.h"
-#include "stdbool.h"
+#include <stdbool.h>
 
 /**
  * @brief Sets the sound click of the selected button
  *
- * @param button 
- * @param path 
- * @return bool 
+ * @param button
+ * @param path
+ * @return bool
  */
 bool bs_button_set_sound_click(bs_button_t *button, char *path)
 {

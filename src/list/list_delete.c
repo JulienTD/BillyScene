@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2018
+** BillyScene, 2018
 ** list_delete
 ** File description:
-** list_delete
+** bs_list_delete
 */
 
 #include "bs_components.h"
@@ -19,6 +19,12 @@ static bs_list_t *delete_first_element(bs_list_t **head)
     return (tmp);
 }
 
+/**
+ * @brief Delete an item of the list
+ * 
+ * @param head
+ * @param id
+ */
 bs_list_t *bs_list_delete(bs_list_t **head, int id)
 {
     bs_list_t *curr = NULL;
