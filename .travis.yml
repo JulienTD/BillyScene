@@ -19,5 +19,5 @@ addons:
       - bash
 
 script:
-  - sudo bash ./install_script.sh
+  - sudo ./install_script.sh
   - make tests_run
