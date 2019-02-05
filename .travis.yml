@@ -63,7 +63,7 @@ before_script:
   - sudo cp -r $DIR/include/* $DST/include/
   - sudo cp -r $DIR/lib/* $DST/lib/
   - sudo ldconfig
-  - sudo cd -
+  - cd -
 
 script:
   - make tests_run
