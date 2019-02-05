@@ -16,6 +16,7 @@ addons:
       - libfreetype6-dev
       - libxrandr-dev
       - unzip
+      - bash
 
 before_script:
   - sudo bash ./install_script.sh
