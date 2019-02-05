@@ -18,9 +18,6 @@ addons:
       - unzip
       - bash
 
-before_script:
-  - sudo bash ./install_script.sh
-
-
 script:
+  - sudo bash ./install_script.sh
   - make tests_run
