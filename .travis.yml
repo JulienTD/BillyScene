@@ -20,7 +20,7 @@ addons:
 before_script:
   - SFML_SOURCE_URL="http://www.sfml-dev.org/files/SFML-2.4.2-sources.zip"
   - CSFML_SOURCE_URL="http://www.sfml-dev.org/files/CSFML-2.4-sources.zip"
-
+  - sudo -i
   - CSFML_ZIP="CSFML.zip"
   - SFML_ZIP="SFML.zip"
   - echo "Download SFML Sources"
@@ -45,7 +45,7 @@ before_script:
   - cmake -DSFML_ROOT="$SFML_PATH" -DSFML_INCLUDE_DIR="$SFML_PATH/include" -DCMAKE_MODULE_PATH="$SFML_PATH/cmake/Modules" .
   - LD_LIBRARY_PATH="$SFML_PATH/lib"
   - make
-  - sudo make install
+  - make install
   - cd ..
   - echo "/usr/local/lib/" > /etc/ld.so.conf.d/csfml.conf
   - ldconfig
