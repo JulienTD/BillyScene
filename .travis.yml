@@ -16,6 +16,7 @@ addons:
       - libfreetype6-dev
       - libxrandr-dev
       - unzip
+      - wget
 
 before_script:
   - SFML_SOURCE_URL="http://www.sfml-dev.org/files/SFML-2.4.2-sources.zip"
@@ -49,7 +50,24 @@ before_script:
   - echo '/usr/local/lib/' | sudo tee --append /etc/ld.so.conf.d/csfml.conf > /dev/null
   - sudo ldconfig
   - rm -rf "$CSFML_ZIP" "$CSFML_PATH" "$SFML_ZIP" "$SFML_PATH"
-
+  - URL="https://github.com/Snaipe/Criterion/releases/download/v2.3.2"
+  - TARBALL="criterion-v2.3.2-linux-x86_64.tar.bz2"
+  - DIR="criterion-v2.3.2"
+  - DST="/usr/local/"
+  - cd /tmp
+  - rm -f $TARBALL
+  - rm -fr $DIR
+  - wget $URL/$TARBALL
+  - tar xjf $TARBALL
+  - echo "creating custom ld.conf"
+  - sudo sh -c "echo "/usr/local/lib" > /etc/ld.so.conf.d/criterion.conf"
+  - echo "cp headers to $DST/include..."
+  - sudo cp -r $DIR/include/* $DST/include/
+  - echo "cp lib to $DST/include..."
+  - suo cp -r $DIR/lib/* $DST/lib/
+  - echo "run ldconfig."
+  - sudo ldconfig
+  - echo "all good."
 
 script:
   - make tests_run
