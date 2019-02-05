@@ -217,9 +217,6 @@ ex: re example clean
 example:  $(EXAMPLE_OBJ)
 	gcc $(EXAMPLE_OBJ) -o ex -L. -lbs_scene -I./include/ -lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-audio -g3
 
-exwin: $(EXAMPLE_OBJ)
-	x86_64-w64-mingw32-gcc $(EXAMPLE_OBJ) -o ex.exe -L. -lbs_scene -I./include/ -lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-audio
-
 #Other
 wc:
 	wc $(ALL_SRC)
