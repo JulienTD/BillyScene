@@ -59,15 +59,11 @@ before_script:
   - rm -fr $DIR
   - wget $URL/$TARBALL
   - tar xjf $TARBALL
-  - echo "creating custom ld.conf"
   - sudo sh -c "echo "/usr/local/lib" > /etc/ld.so.conf.d/criterion.conf"
-  - echo "cp headers to $DST/include..."
   - sudo cp -r $DIR/include/* $DST/include/
-  - echo "cp lib to $DST/include..."
   - sudo cp -r $DIR/lib/* $DST/lib/
-  - echo "run ldconfig."
   - sudo ldconfig
-  - echo "all good."
+  - sudo cd -
 
 script:
   - make tests_run
