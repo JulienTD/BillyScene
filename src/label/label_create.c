@@ -9,6 +9,17 @@
 #include "bs_prototypes.h"
 #include <stdbool.h>
 
+static bool init_label_events(bs_label_t *label)
+{
+    label->event_key_pressed = NULL;
+    label->event_mouse_pressed = NULL;
+    label->event_mouse_released = NULL;
+    label->event_mouse_moved = NULL;
+    label->event_mouse_wheel_scrolled = NULL;
+    label->event_text_entered = NULL;
+    return (true);
+}
+
 static bool init_label(bs_label_t *label, char *font, char *id)
 {
     label->font = sfFont_createFromFile(font);
@@ -30,7 +41,7 @@ static bool init_label(bs_label_t *label, char *font, char *id)
 
 /**
  * @brief Create a label struct
- * 
+ *
  * @param id
  * @param font
  * @param text
@@ -53,5 +64,6 @@ bs_label_t *bs_label_create(char *id, char *font, char *text, int font_size)
     bs_label_set_pos(label, 0, 0);
     bs_label_set_color(label, sfBlack);
     sfText_setCharacterSize(label->text, font_size);
+    init_label_events(label);
     return (label);
 }

@@ -24,6 +24,13 @@ typedef struct bs_label_s
     short layer;
     bool enabled;
     sfRenderStates *rs;
+    void (*event_key_pressed)(bs_event_key_pressed_t event);
+    void (*event_mouse_pressed)(bs_event_mouse_pressed_t event);
+    void (*event_mouse_released)(bs_event_mouse_released_t event);
+    void (*event_mouse_moved)(bs_event_mouse_moved_t event);
+    void (*event_mouse_wheel_scrolled)(bs_event_mouse_wheel_scrolled_t \
+    event);
+    void (*event_text_entered)(bs_event_text_entered_t event);
 } bs_label_t;
 
 
@@ -39,5 +46,16 @@ void bs_label_destroy(bs_label_t *label);
 bs_label_t *bs_label_get_by_id(bs_scene_t *scene, char *id);
 bool bs_label_set_color(bs_label_t *label, sfColor color);
 bool bs_label_set_layer(bs_label_t *label, short layer);
-
+bool bs_label_mouse_moved_manager(sfMouseMoveEvent evt, bs_frame_t *frame, \
+bs_scene_t *scene, bs_label_t *label);
+bool bs_label_mouse_pressed_manager(sfMouseButtonEvent evt, \
+bs_frame_t *frame, bs_scene_t *scene, bs_label_t *label);
+bool bs_label_mouse_released_manager(sfMouseButtonEvent evt, \
+bs_frame_t *frame, bs_scene_t *scene, bs_label_t *label);
+bool bs_label_key_pressed_manager(sfKeyEvent evt, bs_frame_t *frame, \
+bs_scene_t *scene, bs_label_t *label);
+bool bs_label_mouse_wheel_scrolled_manager(sfMouseWheelScrollEvent evt, \
+bs_frame_t *frame, bs_scene_t *scene, bs_label_t *label);
+bool bs_label_text_entered_manager(sfTextEvent evt, bs_frame_t *frame, \
+bs_scene_t *scene, bs_label_t *label);
 #endif /* !BS_LABEL_H_ */

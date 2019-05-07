@@ -42,6 +42,13 @@ SRC_EVENTS_SCENE		=	./src/events/scene/event_scene_key_pressed.c \
 SRC_EVENTS_TEXTFIELD	=	./src/events/textfield/event_textfield_text_entered.c \
 							./src/events/textfield/event_textfield_mouse_pressed.c
 
+SRC_EVENTS_LABEL		=	./src/events/label/event_label_mouse_moved.c \
+							./src/events/label/event_label_mouse_pressed.c \
+							./src/events/label/event_label_mouse_released.c \
+							./src/events/label/event_label_key_pressed.c \
+							./src/events/label/event_label_mouse_wheel_scrolled.c \
+							./src/events/label/event_label_text_entered.c
+
 SRC_EVENTS				=	./src/events/event_dispatcher.c
 
 SRC_FRAME				=	./src/frame/frame_create.c \
@@ -136,7 +143,7 @@ ALL_SRC					=	$(SRC_BUTTON) $(SRC_EVENTS_BUTTON) $(SRC_EVENTS_GENERAL) \
 							$(SRC_EVENTS_SCENE) $(SRC_EVENTS_TEXTFIELD) $(SRC_EVENTS) \
 							$(SRC_FRAME) $(SRC_LABEL) $(SRC_LIST) $(SRC_PIXELBUFFER) \
 							$(SRC_SCENE) $(SRC_SOUND) $(SRC_SPRITE) $(SRC_SPRITE_ANIMATION) \
-							$(SRC_TEXTFIELD) $(SRC_UTIL)
+							$(SRC_TEXTFIELD) $(SRC_UTIL) $(SRC_EVENTS_LABEL)
 
 OBJ						=	$(ALL_SRC:.c=.o)
 

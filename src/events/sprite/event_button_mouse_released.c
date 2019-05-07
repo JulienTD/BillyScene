@@ -30,6 +30,7 @@ sfMouseButtonEvent event, bs_frame_t *frame, bs_scene_t *scene)
  * @brief Event fired when the mouse is released. This event is used to detect
  * if the mouse is on a button, and if it's the case we fired button's
  * events.
+ * 
  */
 void bs_button_mouse_released_manager(sfMouseButtonEvent event, \
 bs_frame_t *frame, bs_scene_t *scene)

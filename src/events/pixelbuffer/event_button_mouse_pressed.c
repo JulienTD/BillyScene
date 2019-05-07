@@ -1,37 +1,37 @@
 /*
 ** BillyScene, 2018
-** mouse_button_pressed_event
+** event_button_mouse_pressed
 ** File description:
-** bs_button_mouse_released_manager
+** bs_button_mouse_pressed_manager
 */
 
-#include "bs_events.h"
 #include "bs_components.h"
+#include "bs_events.h"
 #include "bs_prototypes.h"
 #include <stdbool.h>
 
-static bool execute_released_event(bs_button_t *button, \
+static bool execute_pressed_event(bs_button_t *button, 
 sfMouseButtonEvent event, bs_frame_t *frame, bs_scene_t *scene)
 {
-    bs_event_button_click_released_t result;
+    bs_event_button_click_pressed_t result;
 
-    if (button == NULL || button->click_released_event == NULL) {
+    if (button == NULL || button->click_pressed_event == NULL)
         return false;
-    }
     result.event = event;
     result.frame = frame;
     result.button = button;
     result.scene = scene;
-    button->click_released_event(result);
+    button->click_pressed_event(result);
     return true;
 }
 
 /**
- * @brief Event fired when the mouse is released. This event is used to detect
- * if the mouse is on a button, and if it's the case we fired button's
+ * @brief Event fired when the mouse is pressed. This event is used to detect
+ * if the mouse is on a button component, and if it's the case we fire button's
  * events.
+ * 
  */
-void bs_button_mouse_released_manager(sfMouseButtonEvent event, \
+void bs_button_mouse_pressed_manager(sfMouseButtonEvent event, \
 bs_frame_t *frame, bs_scene_t *scene)
 {
     bs_list_t *curr = NULL;
@@ -45,9 +45,8 @@ bs_frame_t *frame, bs_scene_t *scene)
         button = (bs_button_t *)curr->data;
         if (button->enabled == true && \
         bs_is_mouse_on_button(*(button), event.x, event.y) == true) {
-            execute_released_event(button, event, frame, scene);
-            bs_sound_play(button->sound_click);
-            button->status = HOVERED;
+            execute_pressed_event(button, event, frame, scene);
+            button->status = CLICKED;
         }
     }
 }

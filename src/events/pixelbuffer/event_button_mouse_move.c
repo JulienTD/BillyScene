@@ -81,6 +81,7 @@ bs_frame_t *frame, bs_scene_t *scene, bs_button_t *button)
  * @brief Event fired when the mouse is moving. This event is used to detect
  * if the mouse is on a button component, and if it's the case we fire the button's
  * events.
+ * 
  */
 void bs_button_mouse_move_manager(sfMouseMoveEvent evt, bs_frame_t *frame, \
 bs_scene_t *scene)
